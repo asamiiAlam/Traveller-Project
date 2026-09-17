@@ -21,7 +21,18 @@
         padding: 0;
         box-sizing: border-box;
       }
+      @media(max-width:991px){
 
+       .navbar-collapse .nav-link {
+        color: black !important;
+       }
+      .navbar-toggler-icon {
+        filter: brightness(0) invert(1);
+}  
+
+
+      }
+ 
       .date-input::-webkit-calendar-picker-indicator {
         display: none;
       }
@@ -136,6 +147,8 @@
       </nav>
     </div>
 
+  
+
     <!--search-bar-->
     <div class="container position-relative search">
       <div
@@ -240,7 +253,644 @@
       </div>
     </div>
 
-    <!--search-bar-->
+    <!---searchbar-->
+<!--hero-->
+       
+        <div class="container ">
+        <!--search filters-->
+        <div class="row ">
+            <div class="col-md-3 gy-4">
+                <div class="card shadow-sm mb-3 border-0 rounded-3 mb-3" style=" background-color:#f5f5f5;">
+
+    <!-- Body -->
+    <div class="card-body p-3 ">
+
+
+        <!-- Title -->
+        <h6 class="mb-3"
+            style="
+            font-size:12px;
+            font-weight:600;
+            ">
+            Search by property name
+        </h6>
+
+
+        <!-- Search Input -->
+        <div class="input-group">
+
+            <span class="input-group-text bg-white border-end-0">
+                <i class="bi bi-search text-secondary"></i>
+            </span>
+
+
+            <input 
+                type="text"
+                class="form-control border-start-0 shadow-none"
+                placeholder="eg. Beach westpalm"
+                style="
+                font-size:12px;
+                color:#777;
+                "
+            >
+
+        </div>
+
+
+    </div>
+
+</div>
+      <h6 class="ms-3 mb-3">
+        Filter by</h6>
+      <div class="card shadow-sm border-0 rounded-3 mb-3" >
+
+    <!-- Header -->
+    <div class="card-header  fw-semibold"
+         style="font-size:12px;
+         background-color:#F2F2F2;
+         ">
+        Your budget per day
+    </div>
+
+
+    <!-- Body -->
+    <div class="card-body p-3">
+
+
+        <!-- Option 1 -->
+        <div class="d-flex justify-content-between align-items-center mb-2">
+
+            <div class="form-check d-flex align-items-center">
+                <input class="form-check-input me-2"
+                       type="checkbox"
+                       id="budget1">
+
+                <label class="form-check-label text-secondary fw-semibold"
+                       for="budget1"
+                       style="font-size:12px;">
+                    $0 - $200
+                </label>
+            </div>
+
+            <span class="text-secondary fw-semibold"
+                  style="font-size:12px;">
+                200
+            </span>
+
+        </div>
+
+
+
+        <!-- Option 2 -->
+        <div class="d-flex justify-content-between align-items-center mb-2">
+
+            <div class="form-check d-flex align-items-center">
+                <input class="form-check-input me-2"
+                       type="checkbox"
+                       id="budget2">
+
+                <label class="form-check-label text-secondary fw-semibold"
+                       for="budget2"
+                       style="font-size:12px;">
+                    $200 - $500
+                </label>
+            </div>
+
+            <span class="text-secondary fw-semibold"
+                  style="font-size:12px;">
+                100
+            </span>
+
+        </div>
+
+
+
+        <!-- Option 3 -->
+        <div class="d-flex justify-content-between align-items-center mb-2">
+
+            <div class="form-check d-flex align-items-center">
+                <input class="form-check-input me-2"
+                       type="checkbox"
+                       id="budget3">
+
+                <label class="form-check-label text-secondary fw-semibold"
+                       for="budget3"
+                       style="font-size:12px;">
+                    $500 - $1,000
+                </label>
+            </div>
+
+
+            <span class="text-secondary fw-semibold"
+                  style="font-size:12px; ">
+                15
+            </span>
+
+        </div>
+
+
+
+        <!-- Option 4 -->
+        <div class="d-flex justify-content-between align-items-center mb-2">
+
+            <div class="form-check d-flex align-items-center">
+                <input class="form-check-input me-2"
+                       type="checkbox"
+                       id="budget4">
+
+                <label class="form-check-label text-secondary fw-semibold"
+                       for="budget4"
+                       style="font-size:12px;">
+                    $1,000 - $2,000
+                </label>
+            </div>
+
+            <span class="text-secondary fw-semibold"
+                  style="font-size:12px;">
+                12
+            </span>
+
+        </div>
+
+
+
+
+        <!-- Option 5 -->
+        <div class="d-flex justify-content-between align-items-center mb-3">
+
+            <div class="form-check d-flex align-items-center">
+                <input class="form-check-input me-2"
+                       type="checkbox"
+                       id="budget5">
+
+                <label class="form-check-label text-secondary fw-semibold"
+                       for="budget5"
+                       style="font-size:12px;">
+                    $2,000 - $5,000
+                </label>
+            </div>
+
+            <span class="text-secondary fw-semibold"
+                  style="font-size:12px;">
+                230
+            </span>
+
+        </div>
+
+
+
+        <!-- Custom budget -->
+        <div class="d-flex justify-content-between align-items-center mt-3">
+
+            <span class="text-secondary"
+                  style="font-size:12px;">
+                Set your own budget
+            </span>
+
+
+            <!-- Switch -->
+            <div class="form-check form-switch">
+
+                <input class="form-check-input"
+                       type="checkbox"
+                       role="switch">
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+      </div>
+    <!--star buttons-->
+    <div class="card shadow-sm border-0 rounded-3 mb-3" >
+
+    <!-- Header -->
+    <div class="card-header fw-semibold"
+         style="
+         font-size:12px;
+         background-color:rgb(232,230,230);
+         ">
+        Rating
+    </div>
+
+
+    <!-- Body -->
+    <div class="card-body p-3">
+
+
+
+        <p class="text-secondary mb-2 fw-semibold"
+           style="font-size:12px;">
+            Show only ratings more than
+        </p>
+
+
+        <!-- Rating buttons -->
+        <div class="btn-group w-100" role="group">
+
+
+            <button type="button"
+                    class="btn btn-light border text-secondary fw-semibold"
+                    style="font-size:12px;">
+
+                <div class="star d-flex align-items-center justify-content-center gap-1">
+                 1
+                  <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="orange" class="bi bi-star-fill" viewBox="0 0 16 16">
+  <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+</svg>
+                </div>
+          
+            </button>
+
+
+            <button type="button"
+                    class="btn btn-light border text-secondary fw-semibold"
+                    style="font-size:12px;">
+                <div class="star d-flex align-items-center justify-content-center gap-1">
+                    2
+                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="orange" class="bi bi-star-fill" viewBox="0 0 16 16">
+                        <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                </div>
+            </button>
+
+
+            <button type="button"
+                    class="btn btn-light border text-secondary  fw-semibold"
+                    style="font-size:12px;">
+                <div class="star d-flex align-items-center justify-content-center gap-1">
+                3
+                <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="orange" class="bi bi-star-fill" viewBox="0 0 16 16">
+                        <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                </div>
+            </button>
+
+
+            <button type="button"
+                    class="btn btn-light border text-secondary   fw-semibold"
+                    style="font-size:12px;">
+                <div class="star d-flex align-items-center justify-content-center gap-1">
+                    4
+                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="orange" class="bi bi-star-fill" viewBox="0 0 16 16">
+                        <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                </div>
+            </button>
+
+
+            <button type="button"
+                    class="btn btn-light border text-secondary fw-semibold" 
+                    style="font-size:12px;">
+                  <div class="star d-flex align-items-center justify-content-center gap-1">
+                    5
+                    <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="orange" class="bi bi-star-fill" viewBox="0 0 16 16">
+                        <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                </div>
+            </button>
+
+
+        </div>
+
+
+    </div>
+
+</div>
+    <!--popular filters-->
+      <div class="card shadow-sm border-0 rounded-3 mb-3" >
+
+    <!-- Header -->
+    <div class="card-header fw-semibold"
+         style="
+         font-size:12px;
+         background-color:#F2F2F2;
+         ">
+        Popular Filters
+    </div>
+
+
+    <!-- Body -->
+    <div class="card-body p-3">
+
+
+        <div class="d-flex justify-content-between align-items-center mb-2">
+            <div class="form-check d-flex align-items-center">
+                <input class="form-check-input me-2" type="checkbox" id="filter1">
+                <label class="form-check-label text-secondary fw-semibold"
+                       for="filter1"
+                       style="font-size:12px;">
+                    Free cancellation
+                </label>
+            </div>
+
+            <span class="text-secondary fw-semibold" style="font-size:12px;">
+                200
+            </span>
+        </div>
+
+
+        <div class="d-flex justify-content-between align-items-center mb-2">
+            <div class="form-check d-flex align-items-center">
+                <input class="form-check-input me-2" type="checkbox" id="filter2">
+                <label class="form-check-label text-secondary fw-semibold"
+                       for="filter2"
+                       style="font-size:12px;">
+                    Spa
+                </label>
+            </div>
+
+            <span class="text-secondary fw-semibold" style="font-size:12px;">
+                100
+            </span>
+        </div>
+
+
+        <div class="d-flex justify-content-between align-items-center mb-2">
+            <div class="form-check d-flex align-items-center">
+                <input class="form-check-input me-2" type="checkbox" id="filter3">
+                <label class="form-check-label text-secondary fw-semibold"
+                       for="filter3"
+                       style="font-size:12px;">
+                    Beach front
+                </label>
+            </div>
+
+            <span class="text-secondary fw-semibold" style="font-size:12px;">
+                15
+            </span>
+        </div>
+
+
+        <div class="d-flex justify-content-between align-items-center mb-2">
+            <div class="form-check d-flex align-items-center">
+                <input class="form-check-input me-2" type="checkbox" id="filter4">
+                <label class="form-check-label text-secondary fw-semibold"
+                       for="filter4"
+                       style="font-size:12px;">
+                    Hot tub / jacuzzi
+                </label>
+            </div>
+
+            <span class="text-secondary fw-semibold" style="font-size:12px;">
+                12
+            </span>
+        </div>
+
+
+        <div class="d-flex justify-content-between align-items-center mb-2">
+            <div class="form-check d-flex align-items-center">
+                <input class="form-check-input me-2" type="checkbox" id="filter5">
+                <label class="form-check-label text-secondary fw-semibold"
+                       for="filter5"
+                       style="font-size:12px;">
+                    Book without credit card
+                </label>
+            </div>
+
+            <span class="text-secondary fw-semibold" style="font-size:12px;">
+                230
+            </span>
+        </div>
+
+
+        <div class="d-flex justify-content-between align-items-center">
+            <div class="form-check d-flex align-items-center">
+                <input class="form-check-input me-2" type="checkbox" id="filter6">
+                <label class="form-check-label text-secondary fw-semibold"
+                       for="filter6"
+                       style="font-size:12px;">
+                    No prepayment
+                </label>
+            </div>
+
+            <span class="text-secondary fw-semibold" style="font-size:12px;">
+                12
+            </span>
+        </div>
+
+
+    </div>
+
+</div> 
+
+ <!--activities-->
+ <div class="card shadow-sm border-0 rounded-3 mb-3">
+
+    <!-- Header -->
+    <div class="card-header fw-semibold"
+         style="
+         font-size:12px;
+         background-color:rgb(232,230,230);
+         ">
+        Activities
+    </div>
+
+
+    <!-- Body -->
+    <div class="card-body p-3">
+
+
+        <div class="d-flex justify-content-between align-items-center mb-2">
+            <div class="form-check d-flex align-items-center">
+                <input class="form-check-input me-2" type="checkbox" id="activity1">
+
+                <label class="form-check-label text-secondary fw-semibold"
+                       for="activity1"
+                       style="font-size:12px;">
+                    Fishing
+                </label>
+            </div>
+
+            <span class="text-secondary fw-semibold" style="font-size:12px;">
+                200
+            </span>
+        </div>
+
+
+        <div class="d-flex justify-content-between align-items-center mb-2">
+            <div class="form-check d-flex align-items-center">
+                <input class="form-check-input me-2" type="checkbox" id="activity2">
+
+                <label class="form-check-label text-secondary fw-semibold"
+                       for="activity2"
+                       style="font-size:12px;">
+                    Hiking
+                </label>
+            </div>
+
+            <span class="text-secondary fw-semibold" style="font-size:12px;">
+                100
+            </span>
+        </div>
+
+
+        <div class="d-flex justify-content-between align-items-center mb-2">
+            <div class="form-check d-flex align-items-center">
+                <input class="form-check-input me-2" type="checkbox" id="activity3">
+
+                <label class="form-check-label text-secondary fw-semibold"
+                       for="activity3"
+                       style="font-size:12px;">
+                    Beach
+                </label>
+            </div>
+
+            <span class="text-secondary fw-semibold" style="font-size:12px;">
+                15
+            </span>
+        </div>
+
+
+        <div class="d-flex justify-content-between align-items-center mb-2">
+            <div class="form-check d-flex align-items-center">
+                <input class="form-check-input me-2" type="checkbox" id="activity4">
+
+                <label class="form-check-label text-secondary fw-semibold"
+                       for="activity4"
+                       style="font-size:12px;">
+                    Cycling
+                </label>
+            </div>
+
+            <span class="text-secondary fw-semibold" style="font-size:12px;">
+                12
+            </span>
+        </div>
+
+
+        <div class="d-flex justify-content-between align-items-center mb-2">
+            <div class="form-check d-flex align-items-center">
+                <input class="form-check-input me-2" type="checkbox" id="activity5">
+
+                <label class="form-check-label text-secondary fw-semibold"
+                       for="activity5"
+                       style="font-size:12px;">
+                    Sauna
+                </label>
+            </div>
+
+            <span class="text-secondary fw-semibold" style="font-size:12px;">
+                230
+            </span>
+        </div>
+
+
+        <div class="d-flex justify-content-between align-items-center">
+            <div class="form-check d-flex align-items-center">
+                <input class="form-check-input me-2" type="checkbox" id="activity6">
+
+                <label class="form-check-label text-secondary fw-semibold"
+                       for="activity6"
+                       style="font-size:12px;">
+                    Night lights
+                </label>
+            </div>
+
+            <span class="text-secondary fw-semibold" style="font-size:12px;">
+                12
+            </span>
+        </div>
+
+
+    </div>
+
+</div>
+
+  
+    </div>
+    <div class="col-md-9 mt-4">
+        <h6>Showing the Search Results</h6>
+
+        <div class="row d-flex justify-content-md-between align-items-center mb-3">
+    <div class="col-md-8">
+                      <div class="buttons d-flex justify-content-md-between justify-content-center align-items-center mb-3 mt-3">
+
+     <div class="d-flex flex-wrap gap-2" role="group">
+  <button class="btn btn-outline-primary active" style="font-size:12px; padding:8px 14px;">
+    Our top picks
+  </button>
+  <button class="btn btn-outline-secondary" style="font-size:12px; padding:8px 14px;">
+    Hotel and apartments
+  </button>
+  <button class="btn btn-outline-secondary" style="font-size:12px; padding:8px 14px;">
+    Residence
+  </button>
+  <button class="btn btn-outline-secondary" style="font-size:12px; padding:8px 14px;">
+    Resort
+  </button>
+  <button class="btn btn-outline-secondary" style="font-size:12px; padding:8px 14px;">
+    Shared Space
+  </button>
+</div> 
+
+
+    </div>
+            </div>
+            <div class="col-md-4">
+            <div >
+
+            <label 
+            class="d-block text-secondary"
+            style="font-size:10px;">
+                Sort by
+            </label>
+
+
+            <select 
+            class="form-select shadow-none"
+            id="sortby"
+            style="
+            width:135px;
+            height:35px;
+            font-size:12px;
+            ">
+
+                <option selected>
+                    Recommended
+                </option>
+
+                <option>
+                    Price low to high
+                </option>
+
+                <option>
+                    Price high to low
+                </option>
+
+                <option>
+                    Rating
+                </option>
+
+            </select>
+
+        </div>
+
+            </div>
+
+            <div class="container">
+
+                this is items yo
+            </div>
+        </div>
+ 
+      
+    </div>
+
+
+       </div>
+
+       
+
+</div>
+    </div>
+        </div>
+    </div>
+<!--hero-->
+
+
     <!--Covid Section-->
     <div class="container my-md-5 my-4">
       <div class="row">

@@ -14,12 +14,7 @@ input{
     background:white;
     padding:20px;
 }
- .navbar-collapse .nav-link {
-        color: black !important;
-}
-  .navbar-toggler-icon {
-        filter: brightness(0) invert(1);
-}
+
 
 
 }
