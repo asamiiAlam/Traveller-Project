@@ -35,13 +35,13 @@
     <div
       class="container-navbar"
       style="
-        background-color: #ffffff;
-        height: 70px;
+        background-color: #144e9d;
+        height: 170px;
         display: flex;
         align-items: center;
       "
     >
-      <!--Navbar -->
+      <!-- Navbar -->
       <nav class="navbar navbar-expand-lg w-100 h-100">
         <div class="container position-relative">
           <!-- Logo -->
@@ -55,8 +55,8 @@
 
             <a
               href="#"
-              class="navbar-brand"
-              style="font-size: 14px; font-weight: 600; color: #333"
+              class="navbar-brand text-white"
+              style="font-size: 14px; font-weight: 600"
             >
               my Dream Place
             </a>
@@ -74,49 +74,57 @@
 
           <!-- Menu -->
           <div
-            class="collapse navbar-collapse"
+            class="collapse navbar-collapse "
             id="navbarNav"
-            style="z-index: 1000"
+            style="z-index: 1000
+            
+            "
           >
             <ul class="navbar-nav mx-auto text-center" style="gap: 25px">
               <li class="nav-item">
-                <a class="nav-link" href="#">Home</a>
+                <a class="nav-link text-white" href="#">Home</a>
               </li>
 
               <li class="nav-item">
-                <a class="nav-link" href="#">Discover</a>
+                <a class="nav-link text-white" href="#">Discover</a>
               </li>
 
               <li class="nav-item">
-                <a class="nav-link" href="#">Activities</a>
+                <a class="nav-link text-white" href="#">Activities</a>
               </li>
 
               <li class="nav-item">
-                <a class="nav-link" href="#">About</a>
+                <a class="nav-link text-white" href="#">About</a>
               </li>
 
               <li class="nav-item">
-                <a class="nav-link" href="#">Contact</a>
+                <a class="nav-link text-white" href="#">Contact</a>
               </li>
             </ul>
           </div>
 
           <!-- Right side -->
           <div class="d-flex align-items-center">
-            <div class="position-relative me-2">
+            <!-- Bell Icon -->
+            <div class="position-relative me-3">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="20"
                 height="20"
-                fill="grey"
+                fill="white"
                 viewBox="0 0 16 16"
               >
                 <path
                   d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2m.995-14.901a1 1 0 1 0-1.99 0A5 5 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901"
                 />
               </svg>
+
+             
+                
+              </span>
             </div>
 
+            <!-- User -->
             <img
               src="img/user.png"
               width="40"
@@ -128,55 +136,6 @@
       </nav>
     </div>
 
-    <!--hero section -->
-    <div class="hero mt-4 mb-md-0 mb-2">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 position-relative">
-            <img
-              src="img/sydney.jpg"
-              alt="Hero Image"
-              class="img-fluid rounded"
-              style="
-                width: 100%;
-                object-fit: cover;
-                object-position: center;
-                height: 500px;
-              "
-            />
-
-            <!-- Overlay -->
-            <div
-              class="overlay"
-              style="
-                position: absolute;
-                top: 0;
-                left: 12px;
-                width: calc(100% - 24px);
-                height: 500px;
-                background-color: rgba(78, 77, 77, 0.5);
-                border-radius: 8px;
-                z-index: 1;
-              "
-            ></div>
-
-            <!-- Text -->
-            <div
-              class="text position-absolute top-50 start-50 translate-middle text-center"
-              style="z-index: 2; width: 80%"
-            >
-              <h1 class="text-white">Enjoy Your Dream Vacation</h1>
-
-              <p class="text-white width-50">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem
-                ipsum dolor<br />
-                sit amet consectetur adipisicing elit.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
     <!--search-bar-->
     <div class="container position-relative search">
       <div
@@ -316,116 +275,9 @@
       </div>
     </div>
     <!--Covid Section-->
-    <!--hero section -->
-
-    <!--view-->
-    <div class="hero2 mb-md-5 mb-5">
-      <div class="container">
-        <div class="row">
-          <div
-            class="col-md-12 position-relative rounded-3"
-            style="height: 300px; overflow: hidden"
-          >
-            <!-- Background Image -->
-            <img
-              src="img/view.jpg"
-              class="rounded-3"
-              style="
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                object-position: center;
-                transform: scaleX(-1);
-                z-index: 0;
-              "
-            />
-
-            <!-- Dark Overlay -->
-            <div
-              class="overlay"
-              style="
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 300px;
-                background-color: rgba(78, 77, 77, 0.5);
-                border-radius: 8px;
-                z-index: 1;
-              "
-            ></div>
-
-            <!-- Phone Image -->
-            <div
-              class="hand"
-              style="
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 300px;
-                overflow: hidden;
-                z-index: 2;
-                pointer-events: none;
-              "
-            >
-              <img
-                src="img/phn.png"
-                style="
-                  width: 40%;
-                  height: 450px;
-                  object-fit: cover;
-                  position: absolute;
-                  top: -30px;
-                  left: 600px;
-                  transform: rotate(-20deg);
-                "
-              />
-            </div>
-
-            <!-- Text -->
-            <div
-              class="text position-absolute d-flex flex-column justify-content-center text-md-start text-center p-md-5 p-3"
-              style="
-                z-index: 3;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 300px;
-                padding: 20px;
-              "
-            >
-              <h4 class="text-white mb-4">
-                Download the mobile application for bonuses<br />
-                Get exclusive deals and offers
-              </h4>
-
-              <button
-                type="submit"
-                class="btn btn-primary px-md-3 py-md-2 mb-3 ms-md-0 ms-5 px-5 py-2"
-                style="width: max-content"
-              >
-                Download mobile app
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!--view-->
-    <!--Explore the world Part-->
-    <div
-      class="container d-flex flex-column align-items-center justify-content-center text-center mb-md-0 mb-5"
-    >
-      <h1 class="mt-md-0 mt-3 mb-3">Explore the World with Dream place</h1>
-      <p class="text-primary">Discover amazing destinations and experiences.</p>
-    </div>
 
     <!--footer-->
-    <footer class="mt-5">
+ <footer class="mt-5">
       <div
         class="lists w-100"
        
