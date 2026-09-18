@@ -285,6 +285,7 @@
 
 
             <input 
+                id="search"
                 type="text"
                 class="form-control border-start-0 shadow-none"
                 placeholder="eg. Beach westpalm"
@@ -1384,15 +1385,62 @@
 
 
 <script>
+let allTrips = [];
+function generateStars(rating) {
+
+    let stars = "";
+
+    let value = Number(rating);
+
+    let fullStars = Math.floor(value);
+
+    let hasHalfStar = value % 1 !== 0;
+
+
+    // Full stars
+    for(let i = 0; i < fullStars; i++) {
+
+        stars += `<i class="bi bi-star-fill"></i>`;
+
+    }
+
+
+    // Half star
+    if(hasHalfStar) {
+
+        stars += `<i class="bi bi-star-half"></i>`;
+
+    }
+
+
+    // Empty stars
+    let emptyStars = 5 - Math.ceil(value);
+
+    for(let i = 0; i < emptyStars; i++) {
+
+        stars += `<i class="bi bi-star"></i>`;
+
+    }
+
+
+    return stars;
+
+}
 
 async function loadTrips() {
 
   const response = await fetch("trips.json");
-  const trips = await response.json();
+  allTrips = await response.json();
 
   const container = document.getElementById("tripContainer");
 
+  renderTrips(allTrips);
 
+}
+function renderTrips(trips){
+  const container = document.getElementById("tripContainer");
+  container.innerHTML = "";
+ 
   trips.forEach(trip => {
 
 
@@ -1446,7 +1494,7 @@ async function loadTrips() {
           >
 
             <span>
-              ★★★★★
+              ${generateStars(trip.rating)}
             </span>
 
 
@@ -1584,9 +1632,38 @@ async function loadTrips() {
 
   });
 
+    
+
+
 
 }
 
+document
+.getElementById("search")
+.addEventListener("input", function(){
+
+
+    const searchText = this.value.toLowerCase().trim();
+
+
+
+    const filteredTrips = allTrips.filter(trip => {
+
+
+
+        return trip.name.trim()
+        .toLowerCase()
+        .includes(searchText);
+
+
+    });
+
+
+
+    renderTrips(filteredTrips);
+
+
+});
 
 loadTrips();
 

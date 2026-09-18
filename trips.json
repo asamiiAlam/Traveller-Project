@@ -16,7 +16,7 @@
   {
     "image": "https://picsum.photos/seed/grand-palace-hotel/400/300",
     "name": "Grand Palace Hotel",
-    "rating": "4.8",
+    "rating": "4",
     "reviews": "850 Reviews",
     "refund": "Free cancellation",
     "checkIn": "Monday, April 10, 2023",
@@ -30,7 +30,7 @@
   {
     "image": "https://picsum.photos/seed/ocean-view-resort/400/300",
     "name": "Ocean View Resort",
-    "rating": "4.6",
+    "rating": "4",
     "reviews": "950 Reviews",
     "refund": "Non refundable",
     "checkIn": "Friday, May 5, 2023",
@@ -44,7 +44,7 @@
   {
     "image": "https://picsum.photos/seed/mountain-escape-lodge/400/300",
     "name": "Mountain Escape Lodge",
-    "rating": "4.2",
+    "rating": "2",
     "reviews": "430 Reviews",
     "refund": "Free cancellation",
     "checkIn": "Thursday, June 15, 2023",
@@ -58,7 +58,7 @@
   {
     "image": "https://picsum.photos/seed/royal-garden-inn/400/300",
     "name": "Royal Garden Inn",
-    "rating": "4.9",
+    "rating": "3",
     "reviews": "2100 Reviews",
     "refund": "Non refundable",
     "checkIn": "Tuesday, July 4, 2023",
@@ -72,7 +72,7 @@
   {
     "image": "https://picsum.photos/seed/city-lights-hotel/400/300",
     "name": "City Lights Hotel",
-    "rating": "3.9",
+    "rating": "1",
     "reviews": "320 Reviews",
     "refund": "Free cancellation",
     "checkIn": "Saturday, August 12, 2023",
@@ -86,7 +86,7 @@
   {
     "image": "https://picsum.photos/seed/blue-horizon-suites/400/300",
     "name": "Blue Horizon Suites",
-    "rating": "4.7",
+    "rating": "4",
     "reviews": "780 Reviews",
     "refund": "Non refundable",
     "checkIn": "Wednesday, September 20, 2023",
@@ -100,7 +100,7 @@
   {
     "image": "https://picsum.photos/seed/sunset-bay-resort/400/300",
     "name": "Sunset Bay Resort",
-    "rating": "4.3",
+    "rating": "3.5",
     "reviews": "560 Reviews",
     "refund": "Free cancellation",
     "checkIn": "Friday, October 6, 2023",
@@ -114,7 +114,7 @@
   {
     "image": "https://picsum.photos/seed/green-valley-hotel/400/300",
     "name": "Green Valley Hotel",
-    "rating": "4.1",
+    "rating": "4",
     "reviews": "670 Reviews",
     "refund": "Non refundable",
     "checkIn": "Monday, November 13, 2023",
@@ -128,7 +128,7 @@
   {
     "image": "https://picsum.photos/seed/royal-ocean-palace/400/300",
     "name": "Royal Ocean Palace",
-    "rating": "4.9",
+    "rating": "4",
     "reviews": "3400 Reviews",
     "refund": "Free cancellation",
     "checkIn": "Sunday, December 24, 2023",
@@ -142,7 +142,7 @@
   {
     "image": "https://picsum.photos/seed/airport-comfort-hotel/400/300",
     "name": "Airport Comfort Hotel",
-    "rating": "3.8",
+    "rating": "3",
     "reviews": "240 Reviews",
     "refund": "Non refundable",
     "checkIn": "Monday, January 8, 2024",
@@ -156,7 +156,7 @@
   {
     "image": "https://picsum.photos/seed/heritage-boutique-hotel/400/300",
     "name": "Heritage Boutique Hotel",
-    "rating": "4.4",
+    "rating": "2",
     "reviews": "920 Reviews",
     "refund": "Free cancellation",
     "checkIn": "Thursday, February 15, 2024",
@@ -170,7 +170,7 @@
   {
     "image": "https://picsum.photos/seed/palm-tree-paradise-resort/400/300",
     "name": "Palm Tree Paradise Resort",
-    "rating": "4.6",
+    "rating": "1",
     "reviews": "1500 Reviews",
     "refund": "Non refundable",
     "checkIn": "Friday, March 22, 2024",
@@ -184,7 +184,7 @@
   {
     "image": "https://picsum.photos/seed/urban-stay-apartments/400/300",
     "name": "Urban Stay Apartments",
-    "rating": "4.0",
+    "rating": "4",
     "reviews": "510 Reviews",
     "refund": "Free cancellation",
     "checkIn": "Tuesday, April 16, 2024",
@@ -198,7 +198,7 @@
   {
     "image": "https://picsum.photos/seed/luxury-grand-resort/400/300",
     "name": "Luxury Grand Resort",
-    "rating": "5.0",
+    "rating": "5",
     "reviews": "5000 Reviews",
     "refund": "Non refundable",
     "checkIn": "Saturday, May 25, 2024",
