@@ -871,156 +871,8 @@
             </div>
 
     <div class="container" id="tripContainer">
-<!-- Trip Card -->
-<div class="card border-0 shadow-sm rounded-0 w-100 trip-card" id="tripTemplate">
-
-  <div class="card-body p-2">
-
-    <div class="row align-items-center">
-
-      <!-- Image -->
-      <div class="col-md-3">
-        <img 
-          id="tripImage"
-          src="img/h1.png"
-          class="img-fluid rounded-2 trip-image"
-          style="object-fit:cover; object-position:center;"
-          alt="hotel"
-        />
-      </div>
-
-
-      <!-- Hotel Details -->
-      <div class="col-md-7">
-
-        <h6 
-          id="tripName"
-          class="fw-semibold mb-1"
-          style="font-size:12px;"
-        >
-          Hotel Name
-        </h6>
-
-
-        <div 
-          class="text-warning mb-1"
-          style="font-size:10px;"
-        >
-          <span id="tripRatingStars">
-            ★★★★★
-          </span>
-
-          <span 
-            id="tripReviews"
-            class="text-muted"
-          >
-            4.5 (1200 Reviews)
-          </span>
-        </div>
-
-
-        <p 
-          id="tripRefund"
-          class="text-danger mb-1"
-          style="font-size:10px;"
-        >
-          Non refundable
-        </p>
-
-
-        <p 
-          id="tripCheckIn"
-          class="text-muted mb-1"
-          style="font-size:10px;"
-        >
-          Check in:
-        </p>
-
-
-        <p 
-          id="tripCheckOut"
-          class="text-muted mb-1"
-          style="font-size:10px;"
-        >
-          Check out:
-        </p>
-
-
-        <p 
-          id="tripStay"
-          class="text-muted mb-0"
-          style="font-size:10px;"
-        >
-          2 night stay
-        </p>
-
-      </div>
-
-
-
-      <!-- Price + Button -->
-      <div 
-        class="col-md-2 text-end"
-      >
-
-        <p 
-          id="tripDuration"
-          class="mb-1 text-muted"
-          style="font-size:10px;"
-        >
-          1 room, 2 days
-        </p>
-
-
-        <div class="mb-2">
-
-          <span
-            id="tripOldPrice"
-            class="text-danger text-decoration-line-through"
-            style="font-size:12px;"
-          >
-            $160
-          </span>
-
-
-          <span
-            id="tripPrice"
-            class="fw-bold"
-            style="font-size:15px;"
-          >
-            $130
-          </span>
-
-        </div>
-
-
-        <p
-          id="tripFees"
-          class="text-muted mb-2"
-          style="font-size:9px;"
-        >
-          Includes taxes and fees
-        </p>
-
-
-        <button
-          id="tripButton"
-          class="btn btn-primary btn-sm"
-          style="font-size:10px;"
-        >
-          View trip details
-        </button>
-
-
-      </div>
-
-
+      <!-- Trip cards are injected here by loadTrips() from trips.json -->
     </div>
-
-  </div>
-
-</div>
-            </div>
         </div>
  
       
@@ -1383,212 +1235,168 @@
     ></script>
 
 
-<script>
+  <script>
 
-async function loadTrips() {
+async function loadTrips(){
 
-  const response = await fetch("trips.json");
-  const trips = await response.json();
+    const response = await fetch("trips.json");
 
-  const container = document.getElementById("tripContainer");
+    const trips = await response.json();
 
-
-  trips.forEach(trip => {
+    const container = document.getElementById("tripContainer");
 
 
-    const card = document.createElement("div");
-
-    card.className = "card border-0 shadow-sm rounded-0 w-100 trip-card mb-3";
+    trips.forEach(trip => {
 
 
-    card.innerHTML = `
+        const card = document.createElement("div");
 
-    <div class="card-body p-2">
-
-      <div class="row align-items-center">
+        card.className = "card border-0 shadow-sm rounded-0 w-100 mb-3";
 
 
-        <!-- Image -->
-        <div class="col-md-3">
+        card.innerHTML = `
 
-          <img
-            src="${trip.image}"
-            class="img-fluid rounded-2 trip-image"
-            style="
-              object-fit:cover;
-              object-position:center;
-            "
-            alt="hotel"
-          />
+        <div class="card-body p-2">
+
+            <div class="row align-items-center">
+
+
+                <!-- Image -->
+                <div class="col-md-3">
+
+                    <img 
+                    src="${trip.image}"
+                    class="img-fluid rounded-2"
+                    style="
+                    width:150px;
+                    height:100px;
+                    object-fit:cover;
+                    "
+                    >
+
+                </div>
+
+
+
+                <!-- Details -->
+                <div class="col-md-7">
+
+
+                    <h6 class="fw-semibold mb-1"
+                    style="font-size:12px;">
+                        ${trip.name}
+                    </h6>
+
+
+                    <div class="text-warning mb-1"
+                    style="font-size:10px;">
+
+                        ★★★★★
+
+                        <span class="text-muted">
+                            ${trip.rating} (${trip.reviews})
+                        </span>
+
+                    </div>
+
+
+
+                    <p class="text-danger mb-1"
+                    style="font-size:10px;">
+                        ${trip.refund}
+                    </p>
+
+
+
+                    <p class="text-muted mb-1"
+                    style="font-size:10px;">
+                        Check in: ${trip.checkIn}
+                    </p>
+
+
+
+                    <p class="text-muted mb-1"
+                    style="font-size:10px;">
+                        Check out: ${trip.checkOut}
+                    </p>
+
+
+
+                    <p class="text-muted mb-0"
+                    style="font-size:10px;">
+                        ${trip.stay}
+                    </p>
+
+
+                </div>
+
+
+
+
+                <!-- Price -->
+
+                <div class="col-md-2 text-end">
+
+
+                    <p class="text-muted mb-1"
+                    style="font-size:10px;">
+                        ${trip.duration}
+                    </p>
+
+
+
+                    <div class="mb-2">
+
+                        <span 
+                        class="text-danger text-decoration-line-through"
+                        style="font-size:12px;">
+                            ${trip.oldPrice}
+                        </span>
+
+
+                        <span class="fw-bold"
+                        style="font-size:15px;">
+                            ${trip.price}
+                        </span>
+
+                    </div>
+
+
+
+                    <p class="text-muted mb-2"
+                    style="font-size:9px;">
+                        ${trip.fees}
+                    </p>
+
+
+
+                    <button class="btn btn-primary btn-sm"
+                    style="font-size:10px;">
+                        View trip details
+                    </button>
+
+
+                </div>
+
+
+            </div>
 
         </div>
 
+        `;
 
 
+        container.appendChild(card);
 
-        <!-- Hotel Details -->
-        <div class="col-md-7">
 
-
-          <h6
-            class="fw-semibold mb-1"
-            style="font-size:12px;"
-          >
-            ${trip.name}
-          </h6>
-
-
-
-
-          <div
-            class="text-warning mb-1"
-            style="font-size:10px;"
-          >
-
-            <span>
-              ★★★★★
-            </span>
-
-
-            <span class="text-muted">
-              ${trip.rating} (${trip.reviews})
-            </span>
-
-          </div>
-
-
-
-
-          <p
-            class="text-danger mb-1"
-            style="font-size:10px;"
-          >
-            ${trip.refund}
-          </p>
-
-
-
-
-          <p
-            class="text-muted mb-1"
-            style="font-size:10px;"
-          >
-            Check in: ${trip.checkIn}
-          </p>
-
-
-
-
-          <p
-            class="text-muted mb-1"
-            style="font-size:10px;"
-          >
-            Check out: ${trip.checkOut}
-          </p>
-
-
-
-
-          <p
-            class="text-muted mb-0"
-            style="font-size:10px;"
-          >
-            ${trip.stay}
-          </p>
-
-
-
-        </div>
-
-
-
-
-
-
-        <!-- Price + Button -->
-        <div
-          class="col-md-2 text-end"
-        >
-
-
-          <p
-            class="mb-1 text-muted"
-            style="font-size:10px;"
-          >
-            ${trip.duration}
-          </p>
-
-
-
-
-          <div class="mb-2">
-
-
-            <span
-              class="text-danger text-decoration-line-through"
-              style="font-size:12px;"
-            >
-              ${trip.oldPrice}
-            </span>
-
-
-
-
-            <span
-              class="fw-bold"
-              style="font-size:15px;"
-            >
-              ${trip.price}
-            </span>
-
-
-          </div>
-
-
-
-
-
-          <p
-            class="text-muted mb-2"
-            style="font-size:9px;"
-          >
-            ${trip.fees}
-          </p>
-
-
-
-
-
-          <button
-            class="btn btn-primary btn-sm"
-            style="font-size:10px;"
-          >
-            View trip details
-          </button>
-
-
-
-        </div>
-
-
-
-      </div>
-
-    </div>
-
-    `;
-
-
-    container.appendChild(card);
-
-
-  });
+    });
 
 
 }
 
 
 loadTrips();
+
 
 </script>
   </body>
