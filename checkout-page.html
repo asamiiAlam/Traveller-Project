@@ -1,0 +1,985 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="index.css" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .date-input::-webkit-calendar-picker-indicator {
+        display: none;
+      }
+
+      .date-input {
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      class="container-navbar"
+      style="
+        background-color: #ffffff;
+        height: 50px;
+        display: flex;
+        border-bottom: 1px solid #e0e0e0;
+
+        align-items: center;
+      "
+    >
+      <!--Navbar -->
+      <nav class="navbar navbar-expand-lg w-100 h-100">
+        <div class="container position-relative">
+          <!-- Logo -->
+          <div class="d-flex align-items-center">
+            <img
+              src="img/Group.png"
+              width="25"
+              height="25"
+              style="margin-right: 8px"
+            />
+
+            <a
+              href="#"
+              class="navbar-brand"
+              style="font-size: 14px; font-weight: 600; color: #333"
+            >
+              my Dream Place
+            </a>
+          </div>
+
+          <!-- Hamburger -->
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- Menu -->
+          <div
+            class="collapse navbar-collapse"
+            id="navbarNav"
+            style="z-index: 1000"
+          >
+            <ul class="navbar-nav mx-auto text-center" style="gap: 25px">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Home</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">Discover</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">Activities</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contact</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Right side -->
+          <div class="d-flex align-items-center">
+            <div class="position-relative me-2">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                fill="grey"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2m.995-14.901a1 1 0 1 0-1.99 0A5 5 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901"
+                />
+              </svg>
+            </div>
+
+            <img
+              src="img/user.png"
+              width="40"
+              height="40"
+              style="border-radius: 50%; object-fit: cover"
+            />
+          </div>
+        </div>
+      </nav>
+    </div>
+
+  
+
+   
+      <!--Covid Section-->
+      <div class="container my-md-5 my-4">
+        <h5 class="fw-semibold mb-3 text-start">Secure Your Reservation</h5>
+        <div class="row">
+          <div
+            class="col-md-12 d-flex align-items-center justify-content-start px-5 rounded-3"
+            style="background-color: #fcefca"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="26"
+              height="26"
+              fill="currentColor"
+              class="me-3 bi bi-exclamation-triangle"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.15.15 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.2.2 0 0 1-.054.06.1.1 0 0 1-.066.017H1.146a.1.1 0 0 1-.066-.017.2.2 0 0 1-.054-.06.18.18 0 0 1 .002-.183L7.884 2.073a.15.15 0 0 1 .054-.057m1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767z"
+              />
+              <path
+                d="M7.002 12a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 5.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z"
+              />
+            </svg>
+
+            <p
+              class="text-center text-secondary"
+              style="font-size: 16px; margin-top: 20px"
+            >
+              check the latest covid-19 restrictions before your travel.
+              <a href="#" class="text-decoration-none text-primary"
+                >Learn more</a
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--Covid Section-->
+      <div class="container">
+         
+        <div class="row">
+            <div class="col-md-8">
+           <div class="card border-0 shadow-sm rounded-3 overflow-hidden mb-3">
+
+  <!-- Header -->
+  <div 
+    class="p-3 text-white d-flex align-items-center"
+    style="background:#2f80ed;"
+  >
+    <i class="bi bi-person-fill me-2" style="font-size:18px;"></i>
+
+    <span style="font-size:12px;">
+      Room 1 &nbsp; 2 adults, 1 double bed and 1 twin bed, Non-smoking
+    </span>
+  </div>
+
+
+  <!-- Body -->
+  <div class="card-body p-4">
+
+
+    <!-- First name + Last name -->
+    <div class="row g-3 mb-2">
+
+      <div class="col-md-4">
+        <label class="form-label mb-1" style="font-size:12px;">
+          First name
+        </label>
+
+        <input 
+          type="text"
+          class="form-control border-0"
+          style="background:#f1f1f1; height:30px;"
+        >
+      </div>
+
+
+      <div class="col-md-4">
+        <label class="form-label mb-1" style="font-size:12px;">
+          Last name
+        </label>
+
+        <input 
+          type="text"
+          class="form-control border-0"
+          style="background:#f1f1f1; height:30px;"
+        >
+      </div>
+
+    </div>
+
+
+
+    <!-- Mobile Number -->
+    <label class="form-label mb-1 mt-2" style="font-size:12px;">
+      Mobile number
+    </label>
+
+
+    <div class="d-flex gap-2 mb-3">
+
+      <div class="d-flex align-items-center bg-light rounded px-2" style="width: 140px; border: 1px solid #e0e0e0;">
+  <!-- Country Flag -->
+  <img src="https://flagcdn.com/w20/au.png" width="20" alt="Australia" class="me-2">
+  
+  <!-- Select Dropdown -->
+  <select class="form-select border-0 bg-transparent pe-4 shadow-none" style="font-size: 14px; cursor: pointer;">
+    <option value="+61">+61</option>
+    <option value="+1">+1</option>
+    <option value="+44">+44</option>
+  </select>
+</div>
+
+
+      <!-- Phone input -->
+      <input
+        type="text"
+        class="form-control border-0"
+        style="
+          width:215px;
+          height:30px;
+          background:#f1f1f1;
+        "
+      >
+
+    </div>
+
+
+
+    <!-- Checkbox -->
+    <div class="form-check">
+
+      <input 
+        class="form-check-input"
+        type="checkbox"
+        id="smsAlert"
+      >
+
+      <label 
+        class="form-check-label text-muted fw-semibold"
+        for="smsAlert"
+        style="font-size:11px;"
+      >
+        Receive text alerts about this trip.
+      </label>
+
+    </div>
+
+
+  </div>
+
+</div>
+
+
+
+<div class="card border-0 shadow-sm rounded-3 overflow-hidden mb-3">
+
+  <!-- Header -->
+  <div 
+    class="p-3 text-white d-flex align-items-center"
+    style="background:#2f80ed;"
+  >
+    <i class="me-2 bi bi-credit-card-2-back-fill" style="font-size: 20px;"></i>
+    <h6 class="mb-0 fw-semibold">
+      Payment options
+    </h6>
+  </div>
+
+
+  <!-- Tabs -->
+  <ul class=" nav nav-tabs px-4 pt-2" style="font-size:12px;">
+
+    <li class="nav-item">
+      <a 
+        class="nav-link active"
+        href="#"
+      >
+        Debit/Credit Card
+      </a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link text-dark" href="#">
+        Paypal
+      </a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link text-dark" href="#">
+        Bank transfer
+      </a>
+    </li>
+
+  </ul>
+
+
+  <div class="card-body p-4">
+
+
+    <!-- Card logos -->
+   <div class="d-flex gap-2 mb-4">
+
+  <div class="border rounded p-2" style="background-color:#e0e0e0;">
+    <img src="img/mastercard.png" width="45">
+  </div>
+
+  <div class="border rounded p-2" style="background-color:#e0e0e0;">
+    <img src="img/visa.png" width="45">
+  </div>
+
+  <div class="border rounded p-2" style="background-color:#e0e0e0;">
+    <img src="img/amex.png" width="45">
+  </div>
+
+  <div class="border rounded p-2" style="background-color:#e0e0e0;">
+    <img src="img/discover.png" width="65">
+  </div>
+
+</div>
+
+
+
+    <!-- Card Name -->
+    <div class="mb-3" style="max-width:365px;">
+
+      <label class="form-label fw-semibold" style="font-size:12px;">
+        Name on card
+      </label>
+
+      <input 
+        type="text"
+        class="form-control border-0"
+        style="background:#f1f1f1;"
+      >
+
+    </div>
+
+
+
+    <!-- Card Number -->
+    <div class="mb-3" style="max-width:365px;">
+
+      <label class="form-label fw-semibold" style="font-size:12px;">
+        Debit/Credit card number
+      </label>
+
+      <input 
+        type="text"
+        class="form-control border-0"
+        style="background:#f1f1f1;"
+      >
+
+    </div>
+
+
+
+   <!-- Expiration Date -->
+<label class="form-label fw-semibold" style="font-size:12px;">
+  Expiration Date
+</label>
+
+<div class="d-flex gap-2 mb-3 ">
+
+  <!-- Month Select -->
+  
+ <select 
+  class="form-select border-0"
+  style="width:110px; background-color:#f1f1f1; font-size:12px;"
+>
+  <option selected disabled>Month</option>
+  <option value="01">January</option>
+  <option value="02">February</option>
+  <option value="03">March</option>
+  <option value="04">April</option>
+  <option value="05">May</option>
+  <option value="06">June</option>
+  <option value="07">July</option>
+  <option value="08">August</option>
+  <option value="09">September</option>
+  <option value="10">October</option>
+  <option value="11">November</option>
+  <option value="12">December</option>
+</select>
+
+
+  <!-- Year Select -->
+  <select 
+    class="form-select border-0"
+    style="width:110px; background-color:#f1f1f1; font-size:12px;"
+  >
+    <option selected disabled>Year</option>
+    <option>2026</option>
+    <option>2027</option>
+    <option>2028</option>
+    <option>2029</option>
+    <option>2030</option>
+    <option>2031</option>
+    <option>2032</option>
+    <option>2033</option>
+    <option>2034</option>
+    <option>2035</option>
+  </select>
+
+</div>
+
+
+
+    <!-- Security + Zip -->
+    <div class="row g-3">
+
+      <div class="col-md-4">
+
+        <label class="form-label fw-semibold" style="font-size:12px;">
+          Security Code
+        </label>
+
+        <input 
+          type="text"
+          class="form-control border-0"
+          style="background:#f1f1f1;"
+        >
+
+      </div>
+
+
+      <div class="col-md-4">
+
+        <label class="form-label fw-semibold" style="font-size:12px;">
+          Billing Zip code
+        </label>
+
+        <input 
+          type="text"
+          class="form-control border-0"
+          style="background:#f1f1f1;"
+        >
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+</div>
+
+
+<div class="card border-0 shadow-sm rounded-3 overflow-hidden mb-3">
+
+  <!-- Yellow Header -->
+  <div 
+    class="p-3"
+    style="background-color:#F9D34A;"
+  >
+    <h6 class="mb-0 fw-semibold">
+      Important information about your booking
+    </h6>
+  </div>
+
+
+  <!-- Content -->
+  <div class="card-body p-4">
+
+    <!-- Rules -->
+    <ol class="mb-4 ps-3" style="font-size:13px; line-height:1.6;">
+      <li>
+        This rate is non-refundable. If you change or cancel your booking 
+        you will not get a refund or credit to use for a future stay.
+      </li>
+
+      <li>
+        Stay extensions will require a new reservation.
+      </li>
+
+      <li>
+        Front desk staff will greet guests on arrival.
+      </li>
+
+      <li>
+        No refunds will be issued for late check-in or early check-out.
+      </li>
+    </ol>
+
+
+    <!-- Agreement text -->
+    <p class="text-muted mb-4" style="font-size:12px; line-height:1.6;">
+      By clicking the button below, I acknowledge that I have reviewed the
+      <a href="#" class="text-decoration-none">
+        Privacy Statement
+      </a>
+      and have reviewed and accept the
+      <a href="#" class="text-decoration-none">
+        Rules and Restrictions
+      </a>
+      and
+      <a href="#" class="text-decoration-none">
+        Terms of Use.
+      </a>
+    </p>
+
+
+    <!-- Button -->
+    <button class="btn btn-primary mb-4 px-3" style="font-size:13px;">
+      Complete Booking
+    </button>
+
+
+    <!-- Security message -->
+    <div class="d-flex align-items-center">
+
+      <i 
+        class="bi bi-lock-fill text-white me-2"
+        style="font-size:12px; background-color:#219653; border-radius:50%; padding:3px;"
+      ></i>
+
+      <span class="text-muted" style="font-size:12px;">
+        We use secure transmission and encrypted storage to protect your
+        personal information
+      </span>
+
+    </div>
+
+
+  </div>
+
+</div>
+
+            </div>
+            <div class="col-md-4 ">
+                <div class="row">
+                    <div class="col-md-12 mb-3">
+                        <div class="box rounded w-100 border border-1 shadow-sm">
+
+                         <div class="green-border d-flex align-items-center "
+                         style="background-color: #85E0AB; padding: 10px; border-radius: 5px;"
+                         >
+                            <h5 class="mt-2">Price Details</h5>
+
+                         </div>
+                         <div class="prices text-secondary "
+                         style="padding: 10px; font-size: 16px;"
+                         >
+                            <div class="price d-flex align-items-center justify-content-between">
+                                 <p class="text-muted">1roomx2 nights</p><p class="float-end">₹ 4,000</p>
+
+                            </div>
+                             <div class="price d-flex align-items-center justify-content-between">
+                                 <p class="text-muted">1roomx2 nights</p><p class="float-end">₹ 4,000</p>
+
+                            </div>
+                            <hr>
+                            <div class="price d-flex align-items-center justify-content-between"
+                            style="font-size: 18px;"
+                            >
+                                 <p class="text-dark fw-bold ms-2">Total</p><p class="float-end  fw-bold text-dark">$130</p>
+
+                            </div>
+                            <p class="text-primary ms-2">use a coupon, credit or prootional code</p>
+                            <h7 class="fw-semibold text-dark p-2">coupon code</h7>
+                            <div class="d-flex align-items-center mb-3 p-2">
+                                <input type="text" class="form-control"
+                                style="background-color: #F2F2F2;
+                                width: 80%;
+                                "
+                                >
+                                <button class="btn btn-dark w-50" type="button" id="button-addon2">Apply Coupon</button>
+                              </div>
+                      
+
+                           
+                         </div>
+
+                        </div>
+                     
+
+                    </div>
+                    <div class="col-md-12">
+                        <div class="card border-0 shadow-sm rounded-3 overflow-hidden">
+
+                    <!-- Hotel Image -->
+                       <img 
+                   src="img/v1.png"
+                    class="card-img-top"
+                    style="height:150px; object-fit:cover;"
+                     alt="Lakeside Motel"
+                      >
+
+
+  <!-- Card Content -->
+  <div class="card-body p-3">
+
+    <!-- Hotel Name -->
+    <h5 class="fw-semibold mb-2" style="font-size:16px;">
+      Lakeside Motel Waterfront
+    </h5>
+
+
+    <!-- Rating -->
+    <div class="d-flex align-items-center mb-3">
+      <span class="text-warning me-2" style="font-size:16px;">
+        ★★★★★
+      </span>
+
+      <span class="text-muted" style="font-size:12px;">
+        4.5 (1200 Reviews)
+      </span>
+    </div>
+
+
+    <!-- Booking Info -->
+
+    <p class="mb-3 text-danger" style="font-size:12px;">
+      Non refundable
+    </p>
+
+
+    <p class="mb-2 text-muted" style="font-size:12px;">
+      Check in: Sunday, March 18, 2022
+    </p>
+
+
+    <p class="mb-2 text-muted" style="font-size:12px;">
+      Check out: Tuesday, March 20, 2022
+    </p>
+
+
+    <p class="mb-0 text-muted" style="font-size:12px;">
+      2 night stay
+    </p>
+
+
+  </div>
+
+</div>
+
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+      </div>
+
+      <!--footer-->
+      <footer class="mt-5">
+        <div class="lists w-100">
+          <div class="container">
+            <div class="row">
+              <div class="col-md">
+                <ul class="list-unstyled">
+                  <li>
+                    <div class="d-flex align-items-center">
+                      <img
+                        src="img/Group.png"
+                        alt="plane"
+                        width="25"
+                        height="25"
+                        style="margin-right: 8px"
+                      />
+
+                      <h6
+                        style="
+                          font-size: 11px;
+                          font-weight: 600;
+                          margin-bottom: 12px;
+                        "
+                      >
+                        my Dream Place
+                      </h6>
+                    </div>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="text-decoration-none text-secondary ms-md-4"
+                      style="font-size: 10px"
+                      >Your Next goto Companion for <br /><span class="ms-md-4"
+                        >Travel</span
+                      ></a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="col-md">
+                <ul class="list-unstyled">
+                  <li>
+                    <h6
+                      style="
+                        font-size: 11px;
+                        font-weight: 600;
+                        margin-bottom: 12px;
+                      "
+                    >
+                      Company
+                    </h6>
+                  </li>
+
+                  <li>
+                    <a
+                      href="#"
+                      class="text-decoration-none text-secondary"
+                      style="font-size: 10px"
+                      >About</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="text-decoration-none text-secondary"
+                      style="font-size: 10px"
+                      >Jobs</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="text-decoration-none text-secondary"
+                      style="font-size: 10px"
+                      >Newsroom</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="text-decoration-none text-secondary"
+                      style="font-size: 10px"
+                      >Advertising</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="text-decoration-none text-secondary"
+                      style="font-size: 10px"
+                      >Contact us</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="col-md">
+                <ul class="list-unstyled">
+                  <li>
+                    <h6
+                      style="
+                        font-size: 11px;
+                        font-weight: 600;
+                        margin-bottom: 12px;
+                      "
+                    >
+                      Explore
+                    </h6>
+                  </li>
+
+                  <li>
+                    <a
+                      href="#"
+                      class="text-decoration-none text-secondary"
+                      style="font-size: 10px"
+                      >Australia</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="text-decoration-none text-secondary"
+                      style="font-size: 10px"
+                      >New Zealand</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="text-decoration-none text-secondary"
+                      style="font-size: 10px"
+                      >United States</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="text-decoration-none text-secondary"
+                      style="font-size: 10px"
+                      >Greece</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="text-decoration-none text-secondary"
+                      style="font-size: 10px"
+                      >Maldives</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="text-decoration-none text-secondary"
+                      style="font-size: 10px"
+                      >Singapore</a
+                    >
+                  </li>
+
+                  <li>
+                    <a
+                      href="#"
+                      style="
+                        font-size: 10px;
+                        color: #0d6efd;
+                        text-decoration: none;
+                      "
+                    >
+                      See more
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div class="col-md">
+                <ul class="list-unstyled">
+                  <li>
+                    <h6
+                      style="
+                        font-size: 11px;
+                        font-weight: 600;
+                        margin-bottom: 12px;
+                      "
+                    >
+                      Terms and Policies
+                    </h6>
+                  </li>
+
+                  <li>
+                    <a
+                      href="#"
+                      class="text-decoration-none text-secondary"
+                      style="font-size: 10px"
+                      >Privacy Policy</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="text-decoration-none text-secondary"
+                      style="font-size: 10px"
+                      >Terms of use</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="text-decoration-none text-secondary"
+                      style="font-size: 10px"
+                      >Accessibility</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="text-decoration-none text-secondary"
+                      style="font-size: 10px"
+                      >Reward system policy</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="col-md">
+                <ul class="list-unstyled">
+                  <li>
+                    <h6
+                      style="
+                        font-size: 11px;
+                        font-weight: 600;
+                        margin-bottom: 12px;
+                      "
+                    >
+                      Help
+                    </h6>
+                  </li>
+
+                  <li>
+                    <a
+                      href="#"
+                      class="text-decoration-none text-secondary"
+                      style="font-size: 10px"
+                      >Support</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="text-decoration-none text-secondary"
+                      style="font-size: 10px"
+                      >Cancel your bookings</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="text-decoration-none text-secondary"
+                      style="font-size: 10px"
+                      >Use Coupon</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="text-decoration-none text-secondary"
+                      style="font-size: 10px"
+                      >Refund Policies</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="text-decoration-none text-secondary"
+                      style="font-size: 10px"
+                      >International Travel Documents</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div
+            class="last w-100 d-flex align-items-center justify-content-md-end justify-content-center pe-md-5"
+            style="background-color: #ebebeb; height: 40px"
+          >
+            <p class="text-secondary m-0">
+              &copy; 2023 Dream place. All rights reserved.
+            </p>
+          </div>
+        </div>
+      </footer>
+      <!--footer-->
+    </div>
+
+    <script>
+      document.querySelectorAll("label").forEach((label) => {
+        label.addEventListener("click", function () {
+          const input = document.getElementById(this.getAttribute("for"));
+
+          input.showPicker();
+        });
+      });
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
