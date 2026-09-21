@@ -93,11 +93,11 @@
           >
             <ul class="navbar-nav mx-auto text-center" style="gap: 25px">
               <li class="nav-item">
-                <a class="nav-link text-white" href="#">Home</a>
+                <a class="nav-link text-white" href="home.html">Home</a>
               </li>
 
               <li class="nav-item">
-                <a class="nav-link text-white" href="#">Discover</a>
+                <a class="nav-link text-white" href="search.html">Discover</a>
               </li>
 
               <li class="nav-item">
@@ -115,34 +115,95 @@
           </div>
 
           <!-- Right side -->
-          <div class="d-flex align-items-center">
-            <!-- Bell Icon -->
-            <div class="position-relative me-3">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                fill="white"
-                viewBox="0 0 16 16"
-              >
-                <path
-                  d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2m.995-14.901a1 1 0 1 0-1.99 0A5 5 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901"
-                />
-              </svg>
+<!-- Right side -->
+<div class="d-flex align-items-center">
 
-             
-                
-              </span>
-            </div>
+    <!-- Notification -->
+    <div class="position-relative me-3 ">
+        <i class="bi bi-bell text-white fs-5"></i>
+    </div>
 
-            <!-- User -->
+
+    <!-- User Dropdown -->
+    <div class="dropdown">
+
+        <button
+            class="btn p-0 border-0 bg-transparent"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false">
+
             <img
-              src="img/user.png"
-              width="40"
-              height="40"
-              style="border-radius: 50%; object-fit: cover"
-            />
-          </div>
+                src="img/user.png"
+                width="40"
+                height="40"
+                class="rounded-circle"
+                style="object-fit:cover; cursor:pointer;"
+            >
+
+        </button>
+
+
+        <ul class="dropdown-menu dropdown-menu-end shadow rounded-3 p-0"
+            style="width:230px; overflow:hidden;">
+
+
+            <li>
+                <a class="dropdown-item py-3 d-flex align-items-center gap-3"
+                   href="#">
+                    <i class="bi bi-person-circle fs-5 text-secondary"></i>
+                    <span>Manage account</span>
+                </a>
+            </li>
+
+
+            <li>
+                <hr class="dropdown-divider m-0">
+            </li>
+
+
+            <li>
+                <a class="dropdown-item py-3 d-flex align-items-center gap-3"
+                   href="checkout-page.html">
+                    <i class="bi bi-airplane fs-5 text-secondary"></i>
+                    <span>My trips</span>
+                </a>
+            </li>
+
+
+            <li>
+                <hr class="dropdown-divider m-0">
+            </li>
+
+
+            <li>
+                <a class="dropdown-item py-3 d-flex align-items-center gap-3"
+                   href="checkout-page.html">
+                    <i class="bi bi-wallet2 fs-5 text-secondary"></i>
+                    <span>Reward and wallet</span>
+                </a>
+            </li>
+
+
+            <li>
+                <hr class="dropdown-divider m-0">
+            </li>
+
+
+            <li>
+                <a class="dropdown-item py-3 d-flex align-items-center gap-3 text-danger"
+                   href="index.html">
+                    <i class="bi bi-box-arrow-right fs-5"></i>
+                    <span>Sign out</span>
+                </a>
+            </li>
+
+
+        </ul>
+
+    </div>
+
+</div>
         </div>
       </nav>
     </div>
@@ -1610,14 +1671,12 @@ function renderTrips(trips){
 
 
 
-
-
-          <button
+          <a href="detail.html"
             class="btn btn-primary btn-sm"
             style="font-size:10px;"
           >
             View trip details
-          </button>
+          </a>
 
 
 
