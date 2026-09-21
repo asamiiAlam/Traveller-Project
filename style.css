@@ -1,0 +1,33 @@
+body {
+    font-family: "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+
+
+.btn-no-hover,
+.btn-no-hover:hover,
+.btn-no-hover:focus,
+.btn-no-hover:active,
+.btn-no-hover:focus-visible {
+  --bs-btn-hover-bg: transparent;
+  --bs-btn-hover-color: var(--bs-btn-color);
+  --bs-btn-hover-border-color: var(--bs-btn-border-color);
+  --bs-btn-active-bg: transparent;
+  --bs-btn-active-color: var(--bs-btn-color);
+  --bs-btn-active-border-color: var(--bs-btn-border-color);
+  --bs-btn-focus-shadow-rgb: 0, 0, 0;
+
+  background-color: transparent;
+  color: var(--bs-btn-color);
+  border-color: var(--bs-btn-border-color);
+  box-shadow: none;
+}
+.new.active,
+.new.active:hover,
+.new.active:focus,
+.new.active:active {
+    background-color: #2F80ED0D !important;
+    color: #2F80ED!important;
+   
+}
+

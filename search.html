@@ -15,6 +15,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="style.css" />
     <style>
       * {
         margin: 0;
@@ -209,7 +210,6 @@
     </div>
 
   
-
     <!--search-bar-->
     <div class="container position-relative search">
       <div
@@ -217,8 +217,10 @@
         style="top: -35px; width: 95%; z-index: 10"
       >
         <div class="row g-2 align-items-center">
-          <!-- Location -->
-          <div class="col-md-3">
+
+         <div class="col-md-10 d-flex flex-wrap gap-2 gap-md-0 align-items-center">
+         <!-- Location -->
+          <div class="col-md">
             <div
               class="d-flex align-items-center bg-light rounded-2 px-3"
               style="height: 45px"
@@ -300,9 +302,12 @@
               />
             </div>
           </div>
+         
+
+         </div>
 
           <!-- Search Button -->
-          <div class="col-md">
+            <div class="col-md-2">
             <button
               class="btn btn-primary w-100"
               style="height: 45px; background: #3b82f6; border: none"
@@ -310,11 +315,14 @@
               Search
             </button>
           </div>
+     
         </div>
+
       </div>
+          
     </div>
 
-    <!---searchbar-->
+  <!--search-bar-->
 <!--hero-->
        
         <div class="container ">
@@ -368,7 +376,7 @@
 
     <!-- Header -->
     <div class="card-header  fw-semibold"
-         style="font-size:12px;
+         style="font-size:16px;padding:18px;
          background-color:#F2F2F2;
          ">
         Your budget per day
@@ -531,8 +539,8 @@
     <!-- Header -->
     <div class="card-header fw-semibold"
          style="
-         font-size:12px;
-         background-color:rgb(232,230,230);
+         font-size:16px;padding: 18px;
+         background-color:#F2F2F2;
          ">
         Rating
     </div>
@@ -544,7 +552,7 @@
 
 
         <p class="text-secondary mb-2 fw-semibold"
-           style="font-size:12px;">
+           style="font-size:12px; padding:18px;">
             Show only ratings more than
         </p>
 
@@ -632,7 +640,7 @@
     <!-- Header -->
     <div class="card-header fw-semibold"
          style="
-         font-size:12px;
+         font-size:16px;padding: 18px;
          background-color:#F2F2F2;
          ">
         Popular Filters
@@ -749,8 +757,8 @@
     <!-- Header -->
     <div class="card-header fw-semibold"
          style="
-         font-size:12px;
-         background-color:rgb(232,230,230);
+         font-size:16px;padding: 18px;
+         background-color:#F2F2F2;
          ">
         Activities
     </div>
@@ -872,23 +880,23 @@
         <h6>Showing the Search Results</h6>
 
         <div class="row d-flex justify-content-md-between align-items-center mb-3">
-    <div class="col-md-8">
-                      <div class="buttons d-flex justify-content-md-between justify-content-center align-items-center mb-3 mt-3">
+    <div class="col-md-9">
+<div class="buttons d-flex justify-content-md-between justify-content-center align-items-center mb-3 mt-3">
 
-     <div class="d-flex flex-wrap gap-2" role="group">
-  <button class="btn btn-outline-primary active" style="font-size:12px; padding:8px 14px;">
+     <div class="d-flex flex-wrap " role="group">
+  <button class="new btn btn-outline-primary active text-secondary fw-semibold" style="font-size:12px; padding:8px 14px;border-radius:5px 0px 0px 5px">
     Our top picks
   </button>
-  <button class="btn btn-outline-primary" style="font-size:12px; padding:8px 14px;">
+  <button class="new btn btn-outline-primary text-secondary fw-semibold" style="font-size:12px; padding:8px 14px;border-radius:0px">
     Hotel and apartments
   </button>
-  <button class="btn btn-outline-primary" style="font-size:12px; padding:8px 14px;">
+  <button class="new btn btn-outline-primary text-secondary fw-semibold" style="font-size:12px; padding:8px 14px; border-radius:0px;">
     Residence
   </button>
-  <button class="btn btn-outline-primary" style="font-size:12px; padding:8px 14px;">
+  <button class="new btn btn-outline-primary text-secondary fw-semibold" style="font-size:12px; padding:8px 14px; border-radius:0px;">
     Resort
   </button>
-  <button class="btn btn-outline-primary" style="font-size:12px; padding:8px 14px;">
+  <button class="new btn btn-outline-primary text-secondary fw-semibold" style="font-size:12px; padding:8px 14px;border-radius:0px 5px 5px 0px;">
     Shared Space
   </button>
 </div> 
@@ -896,25 +904,29 @@
 
     </div>
             </div>
-            <div class="col-md-4">
-            <div >
+            <div class="col-md-3 d-flex justify-content-md-end  justify-content-center align-items-center mb-3 mt-3 b">
+            <div style="border:1px solid rgb(190, 184, 184);
+            border-radius:5px; display:flex; flex-direction:column; justify-content:start;;
+            width:210px; 
+            
+            ">
 
             <label 
-            class="d-block text-secondary"
-            style="font-size:10px;">
+            class="d-block text-secondary fw-semibold "
+            for="sortby"
+            style="font-size:10px; border:none;margin-left:5px; padding-left:5px; padding-top:3px">
                 Sort by
             </label>
 
-
+            
             <select 
-            class="form-select shadow-none"
+            class="form-select shadow-none "
             id="sortby"
             style="
-            width:135px;
-            height:35px;
             font-size:12px;
+            border:none;
             ">
-
+                S
                 <option selected>
                     Recommended
                 </option>
@@ -1139,11 +1151,8 @@
     <!--Covid Section-->
 
     <!--footer-->
- <footer class="mt-5">
-      <div
-        class="lists w-100"
-       
-      >
+  <footer class="mt-5">
+      <div class="lists w-100">
         <div class="container">
           <div class="row">
             <div class="col-md">
@@ -1421,12 +1430,18 @@
           </div>
         </div>
         <div
-          class="last w-100 d-flex align-items-center justify-content-md-end justify-content-center pe-md-5"
+          class="last w-100 d-flex align-items-center "
           style="background-color: #ebebeb; height: 40px"
         >
-          <p class="text-secondary m-0">
+        <div class="container d-flex align-items-center justify-content-md-end justify-content-center ">
+          <p class="text-secondary m-0"
+         
+          >
             &copy; 2023 Dream place. All rights reserved.
           </p>
+
+        </div>
+          
         </div>
       </div>
     </footer>
@@ -1503,157 +1518,266 @@ async function loadTrips() {
   renderTrips(allTrips);
 
 }
-function renderTrips(trips){
+function renderTrips(trips) {
+
   const container = document.getElementById("tripContainer");
   container.innerHTML = "";
- 
+
+
   trips.forEach(trip => {
 
 
     const card = document.createElement("div");
 
-    card.className = "card border-0 shadow-sm rounded-0 w-100 trip-card mb-3";
+
+    card.className =
+      "card border shadow-sm rounded-2 w-100 trip-card mb-3";
+
+
+
+    // Discount badge top right
+
+    const discountTopBadge = trip.discount
+      ? `
+        <span
+          class="badge position-absolute m-2 fw-normal"
+          style="
+            font-size:12px;
+            width:200px;
+            text-align:center;
+            padding:7px;
+            top:10px;
+            right:15px;
+        
+            border-radius:5px;
+            background:#EB5757;
+          "
+        >
+          ${trip.discountLabel || trip.discount}
+        </span>
+      `
+      : "";
+
+
+
+
+    // Green discount badge
+
+    const discountPriceBadge = trip.discount
+      ? `
+        <span
+          class="badge mb-2"
+          style="
+            font-size:9px;
+            padding:8px;
+            background:#27AE60;
+          "
+        >
+          ${typeof trip.discount === "number" 
+            ? trip.discount + "% off" 
+            : ""}
+        </span>
+      `
+      : "";
+
+
+
+
+    // Old price
+
+    const oldPrice = trip.discount
+      ? `
+        <span
+          class="text-danger text-decoration-line-through me-1"
+          style="font-size:11px;"
+        >
+          ${trip.oldPrice}
+        </span>
+      `
+      : "";
+
+
 
 
     card.innerHTML = `
 
-    <div class="card-body p-2">
 
-      <div class="row align-items-center">
+      <div class="card-body p-4 position-relative">
 
 
-        <!-- Image -->
-        <div class="col-md-3">
-
-          <img
-            src="${trip.image}"
-            class="img-fluid rounded-2 trip-image"
-            style="
-              object-fit:cover;
-              object-position:center;
-            "
-            alt="hotel"
-          />
-
-        </div>
+        ${discountTopBadge}
 
 
 
-
-        <!-- Hotel Details -->
-        <div class="col-md-7">
+        <div class="row g-3 align-items-center">
 
 
-          <h6
-            class="fw-semibold mb-1"
-            style="font-size:12px;"
-          >
-            ${trip.name}
-          </h6>
+
+          <!-- IMAGE -->
+
+          <div class="col-md-4">
+
+            <img
+              src="${trip.image}"
+              alt="${trip.name}"
+              class="img-fluid rounded-2 w-100"
+              style="
+                height:170px;
+                object-fit:cover;
+              "
+            >
+
+          </div>
 
 
+
+
+
+          <!-- HOTEL DETAILS -->
+
+
+          <div class="col-md-5">
+
+
+            <h6
+              class="fw-semibold mb-2"
+              style="font-size:14px;"
+            >
+              ${trip.name}
+            </h6>
+
+
+
+
+            <div
+              class="d-flex align-items-center gap-2 mb-2"
+              style="font-size:10px;"
+            >
+
+              <span class="text-warning">
+                ${generateStars(trip.rating)}
+              </span>
+
+
+              <span class="text-secondary">
+                ${trip.rating} (${trip.reviews})
+              </span>
+
+
+            </div>
+
+
+
+
+
+            <p
+              class="mb-1 fw-semibold"
+              style="font-size:10px;"
+            >
+              ${trip.refund}
+            </p>
+
+
+
+
+
+            <p
+              class="text-secondary mb-3"
+              style="
+                font-size:10px;
+                line-height:1.5;
+              "
+            >
+
+              Live a little and celebrate with champagne.<br>
+              Starts include a glass of French champagne,
+              parking and a late checkout.
+
+            </p>
+
+
+
+
+
+            <a
+              href="detail.html"
+              class="btn btn-primary btn-sm px-4 py-2"
+              style="
+                font-size:10px;
+                background:#2F80ED;
+              "
+            >
+              See availability
+            </a>
+
+
+
+          </div>
+
+
+
+
+
+
+
+          <!-- PRICE SECTION -->
 
 
           <div
-            class="text-warning mb-1"
-            style="font-size:10px;"
+            class="col-md-3 text-end d-flex flex-column align-items-end justify-content-end"
+            style="margin-top:100px;"
           >
 
-            <span>
-              ${generateStars(trip.rating)}
-            </span>
 
 
-            <span class="text-muted">
-              ${trip.rating} (${trip.reviews})
-            </span>
-
-          </div>
-
-
-
-
-          <p
-            class="text-danger mb-1"
-            style="font-size:10px;"
-          >
-            ${trip.refund}
-          </p>
-
-
-
-
-          <p
-            class="text-muted mb-1"
-            style="font-size:10px;"
-          >
-            Check in: ${trip.checkIn}
-          </p>
-
-
-
-
-          <p
-            class="text-muted mb-1"
-            style="font-size:10px;"
-          >
-            Check out: ${trip.checkOut}
-          </p>
-
-
-
-
-          <p
-            class="text-muted mb-0"
-            style="font-size:10px;"
-          >
-            ${trip.stay}
-          </p>
-
-
-
-        </div>
+            ${discountPriceBadge}
 
 
 
 
 
-
-        <!-- Price + Button -->
-        <div
-          class="col-md-2 text-end"
-        >
-
-
-          <p
-            class="mb-1 text-muted"
-            style="font-size:10px;"
-          >
-            ${trip.duration}
-          </p>
-
-
-
-
-          <div class="mb-2">
-
-
-            <span
-              class="text-danger text-decoration-line-through"
-              style="font-size:12px;"
+            <p
+              class="text-secondary fw-semibold mb-1"
+              style="
+                font-size:8px;
+              "
             >
-              ${trip.oldPrice}
-            </span>
+              ${trip.duration}
+            </p>
 
 
 
 
-            <span
-              class="fw-bold"
-              style="font-size:15px;"
+
+            <div class="mb-1">
+
+
+              ${oldPrice}
+
+
+
+              <span
+                class="fw-bold"
+                style="font-size:18px;"
+              >
+                $${trip.price}
+              </span>
+
+
+            </div>
+
+
+
+
+
+            <p
+              class="text-secondary mb-0"
+              style="font-size:9px;"
             >
-              ${trip.price}
-            </span>
+              ${trip.fees}
+            </p>
+
+
 
 
           </div>
@@ -1661,34 +1785,14 @@ function renderTrips(trips){
 
 
 
-
-          <p
-            class="text-muted mb-2"
-            style="font-size:9px;"
-          >
-            ${trip.fees}
-          </p>
-
-
-
-          <a href="detail.html"
-            class="btn btn-primary btn-sm"
-            style="font-size:10px;"
-          >
-            View trip details
-          </a>
-
-
-
         </div>
-
 
 
       </div>
 
-    </div>
 
     `;
+
 
 
     container.appendChild(card);
@@ -1696,14 +1800,8 @@ function renderTrips(trips){
 
   });
 
-    
-
-
 
 }
-
-
-
 
 
 let selectedRating = 0;

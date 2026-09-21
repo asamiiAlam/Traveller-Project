@@ -20,7 +20,8 @@
       "fishing",
       "beach"
     ],
-    "type": "resort"
+      "discount": 15,
+     "discountLabel": "Book now and receive 15% off"
   },
   {
     "image": "https://picsum.photos/seed/grand-palace-hotel/400/300",
@@ -157,7 +158,9 @@
     "activities": [
       "nightLights"
     ],
-    "type": "apartment"
+    "type": "apartment",
+     "discount": 15,
+     "discountLabel": "Book now and receive 15% off"
   },
   {
     "image": "https://picsum.photos/seed/demo-3/400/300",
@@ -179,7 +182,10 @@
     "activities": [
       "beach"
     ],
-    "type": "residence"
+    "type": "residence",
+     "discount": 15,
+     "discountLabel": "Book now and receive 15% off"
+
   },
   {
     "image": "https://picsum.photos/seed/demo-4/400/300",

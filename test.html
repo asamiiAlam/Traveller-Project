@@ -1,178 +1,1006 @@
-<div class="d-flex flex-column align-items-center"
-style="
-width:100%;
-padding-top:40px;
-">
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="index.css" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .date-input::-webkit-calendar-picker-indicator {
+        display: none;
+      }
+
+      .date-input {
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      class="container-navbar"
+      style="
+        background-color: #ffffff;
+        height: 70px;
+        display: flex;
+        align-items: center;
+      "
+    >
+      <!--Navbar -->
+      <nav class="navbar navbar-expand-lg w-100 h-100 mb-md-0 mb-3">
+        <div class="container position-relative">
+          <!-- Logo -->
+          <div class="d-flex align-items-center">
+            <img
+              src="img/Group.png"
+              width="25"
+              height="25"
+              style="margin-right: 8px"
+            />
+
+            <a
+              href="#"
+              class="navbar-brand"
+              style="font-size: 14px; font-weight: 600; color: #333"
+            >
+              my Dream Place
+            </a>
+          </div>
+
+          <!-- Hamburger -->
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- Menu -->
+          <div
+            class="collapse navbar-collapse"
+            id="navbarNav"
+            style="z-index: 1000"
+          >
+            <ul class="navbar-nav mx-auto text-center" style="gap: 25px">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Home</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">Discover</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">Activities</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contact</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Right side -->
+          <div class="d-flex align-items-center justify-content-end gap-2">
+              <a
+              href="Register.html"
+              class="btn btn-outline-primary px-3 py-2 ms-2"
+              style="border-color: #3b82f6; color: #3b82f6"
+              >Register</a>
+            
+            <a
+              href="sign-in.html"
+              class="btn btn-primary px-3 py-2"
+              style="background: #3b82f6; border: none"
+              >Sign In</a
+            >   
+        
+            
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <!--hero section -->
+    <div class="hero mt-4 mb-md-0 mb-2">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 position-relative">
+            <img
+              src="img/sydney.jpg"
+              alt="Hero Image"
+              class="img-fluid rounded"
+              style="
+                width: 100%;
+                object-fit: cover;
+                object-position: center;
+                height: 500px;
+              "
+            />
+
+            <!-- Overlay -->
+            <div
+              class="overlay"
+              style="
+                position: absolute;
+                top: 0;
+                left: 12px;
+                width: calc(100% - 24px);
+                height: 500px;
+                background-color: rgba(78, 77, 77, 0.5);
+                border-radius: 8px;
+                z-index: 1;
+              "
+            ></div>
+
+            <!-- Text -->
+            <div
+              class="text position-absolute top-50 start-50 translate-middle text-center"
+              style="z-index: 2; width: 80%"
+            >
+              <h1 class="text-white">Enjoy Your Dream Vacation</h1>
+
+              <p class="text-white width-50">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem
+                ipsum dolor<br />
+                sit amet consectetur adipisicing elit.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--search-bar-->
+    <div class="container position-relative search">
+      <div
+        class="bg-white shadow rounded-3 p-2 position-md-absolute position-relative start-50 translate-middle-x"
+        style="top: -35px; width: 95%; z-index: 10"
+      >
+        <div class="row g-2 align-items-center">
+
+         <div class="col-md-10 d-flex flex-wrap gap-2 gap-md-0 align-items-center">
+         <!-- Location -->
+          <div class="col-md">
+            <div
+              class="d-flex align-items-center bg-light rounded-2 px-3"
+              style="height: 45px"
+            >
+              <label for="location" class="me-2">
+                <i class="bi bi-geo-alt text-secondary"></i>
+              </label>
+
+              <input
+                type="text"
+                id="location"
+                class="form-control border-0 bg-transparent shadow-none"
+                placeholder="Where are you going?"
+                style="color: #777"
+              />
+            </div>
+          </div>
+
+          <!-- Check in -->
+          <div class="col-md">
+            <div
+              class="d-flex align-items-center bg-light rounded-2 px-3"
+              style="height: 45px"
+            >
+              <label for="checkin" class="me-2" style="cursor: pointer">
+                <i class="bi bi-calendar3 text-secondary"></i>
+              </label>
+
+              <input
+                type="text"
+                id="checkin"
+                placeholder="check in date"
+                onfocus="this.type = 'date'"
+                class="form-control border-0 bg-transparent shadow-none date-input"
+                style="color: #777"
+              />
+            </div>
+          </div>
+
+          <!-- Check out -->
+          <div class="col-md">
+            <div
+              class="d-flex align-items-center bg-light rounded-2 px-3"
+              style="height: 45px"
+            >
+              <label for="checkout" class="me-2" style="cursor: pointer">
+                <i class="bi bi-calendar3 text-secondary"></i>
+              </label>
+
+              <input
+                type="text"
+                id="checkout"
+                placeholder="check out date"
+                onfocus="this.type = 'date'"
+                class="form-control border-0 bg-transparent shadow-none date-input"
+                style="color: #777"
+              />
+            </div>
+          </div>
+
+          <!-- Guests -->
+          <div class="col-md-3">
+            <div
+              class="d-flex align-items-center bg-light rounded-2 px-3"
+              style="height: 45px"
+            >
+              <label for="guests" class="me-2">
+                <i class="bi bi-person text-secondary"></i>
+              </label>
+
+              <input
+                type="number"
+                id="guests"
+                class="form-control border-0 bg-transparent shadow-none"
+                placeholder="Guests"
+                min="1"
+                max="100"
+                style="color: #777"
+              />
+            </div>
+          </div>
+         
+
+         </div>
+
+          <!-- Search Button -->
+            <div class="col-md-2">
+            <button
+              class="btn btn-primary w-100"
+              style="height: 45px; background: #3b82f6; border: none"
+            >
+              Search
+            </button>
+          </div>
+     
+        </div>
+
+      </div>
+          
+    </div>
+
+    <!--search-bar-->
+    <!--Covid Section-->
+    <div class="container my-md-5 my-4">
+      <div class="row">
+        <div
+          class="col-md-12 d-flex align-items-center justify-content-start px-5 rounded-3"
+          style="background-color: #fcefca"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="26"
+            height="26"
+            fill="currentColor"
+            class="me-3 bi bi-exclamation-triangle"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.15.15 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.2.2 0 0 1-.054.06.1.1 0 0 1-.066.017H1.146a.1.1 0 0 1-.066-.017.2.2 0 0 1-.054-.06.18.18 0 0 1 .002-.183L7.884 2.073a.15.15 0 0 1 .054-.057m1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767z"
+            />
+            <path
+              d="M7.002 12a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 5.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z"
+            />
+          </svg>
+
+          <p
+            class="text-center text-secondary"
+            style="font-size: 16px; margin-top: 20px"
+          >
+            check the latest covid-19 restrictions before your travel.
+            <a href="#" class="text-decoration-none text-primary">Learn more</a>
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--Covid Section-->
+    <!--hero section -->
+ 
+
+    <!--Explore the world Part-->
+
+       <div class="hero">
+      <div class="container mt-3 mb-3">
+        <h4 class="fw-bold">Enjoy Touring the World</h4>
+        <p class="text-secondary fw-semibold" style="font-size: 12px">
+          plan and book your perfecrt trip travel,destination and experiences<br />
+          and inspiration from us
+        </p>
+        <div class="row">
+          <div class="col-md-3 mb-3">
+            <div class="card border-0 w-100">
+              <img
+                src="img/l1.jpg"
+                class="card-img-top rounded-3"
+                style="height: 220px; object-fit: cover"
+                alt="Australia"
+              />
+
+              <div class="card-body p-0 mt-2">
+                <h6 class="mb-1 fw-semibold" style="font-size: 14px">
+                  Australia
+                </h6>
+
+                <p class="text-muted mb-0" style="font-size: 11px">
+                  2246 properties
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+            <div class="card border-0 w-100">
+              <img
+                src="img/l2.jpg"
+                class="card-img-top rounded-3"
+                style="height: 220px; object-fit: cover"
+                alt="Australia"
+              />
+
+              <div class="card-body p-0 mt-2">
+                <h6 class="mb-1 fw-semibold" style="font-size: 14px">Japan</h6>
+
+                <p class="text-muted mb-0" style="font-size: 11px">
+                  2246 properties
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+            <div class="card border-0 w-100">
+              <img
+                src="img/l3.jpg"
+                class="card-img-top rounded-3"
+                style="height: 220px; object-fit: cover"
+                alt="Australia"
+              />
+
+              <div class="card-body p-0 mt-2">
+                <h6 class="mb-1 fw-semibold" style="font-size: 14px">
+                  New Zealand
+                </h6>
+
+                <p class="text-muted mb-0" style="font-size: 11px">
+                  2246 properties
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+            <div class="card border-0 w-100">
+              <img
+                src="img/l4.jpg"
+                class="card-img-top rounded-3"
+                style="height: 220px; object-fit: cover"
+                alt="Australia"
+              />
+
+              <div class="card-body p-0 mt-2 mb">
+                <h6 class="mb-1 fw-semibold" style="font-size: 14px">Greece</h6>
+
+                <p class="text-muted mb-0" style="font-size: 11px">
+                  2246 properties
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--inspiration-->
+      <div class="container mt-3 mb-3">
+        <h4 class="fw-bold mb-4">Get inspiration For Your Next Trip</h4>
+        <div class="row">
+          <div class="col-md-4 mb-3">
+            <div class="card border-0 w-100 position-relative overflow-hidden">
+              <img
+                src="img/ll.jpg"
+                class="card-img-top rounded-3"
+                style="height: 220px; object-fit: cover"
+                alt="Lakeside Resort"
+              />
+
+              <!-- Overlay -->
+              <div
+                class="position-absolute top-0 start-0 w-100 h-100 rounded-3"
+                style="background: rgba(0, 0, 0, 0.35)"
+              ></div>
+
+              <!-- Text on image -->
+              <div
+                class="position-absolute bottom-0 start-0 p-3 text-white"
+                style="z-index: 2"
+              >
+                <h6 class="mb-0 fw-semibold text-start mb-2">
+                  Lakeside Model Waterfront Resort and Hotels
+                </h6>
+
+                <p style="font-size: 12px;">Lorem ipsum dolor sit amet consectetur adipisicing elit.</br> Maiores alias impedit similique, ex</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-3">
+            <div class="card border-0 w-100 position-relative overflow-hidden">
+              <img
+                src="img/ll2.jpg"
+                class="card-img-top rounded-3"
+                style="height: 220px; object-fit: cover"
+                alt="Lakeside Resort"
+              />
+
+              <!-- Overlay -->
+              <div
+                class="position-absolute top-0 start-0 w-100 h-100 rounded-3"
+                style="background: rgba(0, 0, 0, 0.35)"
+              ></div>
+
+              <!-- Text on image -->
+              <div
+                class="position-absolute bottom-0 start-0 p-3 text-white"
+                style="z-index: 2"
+              >
+                <h6 class="mb-0 fw-semibold text-start mb-2" style="font-size: 14px">
+                  Lakeside Model Waterfront Resort and Hotels
+                </h6>
+                <p></p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores alias impedit similique, ex
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 mb-3">
+             <div class="card border-0 w-100 position-relative overflow-hidden">
+              <img
+                src="img/ll3.jpg"
+                class="card-img-top rounded-3"
+                style="height: 220px; object-fit: cover"
+                alt="Lakeside Resort"
+              />
+
+              <!-- Overlay -->
+              <div
+                class="position-absolute top-0 start-0 w-100 h-100 rounded-3"
+                style="background: rgba(0, 0, 0, 0.35)"
+              ></div>
+
+              <!-- Text on image -->
+              <div
+                class="position-absolute bottom-0 start-0 p-3 text-white"
+                style="z-index: 2"
+              >
+                <h6 class="mb-0 fw-semibold text-start mb-2" style="font-size: 14px">
+                  Lakeside Model Waterfront Resort and Hotels
+                </h6>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores alias impedit similique, ex
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--popular Hotels-->
+      <div class="container mt-3 mb-3">
+        <h4 class="fw-bold mb-3">Popular Hotels</h4>
+        <div class="row">
+          <div class="col-md-3 mb-3">
+            <div class="card border-0 w-100">
+              <img
+                src="img/l5.jpg"
+                class="card-img-top rounded-3"
+                style="height: 220px; object-fit: cover"
+                alt="Australia"
+              />
+
+              <div class="card-body p-0 mt-2">
+                <h6 class="mb-1 fw-semibold" style="font-size: 14px">
+                  Lakeside Model Waterfront Resort
+                </h6>
+
+                <p class="text-muted mb-0" style="font-size: 11px">
+                  2246 properties
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+            <div class="card border-0 w-100">
+              <img
+                src="img/l6.jpg"
+                class="card-img-top rounded-3"
+                style="height: 220px; object-fit: cover"
+                alt="Australia"
+              />
+
+              <div class="card-body p-0 mt-2">
+                <h6 class="mb-1 fw-semibold" style="font-size: 14px">
+                  Reece Graham Resort
+                </h6>
+
+                <p class="text-muted mb-0" style="font-size: 11px">
+                  2246 properties
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+            <div class="card border-0 w-100">
+              <img
+                src="img/l7.jpg"
+                class="card-img-top rounded-3"
+                style="height: 220px; object-fit: cover"
+                alt="Australia"
+              />
+
+              <div class="card-body p-0 mt-2">
+                <h6 class="mb-1 fw-semibold" style="font-size: 14px">
+                  Fireside Dinners
+                </h6>
+
+                <p class="text-muted mb-0" style="font-size: 11px">
+                  2246 properties
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 mb-3">
+            <div class="card border-0 w-100">
+              <img
+                src="img/l8.jpg"
+                class="card-img-top rounded-3"
+                style="height: 220px; object-fit: cover"
+                alt="Australia"
+              />
+
+              <div class="card-body p-0 mt-2">
+                <h6 class="mb-1 fw-semibold" style="font-size: 14px">
+                  Oculous in Stay
+                </h6>
+
+                <p class="text-muted mb-0" style="font-size: 11px">
+                  2246 properties
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
 
-<div class="d-flex justify-content-between flex-wrap"
-style="
-width:75%;
-gap:50px;
-">
+    <!--view-->
+    <div class="hero2 mb-md-5 mb-5">
+      <div class="container">
+        <div class="row g-0">
+          <div
+            class="col-md-12 position-relative rounded-3"
+            style="height: 300px; overflow: hidden"
+          >
+            <!-- Background Image -->
+            <img
+              src="img/view.jpg"
+              class="rounded-3"
+              style="
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+                transform: scaleX(-1);
+                z-index: 0;
+              "
+            />
 
-<!-- Logo column -->
-<ul class="list-unstyled" style="width:120px;">
+            <!-- Dark Overlay -->
+            <div
+              class="overlay"
+              style="
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 300px;
+                background-color: rgba(78, 77, 77, 0.5);
+                border-radius: 8px;
+                z-index: 1;
+              "
+            ></div>
 
-<div class="d-flex align-items-center mb-2">
+            <!-- Phone Image -->
+            <div
+              class="hand"
+              style="
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 300px;
+                overflow: hidden;
+                z-index: 2;
+                pointer-events: none;
+              "
+            >
+              <img
+                src="img/phn.png"
+                style="
+                  width: 40%;
+                  height: 450px;
+                  object-fit: cover;
+                  position: absolute;
+                  top: -30px;
+                  left: 600px;
+                  transform: rotate(-20deg);
+                "
+              />
+            </div>
 
-<img src="img/Group.png"
-width="18"
-height="18"
-style="margin-right:5px;">
+            <!-- Text -->
+            <div
+              class="text position-absolute d-flex flex-column justify-content-center text-md-start text-center p-md-5 p-3"
+              style="
+                z-index: 3;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 300px;
+                padding: 20px;
+              "
+            >
+              <h4 class="text-white mb-4">
+                Download the mobile application for bonuses<br />
+                Get exclusive deals and offers
+              </h4>
 
-<span style="
-font-size:12px;
-font-weight:600;
-color:#333;
-">
-my Dream Place
-</span>
+              <button
+                type="submit"
+                class="btn btn-primary px-md-3 py-md-2 mb-3 ms-md-0 ms-5 px-5 py-2"
+                style="width: max-content"
+              >
+                Download mobile app
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--view-->
+    <div
+      class="container d-flex flex-column align-items-center justify-content-center text-center mb-md-0 mb-5"
+    >
+      <h1 class="mt-md-0 mt-3 mb-3">Explore the World with Dream place</h1>
+      <p class="text-primary">Discover amazing destinations and experiences.</p>
+    </div>
 
-</div>
+    <!--footer-->
+    <footer class="mt-5">
+      <div class="lists w-100">
+        <div class="container">
+          <div class="row">
+            <div class="col-md">
+              <ul class="list-unstyled">
+                <li>
+                  <div class="d-flex align-items-center">
+                    <img
+                      src="img/Group.png"
+                      alt="plane"
+                      width="25"
+                      height="25"
+                      style="margin-right: 8px"
+                    />
 
+                    <h6
+                      style="
+                        font-size: 11px;
+                        font-weight: 600;
+                        margin-bottom: 12px;
+                      "
+                    >
+                      my Dream Place
+                    </h6>
+                  </div>
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="text-decoration-none text-secondary ms-md-4"
+                    style="font-size: 10px"
+                    >Your Next goto Companion for <br /><span class="ms-md-4"
+                      >Travel</span
+                    ></a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="col-md">
+              <ul class="list-unstyled">
+                <li>
+                  <h6
+                    style="
+                      font-size: 11px;
+                      font-weight: 600;
+                      margin-bottom: 12px;
+                    "
+                  >
+                    Company
+                  </h6>
+                </li>
 
-<p style="
-font-size:10px;
-color:#777;
-line-height:15px;
-">
-Your next go-to companion for travel
-</p>
+                <li>
+                  <a
+                    href="#"
+                    class="text-decoration-none text-secondary"
+                    style="font-size: 10px"
+                    >About</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="text-decoration-none text-secondary"
+                    style="font-size: 10px"
+                    >Jobs</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="text-decoration-none text-secondary"
+                    style="font-size: 10px"
+                    >Newsroom</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="text-decoration-none text-secondary"
+                    style="font-size: 10px"
+                    >Advertising</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="text-decoration-none text-secondary"
+                    style="font-size: 10px"
+                    >Contact us</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="col-md">
+              <ul class="list-unstyled">
+                <li>
+                  <h6
+                    style="
+                      font-size: 11px;
+                      font-weight: 600;
+                      margin-bottom: 12px;
+                    "
+                  >
+                    Explore
+                  </h6>
+                </li>
 
-</ul>
+                <li>
+                  <a
+                    href="#"
+                    class="text-decoration-none text-secondary"
+                    style="font-size: 10px"
+                    >Australia</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="text-decoration-none text-secondary"
+                    style="font-size: 10px"
+                    >New Zealand</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="text-decoration-none text-secondary"
+                    style="font-size: 10px"
+                    >United States</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="text-decoration-none text-secondary"
+                    style="font-size: 10px"
+                    >Greece</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="text-decoration-none text-secondary"
+                    style="font-size: 10px"
+                    >Maldives</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="text-decoration-none text-secondary"
+                    style="font-size: 10px"
+                    >Singapore</a
+                  >
+                </li>
 
+                <li>
+                  <a
+                    href="#"
+                    style="
+                      font-size: 10px;
+                      color: #0d6efd;
+                      text-decoration: none;
+                    "
+                  >
+                    See more
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-md">
+              <ul class="list-unstyled">
+                <li>
+                  <h6
+                    style="
+                      font-size: 11px;
+                      font-weight: 600;
+                      margin-bottom: 12px;
+                    "
+                  >
+                    Terms and Policies
+                  </h6>
+                </li>
 
+                <li>
+                  <a
+                    href="#"
+                    class="text-decoration-none text-secondary"
+                    style="font-size: 10px"
+                    >Privacy Policy</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="text-decoration-none text-secondary"
+                    style="font-size: 10px"
+                    >Terms of use</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="text-decoration-none text-secondary"
+                    style="font-size: 10px"
+                    >Accessibility</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="text-decoration-none text-secondary"
+                    style="font-size: 10px"
+                    >Reward system policy</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div class="col-md">
+              <ul class="list-unstyled">
+                <li>
+                  <h6
+                    style="
+                      font-size: 11px;
+                      font-weight: 600;
+                      margin-bottom: 12px;
+                    "
+                  >
+                    Help
+                  </h6>
+                </li>
 
-<!-- Company -->
-<ul class="list-unstyled">
+                <li>
+                  <a
+                    href="#"
+                    class="text-decoration-none text-secondary"
+                    style="font-size: 10px"
+                    >Support</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="text-decoration-none text-secondary"
+                    style="font-size: 10px"
+                    >Cancel your bookings</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="text-decoration-none text-secondary"
+                    style="font-size: 10px"
+                    >Use Coupon</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="text-decoration-none text-secondary"
+                    style="font-size: 10px"
+                    >Refund Policies</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="text-decoration-none text-secondary"
+                    style="font-size: 10px"
+                    >International Travel Documents</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div
+          class="last w-100 d-flex align-items-center "
+          style="background-color: #ebebeb; height: 40px"
+        >
+        <div class="container d-flex align-items-center justify-content-md-end justify-content-center ">
+          <p class="text-secondary m-0"
+         
+          >
+            &copy; 2023 Dream place. All rights reserved.
+          </p>
 
-<li>
-<h6 style="
-font-size:11px;
-font-weight:600;
-margin-bottom:12px;
-">
-Company
-</h6>
-</li>
+        </div>
+          
+        </div>
+      </div>
+    </footer>
+    <!--footer-->
 
-<li><a href="#" class="text-decoration-none text-secondary" style="font-size:10px;">About</a></li>
-<li><a href="#" class="text-decoration-none text-secondary" style="font-size:10px;">Jobs</a></li>
-<li><a href="#" class="text-decoration-none text-secondary" style="font-size:10px;">Newsroom</a></li>
-<li><a href="#" class="text-decoration-none text-secondary" style="font-size:10px;">Advertising</a></li>
-<li><a href="#" class="text-decoration-none text-secondary" style="font-size:10px;">Contact us</a></li>
+    <script>
+      document.querySelectorAll("label").forEach((label) => {
+        label.addEventListener("click", function () {
+          const input = document.getElementById(this.getAttribute("for"));
 
-</ul>
-
-
-
-<!-- Explore -->
-<ul class="list-unstyled">
-
-<li>
-<h6 style="
-font-size:11px;
-font-weight:600;
-margin-bottom:12px;
-">
-Explore
-</h6>
-</li>
-
-<li><a href="#" class="text-decoration-none text-secondary" style="font-size:10px;">Australia</a></li>
-<li><a href="#" class="text-decoration-none text-secondary" style="font-size:10px;">New Zealand</a></li>
-<li><a href="#" class="text-decoration-none text-secondary" style="font-size:10px;">United States</a></li>
-<li><a href="#" class="text-decoration-none text-secondary" style="font-size:10px;">Greece</a></li>
-<li><a href="#" class="text-decoration-none text-secondary" style="font-size:10px;">Maldives</a></li>
-<li><a href="#" class="text-decoration-none text-secondary" style="font-size:10px;">Singapore</a></li>
-
-<li>
-<a href="#" 
-style="
-font-size:10px;
-color:#0d6efd;
-text-decoration:none;
-">
-See more
-</a>
-</li>
-
-</ul>
-
-
-
-
-<!-- Terms -->
-<ul class="list-unstyled">
-
-<li>
-<h6 style="
-font-size:11px;
-font-weight:600;
-margin-bottom:12px;
-">
-Terms and Policies
-</h6>
-</li>
-
-<li><a href="#" class="text-decoration-none text-secondary" style="font-size:10px;">Privacy Policy</a></li>
-<li><a href="#" class="text-decoration-none text-secondary" style="font-size:10px;">Terms of use</a></li>
-<li><a href="#" class="text-decoration-none text-secondary" style="font-size:10px;">Accessibility</a></li>
-<li><a href="#" class="text-decoration-none text-secondary" style="font-size:10px;">Reward system policy</a></li>
-
-</ul>
-
-
-
-<!-- Help -->
-<ul class="list-unstyled">
-
-<li>
-<h6 style="
-font-size:11px;
-font-weight:600;
-margin-bottom:12px;
-">
-Help
-</h6>
-</li>
-
-<li><a href="#" class="text-decoration-none text-secondary" style="font-size:10px;">Support</a></li>
-<li><a href="#" class="text-decoration-none text-secondary" style="font-size:10px;">Cancel your bookings</a></li>
-<li><a href="#" class="text-decoration-none text-secondary" style="font-size:10px;">Use Coupon</a></li>
-<li><a href="#" class="text-decoration-none text-secondary" style="font-size:10px;">Refund Policies</a></li>
-<li><a href="#" class="text-decoration-none text-secondary" style="font-size:10px;">International Travel Documents</a></li>
-
-</ul>
-
-
-</div>
-
-
-
-<!-- Bottom bar -->
-
-<div style="
-width:100%;
-height:25px;
-background:#eeeeee;
-margin-top:35px;
-display:flex;
-justify-content:flex-end;
-align-items:center;
-padding-right:120px;
-">
-
-<p style="
-font-size:9px;
-color:#777;
-margin:0;
-">
-© my Dream Place 2022
-</p>
-
-</div>
-
-
-</div>
+          input.showPicker();
+        });
+      });
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
