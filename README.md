@@ -4,8 +4,7 @@
 
 You can view the live version of the project here:
 
-    Live Link:https://melodious-wisp-9eefcf.netlify.app/
-
+[Live Link](https://melodious-wisp-9eefcf.netlify.app/)
 
 ------------------------------------------------------------------------
 
