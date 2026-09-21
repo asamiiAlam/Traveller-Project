@@ -493,7 +493,8 @@
 
 
             <button type="button"
-                    class="btn btn-light border text-secondary fw-semibold"
+                    class="btn btn-light border text-secondary fw-semibold rating-btn"
+                    data-rating="1"
                     style="font-size:12px;">
 
                 <div class="star d-flex align-items-center justify-content-center gap-1">
@@ -507,7 +508,8 @@
 
 
             <button type="button"
-                    class="btn btn-light border text-secondary fw-semibold"
+                    class="btn btn-light border text-secondary fw-semibold rating-btn"
+                    data-rating="2"
                     style="font-size:12px;">
                 <div class="star d-flex align-items-center justify-content-center gap-1">
                     2
@@ -519,7 +521,8 @@
 
 
             <button type="button"
-                    class="btn btn-light border text-secondary  fw-semibold"
+                    class="btn btn-light border text-secondary  fw-semibold rating-btn"
+                    data-rating="3"
                     style="font-size:12px;">
                 <div class="star d-flex align-items-center justify-content-center gap-1">
                 3
@@ -531,7 +534,8 @@
 
 
             <button type="button"
-                    class="btn btn-light border text-secondary   fw-semibold"
+                    class="btn btn-light border text-secondary   fw-semibold rating-btn"
+                    data-rating="4"
                     style="font-size:12px;">
                 <div class="star d-flex align-items-center justify-content-center gap-1">
                     4
@@ -543,7 +547,8 @@
 
 
             <button type="button"
-                    class="btn btn-light border text-secondary fw-semibold" 
+                    class="btn btn-light border text-secondary fw-semibold rating-btn"
+                    data-rating="5"
                     style="font-size:12px;">
                   <div class="star d-flex align-items-center justify-content-center gap-1">
                     5
@@ -1386,6 +1391,7 @@
 
 <script>
 let allTrips = [];
+let filteredTrips = [];
 function generateStars(rating) {
 
     let stars = "";
@@ -1431,9 +1437,10 @@ async function loadTrips() {
 
   const response = await fetch("trips.json");
   allTrips = await response.json();
+ 
 
   const container = document.getElementById("tripContainer");
-
+  
   renderTrips(allTrips);
 
 }
@@ -1638,32 +1645,140 @@ function renderTrips(trips){
 
 }
 
-document
-.getElementById("search")
-.addEventListener("input", function(){
-
-
-    const searchText = this.value.toLowerCase().trim();
 
 
 
-    const filteredTrips = allTrips.filter(trip => {
+
+let selectedRating = 0;
+document.querySelectorAll(".rating-btn").forEach(button => {
+
+    button.addEventListener("click", function(){
+        document.querySelectorAll(".rating-btn")
+        .forEach(btn => btn.classList.remove("active"));
+
+       this.classList.toggle("active");
+       if(this.classList.contains("active")) {
+            selectedRating = Number(this.dataset.rating);
+            
+        } else {
+            selectedRating = 0;
+            return;
+        }
+        
+    
+   
+      
 
 
 
-        return trip.name.trim()
-        .toLowerCase()
-        .includes(searchText);
-
+        applyFilters();
 
     });
 
+});
 
+function applyFilters() {
 
+  filteredTrips = [...allTrips];
+    
+
+    // 2. Search filter
+    let searchText = document
+        .getElementById("search")
+        .value
+        .toLowerCase()
+        .trim();
+
+    if (searchText) {
+        filteredTrips = filteredTrips.filter(trip =>
+            trip.name.toLowerCase().includes(searchText)
+        );
+    }
+
+    // 3. Rating filter
+    if (typeof selectedRating !== "undefined" && selectedRating > 0) {
+        filteredTrips = filteredTrips.filter(trip =>
+            Number(trip.rating) >= selectedRating
+        );
+    }
+
+    // 4. Budget filter
+    let budgets = [];
+    if (budget1.checked) budgets.push([0, 200]);
+    if (budget2.checked) budgets.push([200, 500]);
+    if (budget3.checked) budgets.push([500, 1000]);
+    if (budget4.checked) budgets.push([1000, 2000]);
+    if (budget5.checked) budgets.push([2000, 5000]);
+
+    if (budgets.length) {
+        filteredTrips = filteredTrips.filter(trip =>
+            budgets.some(b =>
+                Number(trip.price) >= b[0] &&
+                Number(trip.price) <= b[1]
+            )
+        );
+    }
+
+    // 5. Popular Filters
+    let selectedPopular = [];
+    if (filter1.checked) selectedPopular.push("freeCancellation");
+    if (filter2.checked) selectedPopular.push("spa");
+    if (filter3.checked) selectedPopular.push("beachFront");
+    if (filter4.checked) selectedPopular.push("hotTub");
+    if (filter5.checked) selectedPopular.push("bookWithoutCreditCard");
+    if (filter6.checked) selectedPopular.push("noPrepayment");
+
+    if (selectedPopular.length) {
+        filteredTrips = filteredTrips.filter(trip =>
+            selectedPopular.every(item =>
+                trip.popularFilters.includes(item)
+            )
+        );
+    }
+
+    // 6. Activities Filter
+    let selectedActivities = [];
+    if (activity1.checked) selectedActivities.push("fishing");
+    if (activity2.checked) selectedActivities.push("hiking");
+    if (activity3.checked) selectedActivities.push("beach");
+    if (activity4.checked) selectedActivities.push("cycling");
+    if (activity5.checked) selectedActivities.push("sauna");
+    if (activity6.checked) selectedActivities.push("nightLights");
+
+    if (selectedActivities.length) {
+        filteredTrips = filteredTrips.filter(trip =>
+            selectedActivities.every(item =>
+                trip.activities.includes(item)
+            )
+        );
+    }
+
+    // 7. Render results
     renderTrips(filteredTrips);
+}
 
+
+
+
+
+
+
+document
+.getElementById("search")
+.addEventListener("input", applyFilters);
+
+
+
+document
+.querySelectorAll("input[type='checkbox']")
+.forEach(checkbox => {
+
+    checkbox.addEventListener("change", applyFilters);
 
 });
+
+
+
 
 loadTrips();
 
