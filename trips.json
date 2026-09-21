@@ -19,7 +19,8 @@
     "activities": [
       "fishing",
       "beach"
-    ]
+    ],
+    "type": "resort"
   },
   {
     "image": "https://picsum.photos/seed/grand-palace-hotel/400/300",
@@ -42,7 +43,8 @@
     "activities": [
       "sauna",
       "cycling"
-    ]
+    ],
+    "type": "residence"
   },
   {
     "image": "https://picsum.photos/seed/ocean-view-resort/400/300",
@@ -64,7 +66,8 @@
     "activities": [
       "beach",
       "hiking"
-    ]
+    ],
+    "type": "apartment"
   },
   {
     "image": "https://picsum.photos/seed/luxury-grand-resort/400/300",
@@ -90,7 +93,8 @@
       "beach",
       "hiking",
       "sauna"
-    ]
+    ],
+    "type": "resort"
   },
   {
     "image": "https://picsum.photos/seed/demo-0/400/300",
@@ -110,7 +114,8 @@
     ],
     "activities": [
       "hiking"
-    ]
+    ],
+    "type": "residence"
   },
   {
     "image": "https://picsum.photos/seed/demo-1/400/300",
@@ -130,7 +135,8 @@
     ],
     "activities": [
       "cycling"
-    ]
+    ],
+    "type": "resort"
   },
   {
     "image": "https://picsum.photos/seed/demo-2/400/300",
@@ -150,7 +156,8 @@
     ],
     "activities": [
       "nightLights"
-    ]
+    ],
+    "type": "apartment"
   },
   {
     "image": "https://picsum.photos/seed/demo-3/400/300",
@@ -171,7 +178,8 @@
     ],
     "activities": [
       "beach"
-    ]
+    ],
+    "type": "residence"
   },
   {
     "image": "https://picsum.photos/seed/demo-4/400/300",
@@ -193,7 +201,8 @@
     "activities": [
       "beach",
       "fishing"
-    ]
+    ],
+    "type":"shared"
   },
   {
     "image": "https://picsum.photos/seed/demo-5/400/300",
@@ -213,7 +222,8 @@
     ],
     "activities": [
       "nightLights"
-    ]
+    ],
+    "type": "resort"
   },
   {
     "image": "https://picsum.photos/seed/demo-6/400/300",
@@ -233,7 +243,8 @@
     ],
     "activities": [
       "cycling"
-    ]
+    ],
+  "type":"residence"
   },
   {
     "image": "https://picsum.photos/seed/demo-7/400/300",
@@ -253,7 +264,8 @@
     ],
     "activities": [
       "beach"
-    ]
+    ],
+    "type": "apartment"
   },
   {
     "image": "https://picsum.photos/seed/demo-8/400/300",
@@ -295,6 +307,7 @@
     "activities": [
       "hiking",
       "sauna"
-    ]
+    ],
+    "type": "apartment"
   }
 ]

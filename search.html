@@ -818,16 +818,16 @@
   <button class="btn btn-outline-primary active" style="font-size:12px; padding:8px 14px;">
     Our top picks
   </button>
-  <button class="btn btn-outline-secondary" style="font-size:12px; padding:8px 14px;">
+  <button class="btn btn-outline-primary" style="font-size:12px; padding:8px 14px;">
     Hotel and apartments
   </button>
-  <button class="btn btn-outline-secondary" style="font-size:12px; padding:8px 14px;">
+  <button class="btn btn-outline-primary" style="font-size:12px; padding:8px 14px;">
     Residence
   </button>
-  <button class="btn btn-outline-secondary" style="font-size:12px; padding:8px 14px;">
+  <button class="btn btn-outline-primary" style="font-size:12px; padding:8px 14px;">
     Resort
   </button>
-  <button class="btn btn-outline-secondary" style="font-size:12px; padding:8px 14px;">
+  <button class="btn btn-outline-primary" style="font-size:12px; padding:8px 14px;">
     Shared Space
   </button>
 </div> 
@@ -866,9 +866,7 @@
                     Price high to low
                 </option>
 
-                <option>
-                    Rating
-                </option>
+               
 
             </select>
 
@@ -1676,10 +1674,20 @@ document.querySelectorAll(".rating-btn").forEach(button => {
     });
 
 });
-
+let selectedCategory = "all";
 function applyFilters() {
 
   filteredTrips = [...allTrips];
+
+  // Category filter
+
+   if(selectedCategory !== "all"){
+
+    filteredTrips = filteredTrips.filter(trip =>
+        trip.type === selectedCategory
+    );
+
+    }
     
 
     // 2. Search filter
@@ -1752,11 +1760,77 @@ function applyFilters() {
             )
         );
     }
+     let sortOption = document
+    .getElementById("sortby")
+    .value;
+
+
+    if(sortOption === "Price low to high"){
+
+    filteredTrips.sort((a,b)=>
+        Number(a.price) - Number(b.price)
+    );
+
+     }
+
+
+    else if(sortOption === "Price high to low"){
+
+    filteredTrips.sort((a,b)=>
+        Number(b.price) - Number(a.price)
+    );
+
+}
 
     // 7. Render results
     renderTrips(filteredTrips);
-}
 
+    //
+}
+document.querySelectorAll(".buttons button")
+.forEach(button => {
+
+    button.addEventListener("click", function(){
+
+
+        document.querySelectorAll(".buttons button")
+        .forEach(btn => btn.classList.remove("active"));
+
+
+        this.classList.add("active");
+      
+
+
+        let text = this.innerText;
+
+
+        if(text === "Hotel and apartments"){
+            selectedCategory = "apartment";
+        }
+
+        else if(text === "Residence"){
+            selectedCategory = "residence";
+        }
+
+        else if(text === "Resort"){
+            selectedCategory = "resort";
+        }
+
+        else if(text === "Shared Space"){
+            selectedCategory = "shared";
+        }
+
+        else{
+            selectedCategory = "all";
+        }
+
+
+        applyFilters();
+
+
+    });
+
+});
 
 
 
@@ -1776,6 +1850,9 @@ document
     checkbox.addEventListener("change", applyFilters);
 
 });
+
+document
+.getElementById("sortby").addEventListener("change", applyFilters);
 
 
 
