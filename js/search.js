@@ -1,47 +1,6 @@
 
 let allTrips = [];
 let filteredTrips = [];
-function generateStars(rating) {
-
-    let stars = "";
-
-    let value = Number(rating);
-
-    let fullStars = Math.floor(value);
-
-    let hasHalfStar = value % 1 !== 0;
-
-
-    // Full stars
-    for(let i = 0; i < fullStars; i++) {
-
-        stars += `<i class="bi bi-star-fill"></i>`;
-
-    }
-
-
-    // Half star
-    if(hasHalfStar) {
-
-        stars += `<i class="bi bi-star-half"></i>`;
-
-    }
-
-
-    // Empty stars
-    let emptyStars = 5 - Math.ceil(value);
-
-    for(let i = 0; i < emptyStars; i++) {
-
-        stars += `<i class="bi bi-star"></i>`;
-
-    }
-
-
-    return stars;
-
-}
-
 async function loadTrips() {
 
   const response = await fetch("Json/trips.json");
@@ -53,291 +12,290 @@ async function loadTrips() {
   renderTrips(allTrips);
 
 }
+function generateStars(rating) {
+  const value = Number(rating);
+  const container = document.createElement("span");
+
+  [1, 2, 3, 4, 5].map(star => {
+    const icon = document.createElement("i");
+
+    if (value >= star) {
+      icon.className = "bi bi-star-fill";
+    } else if (value >= star - 0.5) {
+      icon.className = "bi bi-star-half";
+    } else {
+      icon.className = "bi bi-star";
+    }
+
+    container.appendChild(icon);
+  });
+
+  return container;
+}
+
+
 function renderTrips(trips) {
 
   const container = document.getElementById("tripContainer");
-  container.innerHTML = "";
+
+  // Instead of container.innerHTML = ""
+  container.replaceChildren();
 
 
   trips.forEach(trip => {
 
-
+    // CARD
     const card = document.createElement("div");
-
-
     card.className =
       "card border shadow-sm rounded-2 w-100 trip-card mb-3";
 
 
-
-    // Discount badge top right
-
-    const discountTopBadge = trip.discount
-      ? `
-        <span
-          class="badge position-absolute m-2 fw-normal"
-          style="
-            font-size:12px;
-            width:200px;
-            text-align:center;
-            padding:7px;
-            top:10px;
-            right:15px;
-        
-            border-radius:5px;
-            background:#EB5757;
-          "
-        >
-          ${trip.discountLabel || trip.discount}
-        </span>
-      `
-      : "";
+    // CARD BODY
+    const cardBody = document.createElement("div");
+    cardBody.className = "card-body p-4 position-relative";
 
 
+    // TOP DISCOUNT BADGE
+    if (trip.discount) {
+
+      const discountTopBadge = document.createElement("span");
+
+      discountTopBadge.className =
+        "badge position-absolute m-2 fw-normal";
+
+      discountTopBadge.style.fontSize = "12px";
+      discountTopBadge.style.width = "200px";
+      discountTopBadge.style.textAlign = "center";
+      discountTopBadge.style.padding = "7px";
+      discountTopBadge.style.top = "10px";
+      discountTopBadge.style.right = "15px";
+      discountTopBadge.style.borderRadius = "5px";
+      discountTopBadge.style.background = "#EB5757";
+
+      discountTopBadge.textContent =
+        trip.discountLabel || trip.discount;
+
+      cardBody.appendChild(discountTopBadge);
+    }
+
+
+    // ROW
+    const row = document.createElement("div");
+    row.className = "row g-3 align-items-center";
+
+
+    // ---------------- IMAGE ----------------
+
+    const imageColumn = document.createElement("div");
+    imageColumn.className = "col-md-4";
+
+    const image = document.createElement("img");
+
+    image.src = trip.image;
+    image.alt = trip.name;
+
+    image.className =
+      "img-fluid rounded-2 w-100";
+
+    image.style.height = "170px";
+    image.style.objectFit = "cover";
+
+    imageColumn.appendChild(image);
+
+
+    // ---------------- HOTEL DETAILS ----------------
+
+    const detailsColumn = document.createElement("div");
+    detailsColumn.className = "col-md-5";
+
+
+    // Hotel name
+    const hotelName = document.createElement("h6");
+
+    hotelName.className = "fw-semibold mb-2";
+    hotelName.style.fontSize = "20px";
+
+    hotelName.textContent = trip.name;
+
+
+    // Rating container
+    const ratingContainer = document.createElement("div");
+
+    ratingContainer.className =
+      "d-flex align-items-center gap-2 mb-2";
+
+    ratingContainer.style.fontSize = "13px";
+
+
+    // Stars
+    const stars = generateStars(trip.rating);
+    stars.className = "text-warning";
+
+
+    // Rating text
+    const ratingText = document.createElement("span");
+
+    ratingText.className = "text-secondary";
+
+    ratingText.textContent =
+      `${trip.rating} (${trip.reviews})`;
+
+
+    ratingContainer.append(stars, ratingText);
+
+
+    // Refund
+    const refund = document.createElement("p");
+
+    refund.className = "mb-1 fw-semibold";
+    refund.style.fontSize = "13px";
+
+    refund.textContent = trip.refund;
+
+
+    // Description
+    const description = document.createElement("p");
+
+    description.className = "text-secondary mb-3";
+
+    description.style.fontSize = "13px";
+    description.style.lineHeight = "1.5";
+
+    description.textContent =
+      trip.description;
+
+
+    // Availability button
+    const button = document.createElement("a");
+
+    button.href = "detail.html";
+
+    button.className =
+      "btn btn-primary btn-sm px-4 py-2 rounded-2";
+
+    button.style.fontSize = "14px";
+    button.style.background = "#2F80ED";
+
+    button.textContent = "See availability";
+
+
+    detailsColumn.append(
+      hotelName,
+      ratingContainer,
+      refund,
+      description,
+      button
+    );
+
+
+    // ---------------- PRICE SECTION ----------------
+
+    const priceColumn = document.createElement("div");
+
+    priceColumn.className =
+      "col-md-3 text-end d-flex flex-column align-items-end justify-content-end";
+
+    priceColumn.style.marginTop = "100px";
 
 
     // Green discount badge
+    if (trip.discount) {
 
-    const discountPriceBadge = trip.discount
-      ? `
-        <span
-          class="badge mb-2"
-          style="
-            font-size:9px;
-            padding:8px;
-            background:#27AE60;
-          "
-        >
-          ${typeof trip.discount === "number" 
-            ? trip.discount + "% off" 
-            : ""}
-        </span>
-      `
-      : "";
+      const discountPriceBadge =
+        document.createElement("span");
+
+      discountPriceBadge.className = "badge mb-2";
+
+      discountPriceBadge.style.fontSize = "9px";
+      discountPriceBadge.style.padding = "8px";
+      discountPriceBadge.style.background = "#27AE60";
+
+      if (typeof trip.discount === "number") {
+        discountPriceBadge.textContent =
+          `${trip.discount}% off`;
+      }
+
+      priceColumn.appendChild(discountPriceBadge);
+    }
 
 
+    // Duration
+    const duration = document.createElement("p");
+
+    duration.className =
+      "text-secondary  mb-1";
+
+    duration.style.fontSize = "13px";
+
+    duration.textContent = trip.duration;
+
+
+    // Price container
+    const priceContainer = document.createElement("div");
+
+    priceContainer.className = "mb-1";
 
 
     // Old price
+    if (trip.discount) {
 
-    const oldPrice = trip.discount
-      ? `
-        <span
-          class="text-danger text-decoration-line-through me-1"
-          style="font-size:11px;"
-        >
-          ${trip.oldPrice}
-        </span>
-      `
-      : "";
+      const oldPrice = document.createElement("span");
 
+      oldPrice.className =
+        "text-danger text-decoration-line-through me-1";
 
+      oldPrice.style.fontSize = "11px";
 
+      oldPrice.textContent = trip.oldPrice;
 
-    card.innerHTML = `
+      priceContainer.appendChild(oldPrice);
+    }
 
 
-      <div class="card-body p-4 position-relative">
+    // New price
+    const price = document.createElement("span");
 
+    price.className = "fw-bold";
+    price.style.fontSize = "18px";
 
-        ${discountTopBadge}
+    price.textContent = `$${trip.price}`;
 
+    priceContainer.appendChild(price);
 
 
-        <div class="row g-3 align-items-center">
+    // Fees
+    const fees = document.createElement("p");
 
+    fees.className = "text-secondary mb-0";
+    fees.style.fontSize = "13px";
 
+    fees.textContent = trip.fees;
 
-          <!-- IMAGE -->
 
-          <div class="col-md-4">
+    priceColumn.append(
+      duration,
+      priceContainer,
+      fees
+    );
 
-            <img
-              src="${trip.image}"
-              alt="${trip.name}"
-              class="img-fluid rounded-2 w-100"
-              style="
-                height:170px;
-                object-fit:cover;
-              "
-            >
 
-          </div>
+    // COMBINE EVERYTHING 
 
+    row.append(
+      imageColumn,
+      detailsColumn,
+      priceColumn
+    );
 
+    cardBody.appendChild(row);
 
-
-
-          <!-- HOTEL DETAILS -->
-
-
-          <div class="col-md-5">
-
-
-            <h6
-              class="fw-semibold mb-2"
-              style="font-size:14px;"
-            >
-              ${trip.name}
-            </h6>
-
-
-
-
-            <div
-              class="d-flex align-items-center gap-2 mb-2"
-              style="font-size:10px;"
-            >
-
-              <span class="text-warning">
-                ${generateStars(trip.rating)}
-              </span>
-
-
-              <span class="text-secondary">
-                ${trip.rating} (${trip.reviews})
-              </span>
-
-
-            </div>
-
-
-
-
-
-            <p
-              class="mb-1 fw-semibold"
-              style="font-size:10px;"
-            >
-              ${trip.refund}
-            </p>
-
-
-
-
-
-            <p
-              class="text-secondary mb-3"
-              style="
-                font-size:10px;
-                line-height:1.5;
-              "
-            >
-
-              Live a little and celebrate with champagne.<br>
-              Starts include a glass of French champagne,
-              parking and a late checkout.
-
-            </p>
-
-
-
-
-
-            <a
-              href="detail.html"
-              class="btn btn-primary btn-sm px-4 py-2"
-              style="
-                font-size:14px;
-                background:#2F80ED;
-              "
-            >
-              See availability
-            </a>
-
-
-
-          </div>
-
-
-
-
-
-
-
-          <!-- PRICE SECTION -->
-
-
-          <div
-            class="col-md-3 text-end d-flex flex-column align-items-end justify-content-end"
-            style="margin-top:100px;"
-          >
-
-
-
-            ${discountPriceBadge}
-
-
-
-
-
-            <p
-              class="text-secondary fw-semibold mb-1"
-              style="
-                font-size:8px;
-              "
-            >
-              ${trip.duration}
-            </p>
-
-
-
-
-
-            <div class="mb-1">
-
-
-              ${oldPrice}
-
-
-
-              <span
-                class="fw-bold"
-                style="font-size:18px;"
-              >
-                $${trip.price}
-              </span>
-
-
-            </div>
-
-
-
-
-
-            <p
-              class="text-secondary mb-0"
-              style="font-size:9px;"
-            >
-              ${trip.fees}
-            </p>
-
-
-
-
-          </div>
-
-
-
-
-        </div>
-
-
-      </div>
-
-
-    `;
-
-
+    card.appendChild(cardBody);
 
     container.appendChild(card);
 
-
   });
 
-
 }
-
 
 let selectedRating = 0;
 document.querySelectorAll(".rating-btn").forEach(button => {

@@ -20,8 +20,9 @@
       "fishing",
       "beach"
     ],
-      "discount": 15,
-     "discountLabel": "Book now and receive 15% off"
+    "discount": 15,
+    "discountLabel": "Book now and receive 15% off",
+    "description": "Relax by the waterfront with peaceful lake views, easy beach access, and comfortable rooms for a refreshing stay."
   },
   {
     "image": "https://picsum.photos/seed/grand-palace-hotel/400/300",
@@ -45,7 +46,8 @@
       "sauna",
       "cycling"
     ],
-    "type": "residence"
+    "type": "residence",
+    "description": "Enjoy a comfortable city stay with relaxing spa facilities, sauna access, and convenient options for a stress-free visit."
   },
   {
     "image": "https://picsum.photos/seed/ocean-view-resort/400/300",
@@ -68,7 +70,8 @@
       "beach",
       "hiking"
     ],
-    "type": "apartment"
+    "type": "apartment",
+    "description": "Wake up to beautiful ocean views and enjoy beach access, spa services, and nearby hiking opportunities."
   },
   {
     "image": "https://picsum.photos/seed/luxury-grand-resort/400/300",
@@ -95,7 +98,8 @@
       "hiking",
       "sauna"
     ],
-    "type": "resort"
+    "type": "resort",
+    "description": "A premium beachfront resort offering spa treatments, hot tubs, sauna facilities, and a luxurious setting for a relaxing escape."
   },
   {
     "image": "https://picsum.photos/seed/demo-0/400/300",
@@ -116,7 +120,8 @@
     "activities": [
       "hiking"
     ],
-    "type": "residence"
+    "type": "residence",
+    "description": "A simple mountain lodge ideal for travelers who enjoy hiking, fresh air, and a peaceful natural environment."
   },
   {
     "image": "https://picsum.photos/seed/demo-1/400/300",
@@ -137,7 +142,8 @@
     "activities": [
       "cycling"
     ],
-    "type": "resort"
+    "type": "resort",
+    "description": "Stay in a quiet garden setting with hot tub access and nearby cycling routes for a relaxing short break."
   },
   {
     "image": "https://picsum.photos/seed/demo-2/400/300",
@@ -159,8 +165,9 @@
       "nightLights"
     ],
     "type": "apartment",
-     "discount": 15,
-     "discountLabel": "Book now and receive 15% off"
+    "discount": 15,
+    "discountLabel": "Book now and receive 15% off",
+    "description": "A budget-friendly city stay with easy access to nightlife, evening attractions, and convenient urban amenities."
   },
   {
     "image": "https://picsum.photos/seed/demo-3/400/300",
@@ -183,9 +190,9 @@
       "beach"
     ],
     "type": "residence",
-     "discount": 15,
-     "discountLabel": "Book now and receive 15% off"
-
+    "discount": 15,
+    "discountLabel": "Book now and receive 15% off",
+    "description": "Modern suites near the beach with spa facilities, comfortable rooms, and a relaxing atmosphere for couples or families."
   },
   {
     "image": "https://picsum.photos/seed/demo-4/400/300",
@@ -208,7 +215,8 @@
       "beach",
       "fishing"
     ],
-    "type":"shared"
+    "type": "shared",
+    "description": "A stylish oceanfront property featuring beach access, hot tub facilities, and great opportunities for fishing and relaxation."
   },
   {
     "image": "https://picsum.photos/seed/demo-5/400/300",
@@ -229,7 +237,8 @@
     "activities": [
       "nightLights"
     ],
-    "type": "resort"
+    "type": "resort",
+    "description": "A convenient and affordable option near the airport, suitable for short stays and travelers with early or late flights."
   },
   {
     "image": "https://picsum.photos/seed/demo-6/400/300",
@@ -250,7 +259,8 @@
     "activities": [
       "cycling"
     ],
-  "type":"residence"
+    "type": "residence",
+    "description": "A charming boutique stay with classic character, comfortable rooms, and easy access to local cycling routes."
   },
   {
     "image": "https://picsum.photos/seed/demo-7/400/300",
@@ -271,7 +281,8 @@
     "activities": [
       "beach"
     ],
-    "type": "apartment"
+    "type": "apartment",
+    "description": "A tropical beachfront stay surrounded by palm trees, offering direct access to the beach and a laid-back holiday atmosphere."
   },
   {
     "image": "https://picsum.photos/seed/demo-8/400/300",
@@ -291,7 +302,8 @@
     ],
     "activities": [
       "cycling"
-    ]
+    ],
+    "description": "Comfortable city apartments designed for independent travelers, with convenient booking options and easy access to cycling routes."
   },
   {
     "image": "https://picsum.photos/seed/demo-9/400/300",
@@ -314,6 +326,7 @@
       "hiking",
       "sauna"
     ],
-    "type": "apartment"
+    "type": "apartment",
+    "description": "A peaceful forest retreat with spa services, hot tubs, hiking trails, and sauna facilities for a premium wellness experience."
   }
 ]

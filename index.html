@@ -16,6 +16,7 @@
     />
       <link rel="stylesheet" href="css/style.css">
      <link rel="stylesheet" href="css/index.css">
+      <link href="https://fonts.cdnfonts.com/css/sf-pro-display" rel="stylesheet">
     <style>
       * {
         margin: 0;
@@ -33,6 +34,69 @@
     </style>
   </head>
   <body>
+
+
+
+<!--entry Modal-->
+<div class="modal fade mt-4" id="welcomeModal" tabindex="-1">
+
+  <div class="modal-dialog">
+    <div class="modal-content bg-transparent border-0">
+
+      <div class="container bg-transparent p-0 d-flex justify-content-center align-items-start "
+       
+      >
+          
+        <!-- Card -->
+        <div class="card rounded-4 text-center shadow-sm p-4 w-100">
+
+          <!-- Image -->
+          <div
+            class="d-flex justify-content-center p-3 mb-4"
+            style="background-color:#2F80ED4D; border-radius:40%;"
+          >
+
+            <img
+              src="img/f1.png"
+              class="img-fluid"
+              style="width:100px;"
+              alt="Welcome"
+            >
+
+            <img
+              src="img/f2.png"
+              class="img-fluid"
+              alt="Welcome"
+            >
+
+          </div>
+
+          <h3 class="fw-semibold mt-5">
+            Welcome to My Dream Place
+          </h3>
+
+          <p class="text-secondary fs-5 mt-3">
+            You can now enjoy your travel experience with
+            <br>
+            easy access to resources and more
+          </p>
+
+          <a
+            href="index.html"
+            class="btn btn-primary w-100 py-3 mt-4 rounded-2"
+          >
+            Get Started
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+</div>
+<!--entry Modal-->
     <div
       class="container-navbar"
       style="
@@ -107,13 +171,13 @@
           <div class="d-flex align-items-center justify-content-end gap-2 mt-3 mt-md-0 ">
               <a
               href="Register.html"
-              class="btn btn-outline-primary px-3 py-2 ms-2"
+              class="btn btn-outline-primary  btn-no-hover px-3 py-2 ms-2"
               style="border-color: #3b82f6; color: #3b82f6"
               >Register</a>
             
             <a
               href="sign-in.html"
-              class="btn btn-primary px-3 py-2"
+              class="btn btn-primary  btn-no-hover px-3 py-2"
               style="background: #3b82f6; border: none"
               >Sign In</a
             >   
@@ -1004,5 +1068,30 @@
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"
     ></script>
+
+    <script>
+    window.addEventListener("DOMContentLoaded", function () {
+      const navigation = performance.getEntriesByType("navigation")[0];
+
+        if (navigation.type === "reload") {
+        localStorage.removeItem("welcomeModalShown");
+        }
+
+
+     const modalElement = document.getElementById("welcomeModal");
+
+
+     const modal = new bootstrap.Modal(modalElement);
+
+    if(!localStorage.getItem("welcomeModalShown")) {
+      modal.show();
+      localStorage.setItem("welcomeModalShown", "true");
+    }
+    
+
+    });
+
+   </script>
+
   </body>
 </html>

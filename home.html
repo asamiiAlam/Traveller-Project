@@ -16,6 +16,7 @@
     />
      <link rel="stylesheet" href="css/style.css">
      <link rel="stylesheet" href="css/index.css">
+      <link href="https://fonts.cdnfonts.com/css/sf-pro-display" rel="stylesheet">
     <style>
       * {
         margin: 0;
@@ -33,6 +34,59 @@
     </style>
   </head>
   <body>
+    <!--success Modal-->
+<div class="modal fade" id="bookingSuccessModal" tabindex="-1">
+
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content bg-transparent border-0 ">
+
+      <div class="container bg-transparent  d-flex justify-content-center align-items-center"
+      
+      >
+
+        <!-- Card -->
+        <div class="card success-card shadow-sm text-center p-5" style="width: 600px; border-radius: 8px;
+        
+        ">
+
+          <!-- Success Image -->
+          <div class="d-flex justify-content-center rounded-3 mb-5" style="background-color:#6FCF9733;
+          ">
+            <img
+              src="img/booking.png"
+              class="success-image p-5"
+              style="width: 250px; height: 250px;"
+              alt="Booking Successful">
+          </div>
+
+          <!-- Title -->
+          <h2 class="success-title mb-2" style="font-size: 20px;">
+            Booking Successful
+          </h2>
+
+          <!-- Description -->
+          <p class="success-message mt-2  mb-4 text-secondary" style="font-size: 16px;">
+            Congratulations your reservation has been made.<br>
+            You will be notified 2 days prior the date.
+          </p>
+
+          <!-- Button -->
+          <a href="detail.html" class="btn btn-primary  mt-3 w-100"
+            style="background-color: #2F80ED;padding:12px 18px;"
+          >
+            View Trip
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!--success Modal-->
     <div
       class="container-navbar"
       style="
@@ -1080,5 +1134,35 @@
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"
     ></script>
+  <script>
+   window.addEventListener("DOMContentLoaded", function () {
+
+  const navigation = performance.getEntriesByType("navigation")[0];
+
+        if (navigation.type === "reload") {
+        localStorage.removeItem("bookingSuccessModalShown");
+        }
+
+
+  const params = new URLSearchParams(window.location.search);
+
+  if (params.get("booking") === "success") {
+
+    const modalElement =
+      document.getElementById("bookingSuccessModal");
+
+    const modal =
+      new bootstrap.Modal(modalElement);
+    if(!localStorage.getItem("bookingSuccessModalShown")) {
+      localStorage.setItem("bookingSuccessModalShown", "true");
+      modal.show();
+    }
+   
+    
+
+  }
+
+});
+</script>
   </body>
 </html>

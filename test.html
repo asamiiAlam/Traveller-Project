@@ -14,7 +14,9 @@
       integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="index.css" />
+      <link rel="stylesheet" href="css/style.css">
+     <link rel="stylesheet" href="css/index.css">
+      <link href="https://fonts.cdnfonts.com/css/sf-pro-display" rel="stylesheet">
     <style>
       * {
         margin: 0;
@@ -32,6 +34,113 @@
     </style>
   </head>
   <body>
+<!--success Modal-->
+<div class="modal fade" id="bookingSuccessModal" tabindex="-1">
+
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content bg-transparent border-0">
+
+      <div class="container bg-transparent p-0 d-flex justify-content-center align-items-center">
+
+        <!-- Card -->
+        <div class="card success-card shadow-sm text-center">
+
+          <!-- Success Image -->
+          <div class="d-flex justify-content-center">
+            <img
+              src="img/booking.png"
+              class="success-image p-2"
+              alt="Booking Successful">
+          </div>
+
+          <!-- Title -->
+          <h2 class="success-title mb-0">
+            Booking Successful
+          </h2>
+
+          <!-- Description -->
+          <p class="success-message mt-2 mb-0">
+            Congratulations your reservation has been made.<br>
+            You will be notified 2 days prior the date.
+          </p>
+
+          <!-- Button -->
+          <a href="detail.html" class="btn btn-primary  mt-3 view-btn">
+            View Trip
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!--success Modal-->
+
+
+<!--entry Modal-->
+<div class="modal fade mt-4" id="welcomeModal" tabindex="-1">
+
+  <div class="modal-dialog">
+    <div class="modal-content bg-transparent border-0">
+
+      <div class="container bg-transparent p-0 d-flex justify-content-center align-items-start "
+       
+      >
+          
+        <!-- Card -->
+        <div class="card rounded-4 text-center shadow-sm p-4 w-100">
+
+          <!-- Image -->
+          <div
+            class="d-flex justify-content-center p-3 mb-4"
+            style="background-color:#2F80ED4D; border-radius:40%;"
+          >
+
+            <img
+              src="img/f1.png"
+              class="img-fluid"
+              style="width:100px;"
+              alt="Welcome"
+            >
+
+            <img
+              src="img/f2.png"
+              class="img-fluid"
+              alt="Welcome"
+            >
+
+          </div>
+
+          <h3 class="fw-semibold mt-5">
+            Welcome to My Dream Place
+          </h3>
+
+          <p class="text-secondary fs-5 mt-3">
+            You can now enjoy your travel experience with
+            <br>
+            easy access to resources and more
+          </p>
+
+          <a
+            href="index.html"
+            class="btn btn-primary w-100 py-3 mt-4 rounded-2"
+          >
+            Get Started
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+</div>
+<!--entry Modal-->
     <div
       class="container-navbar"
       style="
@@ -39,6 +148,7 @@
         height: 70px;
         display: flex;
         align-items: center;
+        padding: 12px;;
       "
     >
       <!--Navbar -->
@@ -74,17 +184,17 @@
 
           <!-- Menu -->
           <div
-            class="collapse navbar-collapse"
+            class="collapse navbar-collapse "
             id="navbarNav"
-            style="z-index: 1000"
+            style="z-index: 1000;margin-top: 36px"
           >
             <ul class="navbar-nav mx-auto text-center" style="gap: 25px">
               <li class="nav-item">
-                <a class="nav-link" href="#">Home</a>
+                <a class="nav-link" href="home.html">Home</a>
               </li>
 
               <li class="nav-item">
-                <a class="nav-link" href="#">Discover</a>
+                <a class="nav-link" href="search.html">Discover</a>
               </li>
 
               <li class="nav-item">
@@ -102,16 +212,16 @@
           </div>
 
           <!-- Right side -->
-          <div class="d-flex align-items-center justify-content-end gap-2">
+          <div class="d-flex align-items-center justify-content-end gap-2 mt-3 mt-md-0 ">
               <a
               href="Register.html"
-              class="btn btn-outline-primary px-3 py-2 ms-2"
+              class="btn btn-outline-primary  btn-no-hover px-3 py-2 ms-2"
               style="border-color: #3b82f6; color: #3b82f6"
               >Register</a>
             
             <a
               href="sign-in.html"
-              class="btn btn-primary px-3 py-2"
+              class="btn btn-primary  btn-no-hover px-3 py-2"
               style="background: #3b82f6; border: none"
               >Sign In</a
             >   
@@ -123,7 +233,7 @@
     </div>
 
     <!--hero section -->
-    <div class="hero mt-4 mb-md-0 mb-2">
+    <div class="hero mt-5 mb-md-0 mb-2">
       <div class="container">
         <div class="row">
           <div class="col-md-12 position-relative">
@@ -177,10 +287,10 @@
         class="bg-white shadow rounded-3 p-2 position-md-absolute position-relative start-50 translate-middle-x"
         style="top: -35px; width: 95%; z-index: 10"
       >
-        <div class="row g-2 align-items-center">
+        <div class="row g-0 align-items-center">
 
          <div class="col-md-10 d-flex flex-wrap gap-2 gap-md-0 align-items-center">
-         <!-- Location -->
+                  <!-- Location -->
           <div class="col-md">
             <div
               class="d-flex align-items-center bg-light rounded-2 px-3"
@@ -286,7 +396,7 @@
     <!--search-bar-->
     <!--Covid Section-->
     <div class="container my-md-5 my-4">
-      <div class="row">
+      <div class="row g-0">
         <div
           class="col-md-12 d-flex align-items-center justify-content-start px-5 rounded-3"
           style="background-color: #fcefca"
@@ -1002,5 +1112,48 @@
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"
     ></script>
+
+    <script>
+    window.addEventListener("DOMContentLoaded", function () {
+      const navigation = performance.getEntriesByType("navigation")[0];
+
+        if (navigation.type === "reload") {
+        localStorage.removeItem("welcomeModalShown");
+        }
+
+
+     const modalElement = document.getElementById("welcomeModal");
+
+
+     const modal = new bootstrap.Modal(modalElement);
+
+    if(!localStorage.getItem("welcomeModalShown")) {
+      modal.show();
+      localStorage.setItem("welcomeModalShown", "true");
+    }
+    
+
+    });
+
+   </script>
+  <script>
+   window.addEventListener("DOMContentLoaded", function () {
+
+  const params = new URLSearchParams(window.location.search);
+
+  if (params.get("booking") === "success") {
+
+    const modalElement =
+      document.getElementById("bookingSuccessModal");
+
+    const modal =
+      new bootstrap.Modal(modalElement);
+   
+    modal.show();
+
+  }
+
+});
+</script>
   </body>
 </html>
