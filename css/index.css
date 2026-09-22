@@ -24,6 +24,13 @@ input{
 
 
 }
+@media(max-width:767px){
+.home-collapse{
+
+    margin-top: 36px;
+    
+}
 
 
 
+}
