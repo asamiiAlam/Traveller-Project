@@ -307,7 +307,7 @@
         <div class="container">
 
         <!-- Mobile / Tablet Filter Toggle -->
-        <div class="d-lg-none mb-3">
+        <div class="d-lg-none mb-3 mt-4">
           <button
             class="btn btn-outline-primary w-100"
             type="button"
@@ -315,6 +315,8 @@
             data-bs-target="#searchFilters"
             aria-expanded="false"
             aria-controls="searchFilters"
+            style="background-color: rgb(59, 130, 246);
+            padding:12px 18px;color:white;"
           >
             <i class="bi bi-funnel me-2"></i>
             Search Filters
@@ -1487,6 +1489,10 @@
     <!--footer-->
 
     <script>
+      document.getElementById("search").addEventListener("click", function () {
+      this.style.border = "none";
+      this.style.outline = "none";
+      });
       document.querySelectorAll("label").forEach((label) => {
         label.addEventListener("click", function () {
           const input = document.getElementById(this.getAttribute("for"));

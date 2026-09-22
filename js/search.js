@@ -437,51 +437,53 @@ function applyFilters() {
 
     //
 }
-document.querySelectorAll(".buttons button")
-.forEach(button => {
+const categoryButtons = document.querySelectorAll(
+  ".buttons button, .mobile-search-type-buttons button"
+);
 
-    button.addEventListener("click", function(){
+categoryButtons.forEach(button => {
 
+  button.addEventListener("click", function () {
 
-        document.querySelectorAll(".buttons button")
-        .forEach(btn => btn.classList.remove("active"));
-
-
-        this.classList.add("active");
-      
-
-
-        let text = this.innerText;
-
-
-        if(text === "Hotel and apartments"){
-            selectedCategory = "apartment";
-        }
-
-        else if(text === "Residence"){
-            selectedCategory = "residence";
-        }
-
-        else if(text === "Resort"){
-            selectedCategory = "resort";
-        }
-
-        else if(text === "Shared Space"){
-            selectedCategory = "shared";
-        }
-
-        else{
-            selectedCategory = "all";
-        }
-
-
-        applyFilters();
-
-
+    // Remove active from all desktop + mobile buttons
+    categoryButtons.forEach(btn => {
+      btn.classList.remove("active");
     });
 
-});
+    const text = this.innerText.trim();
 
+    // Make the same category active on both mobile and desktop
+    categoryButtons.forEach(btn => {
+      if (btn.innerText.trim() === text) {
+        btn.classList.add("active");
+      }
+    });
+
+    // Set category
+    if (text === "Hotel and apartments") {
+      selectedCategory = "apartment";
+    }
+
+    else if (text === "Residence") {
+      selectedCategory = "residence";
+    }
+
+    else if (text === "Resort") {
+      selectedCategory = "resort";
+    }
+
+    else if (text === "Shared Space") {
+      selectedCategory = "shared";
+    }
+
+    else {
+      selectedCategory = "all";
+    }
+
+    applyFilters();
+  });
+
+});
 
 
 
