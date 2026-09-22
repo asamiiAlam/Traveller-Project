@@ -16,26 +16,13 @@
     />
      <link rel="stylesheet" href="css/style.css">
      <link rel="stylesheet" href="css/index.css">
+      <link rel="stylesheet" href="css/detail.css">
       <link href="https://fonts.cdnfonts.com/css/sf-pro-display" rel="stylesheet">
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
 
-      .date-input::-webkit-calendar-picker-indicator {
-        display: none;
-      }
-
-      .date-input {
-        cursor: pointer;
-      }
-    </style>
   </head>
   <body>
     <div
-      class="container-navbar"
+      class="container-navbar detail-navbar"
       style="
         background-color: #ffffff;
         height: 70px;
@@ -105,7 +92,7 @@
 
           <!-- Right side -->
 <!-- Right side -->
-<div class="d-flex align-items-center">
+<div class="nav-actions d-flex align-items-center">
 
     <!-- Notification -->
     <div class="position-relative me-3">
@@ -206,9 +193,9 @@
     </div>
 
     <!--hero section -->
-    <div class="container mt-5">
-      <div class="row">
-        <div class="col-md-8 px-0">
+    <div class="container mt-4 mt-md-5 detail-gallery">
+      <div class="row g-3">
+        <div class="col-12 col-md-8">
           <img
             src="img/d1.png"
             class="img-fluid rounded-3 mb-md-0 mb-3"
@@ -221,8 +208,8 @@
             "
           />
         </div>
-        <div class="col-md-4">
-          <div class="images">
+        <div class="col-12 col-md-4">
+          <div class="images d-flex d-md-block gap-3">
             <img
               src="img/d2.png"
               class="img-fluid rounded-3 mb-3 mt-md-0 mt-3"
@@ -240,8 +227,7 @@
       </div>
     </div>
     <!--buttons-->
-    <div class="container"
-    style="position:relative;top:50px;"
+    <div class="container detail-tabs"
     >
       <div class="row mt-4 g-2"
       >
@@ -273,7 +259,7 @@
       <!--second part-->
       <div class="container mt-3">
         <div class="row">
-          <div class="col-md-8 mb-5">
+          <div class="col-12 col-lg-8 mb-4 mb-lg-5">
             <div class="card border-0 shadow-sm p-3">
               <!-- Hotel Title -->
               <h4 class="fw-bold mb-1" style="font-size: 32px">
@@ -375,12 +361,12 @@
               </div>
             </div>
           </div>
-          <div class="col-md-4">
+          <div class="col-12 col-lg-4">
             <div class="card border-0 w-100">
               <!-- Map Image -->
               <img
                 src="img/map.png"
-                class="rounded-3 image-fluid"
+                class="rounded-3 img-fluid w-100"
                 style="height: 250px; object-fit: cover"
                 alt="map"
               />
@@ -460,9 +446,9 @@
         <h5>Available rooms</h5>
         <div class="container mt-4">
           <div class="bg-white shadow-sm rounded-3 p-2">
-            <div class="row align-items-center px-3">
+            <div class="row g-2 align-items-center px-2 px-md-3">
               <!-- Check in -->
-              <div class="col-md-3">
+              <div class="col-12 col-sm-6 col-lg-3">
                 <div
                   class="d-flex align-items-center bg-light rounded-2 px-2"
                   style="height: 45px"
@@ -479,7 +465,7 @@
               </div>
 
               <!-- Check out -->
-              <div class="col-md-3">
+              <div class="col-12 col-sm-6 col-lg-3">
                 <div
                   class="d-flex align-items-center bg-light rounded-2 px-3"
                   style="height: 45px"
@@ -496,7 +482,7 @@
               </div>
 
               <!-- Guests -->
-              <div class="col-md-3">
+              <div class="col-12 col-sm-6 col-lg-3">
                 <div
                   class="d-flex align-items-center bg-light rounded-2 px-3"
                   style="height: 45px"
@@ -513,7 +499,7 @@
               </div>
 
               <!-- Button -->
-              <div class="col-md-3">
+              <div class="col-12 col-sm-6 col-lg-3">
                 <button
                   class="btn btn-primary w-100"
                   style="
@@ -531,7 +517,7 @@
           </div>
         </div>
         <div class="row justify-content-center g-4 mt-3">
-          <div class="col-md-4">
+          <div class="col-12 col-md-4">
             <img
               src="img/sc1.png"
               class="img-fluid rounded-3"
@@ -544,8 +530,8 @@
               "
             />
           </div>
-          <div class="col-md-4">
-            <div class="card border-0 shadow-sm rounded-3 overflow-hidden">
+          <div class="col-12 col-md-4">
+            <div class="card border-0 shadow-sm rounded-3 overflow-hidden h-100">
               <!-- Image -->
               <img
                 src="img/r1.png"
@@ -615,8 +601,8 @@
               </div>
             </div>
           </div>
-          <div class="col-md-4">
-            <div class="card border-0 shadow-sm rounded-3 overflow-hidden">
+          <div class="col-12 col-md-4">
+            <div class="card border-0 shadow-sm rounded-3 overflow-hidden h-100">
               <!-- Image -->
               <img
                 src="img/r1.png"
@@ -733,8 +719,8 @@
     <footer class="mt-5">
       <div class="lists w-100">
         <div class="container">
-          <div class="row  ">
-            <div class="col-md">
+          <div class="row gy-4 justify-content-between">
+            <div class="col-12 col-sm-6 col-lg-auto">
               <ul class="list-unstyled">
                 <li>
                   <div class="d-flex align-items-center">
@@ -769,7 +755,7 @@
                 </li>
               </ul>
             </div>
-            <div class="col-md " style="margin-left:100px;">
+            <div class="col-6 col-sm-6 col-lg-auto">
               <ul class="list-unstyled">
                 <li>
                   <h6
@@ -825,7 +811,7 @@
                 </li>
               </ul>
             </div>
-            <div class="col-md">
+            <div class="col-6 col-sm-6 col-lg-auto">
               <ul class="list-unstyled">
                 <li>
                   <h6
@@ -902,7 +888,7 @@
                 </li>
               </ul>
             </div>
-            <div class="col-md">
+            <div class="col-6 col-sm-6 col-lg-auto">
               <ul class="list-unstyled">
                 <li>
                   <h6
@@ -950,7 +936,7 @@
                 </li>
               </ul>
             </div>
-            <div class="col-md">
+            <div class="col-6 col-sm-6 col-lg-auto">
               <ul class="list-unstyled">
                 <li>
                   <h6

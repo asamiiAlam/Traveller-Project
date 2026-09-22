@@ -16,29 +16,16 @@
     />
       <link rel="stylesheet" href="css/style.css">
      <link rel="stylesheet" href="css/index.css">
+      <link rel="stylesheet" href="css/index-fixed.css">
       <link href="https://fonts.cdnfonts.com/css/sf-pro-display" rel="stylesheet">
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      .date-input::-webkit-calendar-picker-indicator {
-        display: none;
-      }
-
-      .date-input {
-        cursor: pointer;
-      }
-    </style>
+  
   </head>
   <body>
 
 
 
 <!--entry Modal-->
-<div class="modal fade mt-4" id="welcomeModal" tabindex="-1">
+<div class="modal fade" id="welcomeModal" tabindex="-1">
 
   <div class="modal-dialog">
     <div class="modal-content bg-transparent border-0">
@@ -52,20 +39,19 @@
 
           <!-- Image -->
           <div
-            class="d-flex justify-content-center p-3 mb-4"
+            class="d-flex justify-content-center align-items-center gap-2 p-3 mb-4"
             style="background-color:#2F80ED4D; border-radius:40%;"
           >
 
             <img
               src="img/f1.png"
-              class="img-fluid"
-              style="width:100px;"
+              class="img-fluid welcome-icon"
               alt="Welcome"
             >
 
             <img
               src="img/f2.png"
-              class="img-fluid"
+              class="img-fluid welcome-icon"
               alt="Welcome"
             >
 
@@ -101,15 +87,15 @@
       class="container-navbar"
       style="
         background-color: #ffffff;
-        height: 70px;
         display: flex;
         align-items: center;
-        padding: 12px;;
+        padding: 12px;
       "
     >
-      <!--Navbar -->
+      <!-- Navbar -->
       <nav class="navbar navbar-expand-lg w-100 h-100 mb-md-0 mb-3">
-        <div class="container position-relative ">
+        <div class="container position-relative">
+
           <!-- Logo -->
           <div class="d-flex align-items-center">
             <img
@@ -117,6 +103,7 @@
               width="25"
               height="25"
               style="margin-right: 8px"
+              alt="my Dream Place logo"
             />
 
             <a
@@ -134,16 +121,20 @@
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
           >
             <span class="navbar-toggler-icon"></span>
           </button>
 
-          <!-- Menu -->
+          <!-- Collapsible Menu -->
           <div
-            class="collapse navbar-collapse home-collapse "
+            class="collapse navbar-collapse home-collapse"
             id="navbarNav"
-            style="z-index: 1000;"
+            style="z-index: 1000"
           >
+            <!-- Navigation Links -->
             <ul class="navbar-nav mx-auto text-center" style="gap: 25px">
               <li class="nav-item">
                 <a class="nav-link" href="home.html">Home</a>
@@ -165,25 +156,46 @@
                 <a class="nav-link" href="#">Contact</a>
               </li>
             </ul>
+
+            <!-- Mobile only: Register + Sign In inside hamburger -->
+            <div class="mobile-auth-buttons d-lg-none">
+              <a
+                href="Register.html"
+                class="btn btn-outline-primary btn-no-hover w-100 mb-2 py-2"
+                style="border-color: #3b82f6; color: #3b82f6"
+              >
+                Register
+              </a>
+
+              <a
+                href="sign-in.html"
+                class="btn btn-primary btn-no-hover w-100 py-2"
+                style="background: #3b82f6; border: none"
+              >
+                Sign In
+              </a>
+            </div>
           </div>
 
-          <!-- Right side -->
-          <div class="d-flex align-items-center justify-content-end gap-2 mb-md-0 mb-5 mt-3 mt-md-0 ">
-              <a
+          <!-- Desktop only: Register + Sign In -->
+          <div class="d-none d-lg-flex align-items-center gap-2">
+            <a
               href="Register.html"
-              class="btn btn-outline-primary  btn-no-hover px-3 py-2 ms-2"
+              class="btn btn-outline-primary btn-no-hover px-3 py-2"
               style="border-color: #3b82f6; color: #3b82f6"
-              >Register</a>
-            
+            >
+              Register
+            </a>
+
             <a
               href="sign-in.html"
-              class="btn btn-primary  btn-no-hover px-3 py-2"
+              class="btn btn-primary btn-no-hover px-3 py-2"
               style="background: #3b82f6; border: none"
-              >Sign In</a
-            >   
-        
-            
+            >
+              Sign In
+            </a>
           </div>
+
         </div>
       </nav>
     </div>
@@ -195,13 +207,12 @@
           <div class="col-md-12 position-relative">
             <img
               src="img/sydney.jpg"
-              alt="Hero Image"
-              class="img-fluid rounded"
+              alt="Sydney skyline hero image"
+              class="img-fluid rounded hero-image"
               style="
                 width: 100%;
                 object-fit: cover;
                 object-position: center;
-                height: 500px;
               "
             />
 
@@ -213,7 +224,6 @@
                 top: 0;
                 left: 12px;
                 width: calc(100% - 24px);
-                height: 500px;
                 background-color: rgba(78, 77, 77, 0.5);
                 border-radius: 8px;
                 z-index: 1;
@@ -243,11 +253,11 @@
         class="bg-white shadow rounded-3 p-2 position-md-absolute position-relative start-50 translate-middle-x"
         style="top: -35px; width: 95%; z-index: 10"
       >
-        <div class="row g-0 align-items-center">
+        <div class="row g-2 align-items-center">
 
          <div class="col-md-10 d-flex flex-wrap gap-2 gap-md-0 align-items-center">
                   <!-- Location -->
-          <div class="col-md">
+          <div class="col-md search-field">
             <div
               class="d-flex align-items-center bg-light rounded-2 px-3"
               style="height: 45px"
@@ -267,7 +277,7 @@
           </div>
 
           <!-- Check in -->
-          <div class="col-md">
+          <div class="col-md search-field">
             <div
               class="d-flex align-items-center bg-light rounded-2 px-3"
               style="height: 45px"
@@ -288,7 +298,7 @@
           </div>
 
           <!-- Check out -->
-          <div class="col-md">
+          <div class="col-md search-field">
             <div
               class="d-flex align-items-center bg-light rounded-2 px-3"
               style="height: 45px"
@@ -309,7 +319,7 @@
           </div>
 
           <!-- Guests -->
-          <div class="col-md-3">
+          <div class="col-md search-field">
             <div
               class="d-flex align-items-center bg-light rounded-2 px-3"
               style="height: 45px"
@@ -334,7 +344,7 @@
          </div>
 
           <!-- Search Button -->
-            <div class="col-md-2">
+            <div class="col-md-2 search-btn-col">
             <button
               class="btn btn-primary w-100"
               style="height: 45px; background: #3b82f6; border: none"
@@ -354,7 +364,7 @@
     <div class="container my-md-5 my-4">
       <div class="row g-0">
         <div
-          class="col-md-12 d-flex align-items-center justify-content-start px-5 rounded-3"
+          class="col-md-12 d-flex align-items-center justify-content-start px-5 py-3 rounded-3"
           style="background-color: #fcefca"
         >
           <svg
@@ -362,7 +372,7 @@
             width="26"
             height="26"
             fill="currentColor"
-            class="me-3 bi bi-exclamation-triangle"
+            class="me-3 bi bi-exclamation-triangle flex-shrink-0"
             viewBox="0 0 16 16"
           >
             <path
@@ -374,8 +384,8 @@
           </svg>
 
           <p
-            class="text-center text-secondary"
-            style="font-size: 16px; margin-top: 20px"
+            class="text-secondary mb-0"
+            style="font-size: 16px;"
           >
             check the latest covid-19 restrictions before your travel.
             <a href="#" class="text-decoration-none text-primary">Learn more</a>
@@ -397,7 +407,7 @@
           and inspiration from us
         </p>
         <div class="row">
-          <div class="col-md-3 mb-3">
+          <div class="col-6 col-md-3 mb-3">
             <div class="card border-0 w-100">
               <img
                 src="img/l1.jpg"
@@ -417,13 +427,13 @@
               </div>
             </div>
           </div>
-          <div class="col-md-3 mb-3">
+          <div class="col-6 col-md-3 mb-3">
             <div class="card border-0 w-100">
               <img
                 src="img/l2.jpg"
                 class="card-img-top rounded-3"
                 style="height: 220px; object-fit: cover"
-                alt="Australia"
+                alt="Japan"
               />
 
               <div class="card-body p-0 mt-2">
@@ -435,13 +445,13 @@
               </div>
             </div>
           </div>
-          <div class="col-md-3 mb-3">
+          <div class="col-6 col-md-3 mb-3">
             <div class="card border-0 w-100">
               <img
                 src="img/l3.jpg"
                 class="card-img-top rounded-3"
                 style="height: 220px; object-fit: cover"
-                alt="Australia"
+                alt="New Zealand"
               />
 
               <div class="card-body p-0 mt-2">
@@ -455,13 +465,13 @@
               </div>
             </div>
           </div>
-          <div class="col-md-3 mb-3">
+          <div class="col-6 col-md-3 mb-3">
             <div class="card border-0 w-100">
               <img
                 src="img/l4.jpg"
                 class="card-img-top rounded-3"
                 style="height: 220px; object-fit: cover"
-                alt="Australia"
+                alt="Greece"
               />
 
               <div class="card-body p-0 mt-2 mb">
@@ -503,7 +513,7 @@
                   Lakeside Model Waterfront Resort and Hotels
                 </h6>
 
-                <p style="font-size: 16px;">Lorem ipsum dolor sit amet consectetur adipisicing elit.</br> Maiores alias impedit similique, ex</p>
+                <p style="font-size: 16px;">Lorem ipsum dolor sit amet consectetur adipisicing elit.<br> Maiores alias impedit similique, ex</p>
               </div>
             </div>
           </div>
@@ -530,7 +540,7 @@
                 <h6 class="mb-0 fw-semibold text-start mb-2" style="font-size: 20px">
                   Lakeside Model Waterfront Resort and Hotels
                 </h6>
-                <p style="font-size:16px"></p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores alias impedit similique, ex
+                <p style="font-size:16px">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores alias impedit similique, ex</p>
               </div>
             </div>
           </div>
@@ -557,7 +567,7 @@
                 <h6 class="mb-0 fw-semibold text-start mb-2" style="font-size: 20px">
                   Lakeside Model Waterfront Resort and Hotels
                 </h6>
-                <P style="font-size:16px">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores alias impedit similique, ex</P> 
+                <p style="font-size:16px">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores alias impedit similique, ex</p>
               </div>
             </div>
           </div>
@@ -567,13 +577,13 @@
       <div class="container mt-3 mb-3">
         <h4 class="fw-bold mb-3" style="font-size:28px;">Popular Hotels</h4>
         <div class="row">
-          <div class="col-md-3 mb-3">
+          <div class="col-6 col-md-3 mb-3">
             <div class="card border-0 w-100">
               <img
                 src="img/l5.jpg"
                 class="card-img-top rounded-3"
                 style="height: 220px; object-fit: cover"
-                alt="Australia"
+                alt="Lakeside Model Waterfront Resort"
               />
 
               <div class="card-body p-0 mt-2">
@@ -587,13 +597,13 @@
               </div>
             </div>
           </div>
-          <div class="col-md-3 mb-3">
+          <div class="col-6 col-md-3 mb-3">
             <div class="card border-0 w-100">
               <img
                 src="img/l6.jpg"
                 class="card-img-top rounded-3"
                 style="height: 220px; object-fit: cover"
-                alt="Australia"
+                alt="Reece Graham Resort"
               />
 
               <div class="card-body p-0 mt-2">
@@ -607,13 +617,13 @@
               </div>
             </div>
           </div>
-          <div class="col-md-3 mb-3">
+          <div class="col-6 col-md-3 mb-3">
             <div class="card border-0 w-100">
               <img
                 src="img/l7.jpg"
                 class="card-img-top rounded-3"
                 style="height: 220px; object-fit: cover"
-                alt="Australia"
+                alt="Fireside Dinners"
               />
 
               <div class="card-body p-0 mt-2">
@@ -627,13 +637,13 @@
               </div>
             </div>
           </div>
-          <div class="col-md-3 mb-3">
+          <div class="col-6 col-md-3 mb-3">
             <div class="card border-0 w-100">
               <img
                 src="img/l8.jpg"
                 class="card-img-top rounded-3"
                 style="height: 220px; object-fit: cover"
-                alt="Australia"
+                alt="Oculous in Stay"
               />
 
               <div class="card-body p-0 mt-2">
@@ -657,13 +667,14 @@
       <div class="container">
         <div class="row g-0">
           <div
-            class="col-md-12 position-relative rounded-3"
-            style="height: 300px; overflow: hidden"
+            class="col-md-12 position-relative rounded-3 hero2-banner"
+            style="overflow: hidden"
           >
             <!-- Background Image -->
             <img
               src="img/view.jpg"
               class="rounded-3"
+              alt="Scenic travel destination"
               style="
                 position: absolute;
                 top: 0;
@@ -685,7 +696,6 @@
                 top: 0;
                 left: 0;
                 width: 100%;
-                height: 300px;
                 background-color: rgba(78, 77, 77, 0.5);
                 border-radius: 8px;
                 z-index: 1;
@@ -700,7 +710,7 @@
                 top: 0;
                 left: 0;
                 width: 100%;
-                height: 300px;
+                height: 100%;
                 overflow: hidden;
                 z-index: 2;
                 pointer-events: none;
@@ -708,13 +718,13 @@
             >
               <img
                 src="img/phn.png"
+                alt=""
                 style="
                   width: 40%;
                   height: 450px;
                   object-fit: cover;
                   position: absolute;
                   top: -30px;
-                  left: 600px;
                   transform: rotate(-20deg);
                 "
               />
@@ -728,7 +738,7 @@
                 top: 0;
                 left: 0;
                 width: 100%;
-                height: 300px;
+                height: 100%;
                 padding: 20px;
               "
             >
@@ -761,14 +771,14 @@
     <footer class="mt-5">
       <div class="lists w-100">
         <div class="container">
-          <div class="row  ">
+          <div class="row footer-row">
             <div class="col-md">
               <ul class="list-unstyled">
                 <li>
                   <div class="d-flex align-items-center">
                     <img
                       src="img/Group.png"
-                      alt="plane"
+                      alt="my Dream Place logo"
                       width="25"
                       height="25"
                       style="margin-right: 8px"
@@ -797,7 +807,7 @@
                 </li>
               </ul>
             </div>
-            <div class="col-md " style="margin-left:100px;">
+            <div class="col-md footer-col-offset">
               <ul class="list-unstyled">
                 <li>
                   <h6

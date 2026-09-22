@@ -1,0 +1,119 @@
+@media(max-width:991px){
+
+.navbar-collapse{
+    position:absolute;
+    top:70px;
+    left:0;
+    width:100%;
+    background:white;
+    padding:20px;
+}
+
+
+
+}
+@media(max-width:767px){
+.home-collapse{
+
+    margin-top: 36px;
+    
+}
+
+
+
+}
+
+
+
+
+      .date-input::-webkit-calendar-picker-indicator {
+        display: none;
+      }
+
+      .date-input {
+        cursor: pointer;
+      }
+
+
+      .hero-image,
+      .hero .overlay {
+        height: 500px;
+      }
+      @media (max-width: 767.98px) {
+        .hero-image,
+        .hero .overlay {
+          height: 280px;
+        }
+        .hero .text h2 {
+          font-size: 1.4rem;
+        }
+        .hero .text p {
+          font-size: 0.9rem;
+        }
+      }
+
+
+      .search-field {
+        min-width: 160px;
+      }
+      @media (max-width: 767.98px) {
+        .search-btn-col {
+          width: 100%;
+        }
+      }
+
+      
+      .hero2-banner {
+        min-height: 300px;
+        height: auto;
+      }
+      .hero2-banner .overlay {
+        min-height: 300px;
+        height: 100%;
+      }
+     
+      .hero2-banner .hand {
+        display: none;
+      }
+      @media (min-width: 992px) {
+        .hero2-banner .hand {
+          display: block;
+        }
+        .hero2-banner .hand img {
+          left: 65% !important;
+        }
+      }
+      @media (max-width: 767.98px) {
+        .hero2-banner .text {
+          padding: 24px !important;
+        }
+        .hero2-banner .text h4 {
+          font-size: 1.15rem;
+        }
+      }
+
+      /* Success modal card: fixed 600px overflowed small screens */
+      .success-card {
+        width: 600px;
+        max-width: 100%;
+      }
+      @media (max-width: 575.98px) {
+        .success-card {
+          padding: 1.5rem !important;
+        }
+      }
+
+      /* Footer: the inline margin-left:100px on the 2nd column shoved
+         it off-screen on mobile instead of stacking naturally. Replaced
+         with a responsive gap on the row instead. */
+      .footer-row {
+        row-gap: 2rem;
+      }
+      .footer-col-offset {
+        margin-left: 0;
+      }
+      @media (min-width: 768px) {
+        .footer-col-offset {
+          margin-left: 60px;
+        }
+      }

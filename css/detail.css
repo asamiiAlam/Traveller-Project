@@ -1,0 +1,249 @@
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .date-input::-webkit-calendar-picker-indicator {
+        display: none;
+      }
+
+      .date-input {
+        cursor: pointer;
+      }
+    
+      /* =========================
+         Responsive detail page
+         ========================= */
+
+      html,
+      body {
+        max-width: 100%;
+        overflow-x: hidden;
+      }
+
+      img {
+        max-width: 100%;
+      }
+
+      .detail-tabs {
+        position: relative;
+        top: 24px;
+      }
+
+      .detail-gallery .col-md-8 > img {
+        min-height: 420px;
+      }
+
+      .detail-gallery .images img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+
+      /* Tablet + mobile navbar */
+      @media (max-width: 991.98px) {
+        .detail-navbar {
+          height: auto !important;
+          min-height: 70px;
+        }
+
+        .navbar .container {
+          display: grid;
+          grid-template-columns: 1fr auto auto;
+          align-items: center;
+          gap: 10px;
+        }
+
+        .navbar .container > .d-flex:first-child {
+          grid-column: 1;
+          grid-row: 1;
+        }
+
+        .nav-actions {
+          grid-column: 2;
+          grid-row: 1;
+        }
+
+        .navbar-toggler {
+          grid-column: 3;
+          grid-row: 1;
+        }
+
+        #navbarNav {
+          grid-column: 1 / -1;
+          grid-row: 2;
+          width: 100%;
+          background: #fff;
+          padding: 12px 0;
+        }
+
+        #navbarNav .navbar-nav {
+          gap: 4px !important;
+        }
+
+        .detail-gallery .col-md-8 > img {
+          min-height: 340px;
+        }
+
+        .detail-gallery .images img {
+          height: 160px;
+        }
+      }
+
+      @media (max-width: 767.98px) {
+        .container {
+          width: 100%;
+          padding-left: 16px;
+          padding-right: 16px;
+        }
+
+        .navbar-brand {
+          margin-right: 0;
+          font-size: 12px !important;
+        }
+
+        .nav-actions .bi-bell {
+          font-size: 1rem !important;
+        }
+
+        .nav-actions img {
+          width: 34px !important;
+          height: 34px !important;
+        }
+
+        /* Gallery */
+        .detail-gallery .col-md-8 > img {
+          height: 260px !important;
+          min-height: 260px;
+        }
+
+        .detail-gallery .images {
+          display: grid !important;
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .detail-gallery .images img {
+          height: 140px;
+          margin: 0 !important;
+        }
+
+        /* Tabs */
+        .detail-tabs {
+          top: 10px;
+        }
+
+        .detail-tabs .row {
+          flex-wrap: nowrap;
+          overflow: hidden;
+        }
+
+        .detail-tabs .btn {
+          white-space: nowrap;
+        }
+
+        /* Main hotel content */
+        .layer {
+          margin-top: 24px !important;
+        }
+
+        .layer h4 {
+          font-size: 25px !important;
+        }
+
+        .layer .card {
+          border-radius: 10px;
+        }
+
+        .layer .card p {
+          font-size: 14px !important;
+        }
+
+        /* Facilities */
+        .layer .col-6 {
+          padding-right: 6px;
+          padding-left: 6px;
+        }
+
+        .layer .col-6 span {
+          font-size: 13px !important;
+        }
+
+        /* Area card */
+        .layer .small > div {
+          gap: 12px;
+          align-items: flex-start;
+        }
+
+        .layer .small > div > span {
+          white-space: nowrap;
+        }
+
+        /* Availability */
+        .container.mt-5 > .container.mt-4 {
+          padding-left: 0;
+          padding-right: 0;
+        }
+
+        /* Room cards */
+        .row.justify-content-center.g-4.mt-3 > .col-12 > img {
+          height: 220px !important;
+        }
+
+        /* Covid notice */
+        .container.my-md-5.my-4 .col-md-12 {
+          padding: 14px 16px !important;
+          align-items: flex-start !important;
+        }
+
+        .container.my-md-5.my-4 .col-md-12 p {
+          text-align: left !important;
+          margin: 0 !important;
+          font-size: 14px !important;
+        }
+
+        /* Footer */
+        footer {
+          margin-top: 32px !important;
+        }
+
+        footer .last {
+          height: auto !important;
+          min-height: 48px;
+          padding: 10px 0;
+        }
+
+        footer .last p {
+          text-align: center;
+          font-size: 13px;
+        }
+      }
+
+      @media (max-width: 575.98px) {
+        .navbar .container {
+          padding-left: 12px;
+          padding-right: 12px;
+          gap: 7px;
+        }
+
+        .detail-gallery .col-md-8 > img {
+          height: 220px !important;
+          min-height: 220px;
+        }
+
+        .detail-gallery .images img {
+          height: 115px;
+        }
+
+        .detail-tabs .btn {
+          font-size: 12px;
+          padding-left: 8px;
+          padding-right: 8px;
+        }
+
+        footer .col-6 {
+          padding-right: 8px;
+        }
+      }
+

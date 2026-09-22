@@ -14,7 +14,7 @@
       integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
       crossorigin="anonymous"
     />
-      <link rel="stylesheet" href="css/style.css">
+     <link rel="stylesheet" href="css/style.css">
      <link rel="stylesheet" href="css/index.css">
       <link href="https://fonts.cdnfonts.com/css/sf-pro-display" rel="stylesheet">
     <style>
@@ -31,128 +31,255 @@
       .date-input {
         cursor: pointer;
       }
+    
+      /* =========================
+         Responsive detail page
+         ========================= */
+
+      html,
+      body {
+        max-width: 100%;
+        overflow-x: hidden;
+      }
+
+      img {
+        max-width: 100%;
+      }
+
+      .detail-tabs {
+        position: relative;
+        top: 24px;
+      }
+
+      .detail-gallery .col-md-8 > img {
+        min-height: 420px;
+      }
+
+      .detail-gallery .images img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+
+      /* Tablet + mobile navbar */
+      @media (max-width: 991.98px) {
+        .detail-navbar {
+          height: auto !important;
+          min-height: 70px;
+        }
+
+        .navbar .container {
+          display: grid;
+          grid-template-columns: 1fr auto auto;
+          align-items: center;
+          gap: 10px;
+        }
+
+        .navbar .container > .d-flex:first-child {
+          grid-column: 1;
+          grid-row: 1;
+        }
+
+        .nav-actions {
+          grid-column: 2;
+          grid-row: 1;
+        }
+
+        .navbar-toggler {
+          grid-column: 3;
+          grid-row: 1;
+        }
+
+        #navbarNav {
+          grid-column: 1 / -1;
+          grid-row: 2;
+          width: 100%;
+          background: #fff;
+          padding: 12px 0;
+        }
+
+        #navbarNav .navbar-nav {
+          gap: 4px !important;
+        }
+
+        .detail-gallery .col-md-8 > img {
+          min-height: 340px;
+        }
+
+        .detail-gallery .images img {
+          height: 160px;
+        }
+      }
+
+      @media (max-width: 767.98px) {
+        .container {
+          width: 100%;
+          padding-left: 16px;
+          padding-right: 16px;
+        }
+
+        .navbar-brand {
+          margin-right: 0;
+          font-size: 12px !important;
+        }
+
+        .nav-actions .bi-bell {
+          font-size: 1rem !important;
+        }
+
+        .nav-actions img {
+          width: 34px !important;
+          height: 34px !important;
+        }
+
+        /* Gallery */
+        .detail-gallery .col-md-8 > img {
+          height: 260px !important;
+          min-height: 260px;
+        }
+
+        .detail-gallery .images {
+          display: grid !important;
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .detail-gallery .images img {
+          height: 140px;
+          margin: 0 !important;
+        }
+
+        /* Tabs */
+        .detail-tabs {
+          top: 10px;
+        }
+
+        .detail-tabs .row {
+          flex-wrap: nowrap;
+          overflow: hidden;
+        }
+
+        .detail-tabs .btn {
+          white-space: nowrap;
+        }
+
+        /* Main hotel content */
+        .layer {
+          margin-top: 24px !important;
+        }
+
+        .layer h4 {
+          font-size: 25px !important;
+        }
+
+        .layer .card {
+          border-radius: 10px;
+        }
+
+        .layer .card p {
+          font-size: 14px !important;
+        }
+
+        /* Facilities */
+        .layer .col-6 {
+          padding-right: 6px;
+          padding-left: 6px;
+        }
+
+        .layer .col-6 span {
+          font-size: 13px !important;
+        }
+
+        /* Area card */
+        .layer .small > div {
+          gap: 12px;
+          align-items: flex-start;
+        }
+
+        .layer .small > div > span {
+          white-space: nowrap;
+        }
+
+        /* Availability */
+        .container.mt-5 > .container.mt-4 {
+          padding-left: 0;
+          padding-right: 0;
+        }
+
+        /* Room cards */
+        .row.justify-content-center.g-4.mt-3 > .col-12 > img {
+          height: 220px !important;
+        }
+
+        /* Covid notice */
+        .container.my-md-5.my-4 .col-md-12 {
+          padding: 14px 16px !important;
+          align-items: flex-start !important;
+        }
+
+        .container.my-md-5.my-4 .col-md-12 p {
+          text-align: left !important;
+          margin: 0 !important;
+          font-size: 14px !important;
+        }
+
+        /* Footer */
+        footer {
+          margin-top: 32px !important;
+        }
+
+        footer .last {
+          height: auto !important;
+          min-height: 48px;
+          padding: 10px 0;
+        }
+
+        footer .last p {
+          text-align: center;
+          font-size: 13px;
+        }
+      }
+
+      @media (max-width: 575.98px) {
+        .navbar .container {
+          padding-left: 12px;
+          padding-right: 12px;
+          gap: 7px;
+        }
+
+        .detail-gallery .col-md-8 > img {
+          height: 220px !important;
+          min-height: 220px;
+        }
+
+        .detail-gallery .images img {
+          height: 115px;
+        }
+
+        .detail-tabs .btn {
+          font-size: 12px;
+          padding-left: 8px;
+          padding-right: 8px;
+        }
+
+        footer .col-6 {
+          padding-right: 8px;
+        }
+      }
+
     </style>
   </head>
   <body>
-<!--success Modal-->
-<div class="modal fade" id="bookingSuccessModal" tabindex="-1">
-
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content bg-transparent border-0">
-
-      <div class="container bg-transparent p-0 d-flex justify-content-center align-items-center">
-
-        <!-- Card -->
-        <div class="card success-card shadow-sm text-center">
-
-          <!-- Success Image -->
-          <div class="d-flex justify-content-center">
-            <img
-              src="img/booking.png"
-              class="success-image p-2"
-              alt="Booking Successful">
-          </div>
-
-          <!-- Title -->
-          <h2 class="success-title mb-0">
-            Booking Successful
-          </h2>
-
-          <!-- Description -->
-          <p class="success-message mt-2 mb-0">
-            Congratulations your reservation has been made.<br>
-            You will be notified 2 days prior the date.
-          </p>
-
-          <!-- Button -->
-          <a href="detail.html" class="btn btn-primary  mt-3 view-btn">
-            View Trip
-          </a>
-
-        </div>
-
-      </div>
-
-    </div>
-  </div>
-</div>
-
-
-<!--success Modal-->
-
-
-<!--entry Modal-->
-<div class="modal fade mt-4" id="welcomeModal" tabindex="-1">
-
-  <div class="modal-dialog">
-    <div class="modal-content bg-transparent border-0">
-
-      <div class="container bg-transparent p-0 d-flex justify-content-center align-items-start "
-       
-      >
-          
-        <!-- Card -->
-        <div class="card rounded-4 text-center shadow-sm p-4 w-100">
-
-          <!-- Image -->
-          <div
-            class="d-flex justify-content-center p-3 mb-4"
-            style="background-color:#2F80ED4D; border-radius:40%;"
-          >
-
-            <img
-              src="img/f1.png"
-              class="img-fluid"
-              style="width:100px;"
-              alt="Welcome"
-            >
-
-            <img
-              src="img/f2.png"
-              class="img-fluid"
-              alt="Welcome"
-            >
-
-          </div>
-
-          <h3 class="fw-semibold mt-5">
-            Welcome to My Dream Place
-          </h3>
-
-          <p class="text-secondary fs-5 mt-3">
-            You can now enjoy your travel experience with
-            <br>
-            easy access to resources and more
-          </p>
-
-          <a
-            href="index.html"
-            class="btn btn-primary w-100 py-3 mt-4 rounded-2"
-          >
-            Get Started
-          </a>
-
-        </div>
-
-      </div>
-
-    </div>
-  </div>
-
-</div>
-<!--entry Modal-->
     <div
-      class="container-navbar"
+      class="container-navbar detail-navbar"
       style="
         background-color: #ffffff;
         height: 70px;
         display: flex;
         align-items: center;
-        padding: 12px;;
       "
     >
       <!--Navbar -->
-      <nav class="navbar navbar-expand-lg w-100 h-100 mb-md-0 mb-3">
+      <nav class="navbar navbar-expand-lg w-100 h-100">
         <div class="container position-relative">
           <!-- Logo -->
           <div class="d-flex align-items-center">
@@ -184,9 +311,9 @@
 
           <!-- Menu -->
           <div
-            class="collapse navbar-collapse "
+            class="collapse navbar-collapse"
             id="navbarNav"
-            style="z-index: 1000;margin-top: 36px"
+            style="z-index: 1000"
           >
             <ul class="navbar-nav mx-auto text-center" style="gap: 25px">
               <li class="nav-item">
@@ -212,601 +339,636 @@
           </div>
 
           <!-- Right side -->
-          <div class="d-flex align-items-center justify-content-end gap-2 mt-3 mt-md-0 ">
-              <a
-              href="Register.html"
-              class="btn btn-outline-primary  btn-no-hover px-3 py-2 ms-2"
-              style="border-color: #3b82f6; color: #3b82f6"
-              >Register</a>
-            
-            <a
-              href="sign-in.html"
-              class="btn btn-primary  btn-no-hover px-3 py-2"
-              style="background: #3b82f6; border: none"
-              >Sign In</a
-            >   
-        
-            
-          </div>
+<!-- Right side -->
+<div class="nav-actions d-flex align-items-center">
+
+    <!-- Notification -->
+    <div class="position-relative me-3">
+        <i class="bi bi-bell text-secondary fs-5"></i>
+    </div>
+
+
+    <!-- User Dropdown -->
+    <div class="dropdown">
+
+        <button
+            class="btn p-0 border-0 bg-transparent"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false">
+
+            <img
+                src="img/user.png"
+                width="40"
+                height="40"
+                class="rounded-circle"
+                style="object-fit:cover; cursor:pointer;"
+            >
+
+        </button>
+
+
+        <ul class="dropdown-menu dropdown-menu-end shadow rounded-3 p-0"
+            style="width:230px; overflow:hidden;">
+
+
+            <li>
+                <a class="dropdown-item py-3 d-flex align-items-center gap-3"
+                   href="#">
+                    <i class="bi bi-person-circle fs-5 text-secondary"></i>
+                    <span>Manage account</span>
+                </a>
+            </li>
+
+
+            <li>
+                <hr class="dropdown-divider m-0">
+            </li>
+
+
+            <li>
+                <a class="dropdown-item py-3 d-flex align-items-center gap-3"
+                   href="mytrips.html">
+                    <i class="bi bi-airplane fs-5 text-secondary"></i>
+                    <span>My trips</span>
+                </a>
+            </li>
+
+
+            <li>
+                <hr class="dropdown-divider m-0">
+            </li>
+
+
+            <li>
+                <a class="dropdown-item py-3 d-flex align-items-center gap-3"
+                   href="#">
+                    <i class="bi bi-wallet2 fs-5 text-secondary"></i>
+                    <span>Reward and wallet</span>
+                </a>
+            </li>
+
+
+            <li>
+                <hr class="dropdown-divider m-0">
+            </li>
+
+
+            <li>
+                <a class="dropdown-item py-3 d-flex align-items-center gap-3 text-danger"
+                   href="index.html">
+                    <i class="bi bi-box-arrow-right fs-5"></i>
+                    <span>Sign out</span>
+                </a>
+            </li>
+             <li>
+                <a class="dropdown-item py-3 d-flex align-items-center gap-3 text-secondary"
+                   href="checkout-page.html">
+                    <i class="bi bi-gear fs-5"></i>
+                    <span>Check out</span>
+                </a>
+            </li>
+
+
+
+        </ul>
+
+    </div>
+
+</div>
         </div>
       </nav>
     </div>
 
     <!--hero section -->
-    <div class="hero mt-5 mb-md-0 mb-2">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12 position-relative">
+    <div class="container mt-4 mt-md-5 detail-gallery">
+      <div class="row g-3">
+        <div class="col-12 col-md-8">
+          <img
+            src="img/d1.png"
+            class="img-fluid rounded-3 mb-md-0 mb-3"
+            alt="hero image"
+            style="
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              object-position: center;
+            "
+          />
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="images d-flex d-md-block gap-3">
             <img
-              src="img/sydney.jpg"
-              alt="Hero Image"
-              class="img-fluid rounded"
-              style="
-                width: 100%;
-                object-fit: cover;
-                object-position: center;
-                height: 500px;
-              "
+              src="img/d2.png"
+              class="img-fluid rounded-3 mb-3 mt-md-0 mt-3"
+              alt="image 1"
+              style="object-fit: cover; object-position: center"
             />
-
-            <!-- Overlay -->
-            <div
-              class="overlay"
-              style="
-                position: absolute;
-                top: 0;
-                left: 12px;
-                width: calc(100% - 24px);
-                height: 500px;
-                background-color: rgba(78, 77, 77, 0.5);
-                border-radius: 8px;
-                z-index: 1;
-              "
-            ></div>
-
-            <!-- Text -->
-            <div
-              class="text position-absolute top-50 start-50 translate-middle text-center"
-              style="z-index: 2; width: 80%"
-            >
-              <h1 class="text-white">Enjoy Your Dream Vacation</h1>
-
-              <p class="text-white width-50">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem
-                ipsum dolor<br />
-                sit amet consectetur adipisicing elit.
-              </p>
-            </div>
+            <img
+              src="img/d3.png"
+              class="img-fluid rounded-3"
+              alt="image 2"
+              style="object-fit: cover; object-position: center"
+            />
           </div>
         </div>
       </div>
     </div>
-    <!--search-bar-->
-    <div class="container position-relative search">
-      <div
-        class="bg-white shadow rounded-3 p-2 position-md-absolute position-relative start-50 translate-middle-x"
-        style="top: -35px; width: 95%; z-index: 10"
+    <!--buttons-->
+    <div class="container detail-tabs"
+    >
+      <div class="row mt-4 g-2"
       >
-        <div class="row g-0 align-items-center">
-
-         <div class="col-md-10 d-flex flex-wrap gap-2 gap-md-0 align-items-center">
-                  <!-- Location -->
-          <div class="col-md">
-            <div
-              class="d-flex align-items-center bg-light rounded-2 px-3"
-              style="height: 45px"
-            >
-              <label for="location" class="me-2">
-                <i class="bi bi-geo-alt text-secondary"></i>
-              </label>
-
-              <input
-                type="text"
-                id="location"
-                class="form-control border-0 bg-transparent shadow-none"
-                placeholder="Where are you going?"
-                style="color: #777"
-              />
-            </div>
-          </div>
-
-          <!-- Check in -->
-          <div class="col-md">
-            <div
-              class="d-flex align-items-center bg-light rounded-2 px-3"
-              style="height: 45px"
-            >
-              <label for="checkin" class="me-2" style="cursor: pointer">
-                <i class="bi bi-calendar3 text-secondary"></i>
-              </label>
-
-              <input
-                type="text"
-                id="checkin"
-                placeholder="check in date"
-                onfocus="this.type = 'date'"
-                class="form-control border-0 bg-transparent shadow-none date-input"
-                style="color: #777"
-              />
-            </div>
-          </div>
-
-          <!-- Check out -->
-          <div class="col-md">
-            <div
-              class="d-flex align-items-center bg-light rounded-2 px-3"
-              style="height: 45px"
-            >
-              <label for="checkout" class="me-2" style="cursor: pointer">
-                <i class="bi bi-calendar3 text-secondary"></i>
-              </label>
-
-              <input
-                type="text"
-                id="checkout"
-                placeholder="check out date"
-                onfocus="this.type = 'date'"
-                class="form-control border-0 bg-transparent shadow-none date-input"
-                style="color: #777"
-              />
-            </div>
-          </div>
-
-          <!-- Guests -->
-          <div class="col-md-3">
-            <div
-              class="d-flex align-items-center bg-light rounded-2 px-3"
-              style="height: 45px"
-            >
-              <label for="guests" class="me-2">
-                <i class="bi bi-person text-secondary"></i>
-              </label>
-
-              <input
-                type="number"
-                id="guests"
-                class="form-control border-0 bg-transparent shadow-none"
-                placeholder="Guests"
-                min="1"
-                max="100"
-                style="color: #777"
-              />
-            </div>
-          </div>
-         
-
-         </div>
-
-          <!-- Search Button -->
-            <div class="col-md-2">
-            <button
-              class="btn btn-primary w-100"
-              style="height: 45px; background: #3b82f6; border: none"
-            >
-              Search
-            </button>
-          </div>
-     
-        </div>
-
-      </div>
+        <div class="col-auto">
+          <button type="button" class="btn btn-sm"
+          style="border-bottom: 3px solid #0d6efd; border-radius:0;"
           
-    </div>
-
-    <!--search-bar-->
-    <!--Covid Section-->
-    <div class="container my-md-5 my-4">
-      <div class="row g-0">
-        <div
-          class="col-md-12 d-flex align-items-center justify-content-start px-5 rounded-3"
-          style="background-color: #fcefca"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="26"
-            height="26"
-            fill="currentColor"
-            class="me-3 bi bi-exclamation-triangle"
-            viewBox="0 0 16 16"
-          >
-            <path
-              d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.15.15 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.2.2 0 0 1-.054.06.1.1 0 0 1-.066.017H1.146a.1.1 0 0 1-.066-.017.2.2 0 0 1-.054-.06.18.18 0 0 1 .002-.183L7.884 2.073a.15.15 0 0 1 .054-.057m1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767z"
-            />
-            <path
-              d="M7.002 12a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 5.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z"
-            />
-          </svg>
-
-          <p
-            class="text-center text-secondary"
-            style="font-size: 16px; margin-top: 20px"
-          >
-            check the latest covid-19 restrictions before your travel.
-            <a href="#" class="text-decoration-none text-primary">Learn more</a>
-          </p>
+          >Overview</button>
         </div>
-      </div>
-    </div>
-    <!--Covid Section-->
-    <!--hero section -->
- 
+        
 
-    <!--Explore the world Part-->
-
-       <div class="hero">
-      <div class="container mt-3 mb-3">
-        <h4 class="fw-bold">Enjoy Touring the World</h4>
-        <p class="text-secondary fw-semibold" style="font-size: 12px">
-          plan and book your perfecrt trip travel,destination and experiences<br />
-          and inspiration from us
-        </p>
-        <div class="row">
-          <div class="col-md-3 mb-3">
-            <div class="card border-0 w-100">
-              <img
-                src="img/l1.jpg"
-                class="card-img-top rounded-3"
-                style="height: 220px; object-fit: cover"
-                alt="Australia"
-              />
-
-              <div class="card-body p-0 mt-2">
-                <h6 class="mb-1 fw-semibold" style="font-size: 14px">
-                  Australia
-                </h6>
-
-                <p class="text-muted mb-0" style="font-size: 11px">
-                  2246 properties
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3 mb-3">
-            <div class="card border-0 w-100">
-              <img
-                src="img/l2.jpg"
-                class="card-img-top rounded-3"
-                style="height: 220px; object-fit: cover"
-                alt="Australia"
-              />
-
-              <div class="card-body p-0 mt-2">
-                <h6 class="mb-1 fw-semibold" style="font-size: 14px">Japan</h6>
-
-                <p class="text-muted mb-0" style="font-size: 11px">
-                  2246 properties
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3 mb-3">
-            <div class="card border-0 w-100">
-              <img
-                src="img/l3.jpg"
-                class="card-img-top rounded-3"
-                style="height: 220px; object-fit: cover"
-                alt="Australia"
-              />
-
-              <div class="card-body p-0 mt-2">
-                <h6 class="mb-1 fw-semibold" style="font-size: 14px">
-                  New Zealand
-                </h6>
-
-                <p class="text-muted mb-0" style="font-size: 11px">
-                  2246 properties
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3 mb-3">
-            <div class="card border-0 w-100">
-              <img
-                src="img/l4.jpg"
-                class="card-img-top rounded-3"
-                style="height: 220px; object-fit: cover"
-                alt="Australia"
-              />
-
-              <div class="card-body p-0 mt-2 mb">
-                <h6 class="mb-1 fw-semibold" style="font-size: 14px">Greece</h6>
-
-                <p class="text-muted mb-0" style="font-size: 11px">
-                  2246 properties
-                </p>
-              </div>
-            </div>
-          </div>
+        <div class="col-auto">
+          <button type="button" class="btn btn-sm">Rooms</button>
         </div>
-      </div>
-      <!--inspiration-->
-      <div class="container mt-3 mb-3">
-        <h4 class="fw-bold mb-4">Get inspiration For Your Next Trip</h4>
-        <div class="row">
-          <div class="col-md-4 mb-3">
-            <div class="card border-0 w-100 position-relative overflow-hidden">
-              <img
-                src="img/ll.jpg"
-                class="card-img-top rounded-3"
-                style="height: 220px; object-fit: cover"
-                alt="Lakeside Resort"
-              />
 
-              <!-- Overlay -->
-              <div
-                class="position-absolute top-0 start-0 w-100 h-100 rounded-3"
-                style="background: rgba(0, 0, 0, 0.35)"
-              ></div>
-
-              <!-- Text on image -->
-              <div
-                class="position-absolute bottom-0 start-0 p-3 text-white"
-                style="z-index: 2"
-              >
-                <h6 class="mb-0 fw-semibold text-start mb-2">
-                  Lakeside Model Waterfront Resort and Hotels
-                </h6>
-
-                <p style="font-size: 12px;">Lorem ipsum dolor sit amet consectetur adipisicing elit.</br> Maiores alias impedit similique, ex</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 mb-3">
-            <div class="card border-0 w-100 position-relative overflow-hidden">
-              <img
-                src="img/ll2.jpg"
-                class="card-img-top rounded-3"
-                style="height: 220px; object-fit: cover"
-                alt="Lakeside Resort"
-              />
-
-              <!-- Overlay -->
-              <div
-                class="position-absolute top-0 start-0 w-100 h-100 rounded-3"
-                style="background: rgba(0, 0, 0, 0.35)"
-              ></div>
-
-              <!-- Text on image -->
-              <div
-                class="position-absolute bottom-0 start-0 p-3 text-white"
-                style="z-index: 2"
-              >
-                <h6 class="mb-0 fw-semibold text-start mb-2" style="font-size: 14px">
-                  Lakeside Model Waterfront Resort and Hotels
-                </h6>
-                <p></p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores alias impedit similique, ex
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4 mb-3">
-             <div class="card border-0 w-100 position-relative overflow-hidden">
-              <img
-                src="img/ll3.jpg"
-                class="card-img-top rounded-3"
-                style="height: 220px; object-fit: cover"
-                alt="Lakeside Resort"
-              />
-
-              <!-- Overlay -->
-              <div
-                class="position-absolute top-0 start-0 w-100 h-100 rounded-3"
-                style="background: rgba(0, 0, 0, 0.35)"
-              ></div>
-
-              <!-- Text on image -->
-              <div
-                class="position-absolute bottom-0 start-0 p-3 text-white"
-                style="z-index: 2"
-              >
-                <h6 class="mb-0 fw-semibold text-start mb-2" style="font-size: 14px">
-                  Lakeside Model Waterfront Resort and Hotels
-                </h6>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores alias impedit similique, ex
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!--popular Hotels-->
-      <div class="container mt-3 mb-3">
-        <h4 class="fw-bold mb-3">Popular Hotels</h4>
-        <div class="row">
-          <div class="col-md-3 mb-3">
-            <div class="card border-0 w-100">
-              <img
-                src="img/l5.jpg"
-                class="card-img-top rounded-3"
-                style="height: 220px; object-fit: cover"
-                alt="Australia"
-              />
-
-              <div class="card-body p-0 mt-2">
-                <h6 class="mb-1 fw-semibold" style="font-size: 14px">
-                  Lakeside Model Waterfront Resort
-                </h6>
-
-                <p class="text-muted mb-0" style="font-size: 11px">
-                  2246 properties
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3 mb-3">
-            <div class="card border-0 w-100">
-              <img
-                src="img/l6.jpg"
-                class="card-img-top rounded-3"
-                style="height: 220px; object-fit: cover"
-                alt="Australia"
-              />
-
-              <div class="card-body p-0 mt-2">
-                <h6 class="mb-1 fw-semibold" style="font-size: 14px">
-                  Reece Graham Resort
-                </h6>
-
-                <p class="text-muted mb-0" style="font-size: 11px">
-                  2246 properties
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3 mb-3">
-            <div class="card border-0 w-100">
-              <img
-                src="img/l7.jpg"
-                class="card-img-top rounded-3"
-                style="height: 220px; object-fit: cover"
-                alt="Australia"
-              />
-
-              <div class="card-body p-0 mt-2">
-                <h6 class="mb-1 fw-semibold" style="font-size: 14px">
-                  Fireside Dinners
-                </h6>
-
-                <p class="text-muted mb-0" style="font-size: 11px">
-                  2246 properties
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3 mb-3">
-            <div class="card border-0 w-100">
-              <img
-                src="img/l8.jpg"
-                class="card-img-top rounded-3"
-                style="height: 220px; object-fit: cover"
-                alt="Australia"
-              />
-
-              <div class="card-body p-0 mt-2">
-                <h6 class="mb-1 fw-semibold" style="font-size: 14px">
-                  Oculous in Stay
-                </h6>
-
-                <p class="text-muted mb-0" style="font-size: 11px">
-                  2246 properties
-                </p>
-              </div>
-            </div>
-          </div>
+        <div class="col-auto">
+          <button type="button" class="btn btn-sm">Guest Reviews</button>
         </div>
       </div>
     </div>
 
-
-    <!--view-->
-    <div class="hero2 mb-md-5 mb-5">
-      <div class="container">
-        <div class="row g-0">
-          <div
-            class="col-md-12 position-relative rounded-3"
-            style="height: 300px; overflow: hidden"
-          >
-            <!-- Background Image -->
-            <img
-              src="img/view.jpg"
-              class="rounded-3"
-              style="
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                object-position: center;
-                transform: scaleX(-1);
-                z-index: 0;
-              "
-            />
-
-            <!-- Dark Overlay -->
-            <div
-              class="overlay"
-              style="
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 300px;
-                background-color: rgba(78, 77, 77, 0.5);
-                border-radius: 8px;
-                z-index: 1;
-              "
-            ></div>
-
-            <!-- Phone Image -->
-            <div
-              class="hand"
-              style="
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 300px;
-                overflow: hidden;
-                z-index: 2;
-                pointer-events: none;
-              "
-            >
-              <img
-                src="img/phn.png"
-                style="
-                  width: 40%;
-                  height: 450px;
-                  object-fit: cover;
-                  position: absolute;
-                  top: -30px;
-                  left: 600px;
-                  transform: rotate(-20deg);
-                "
-              />
-            </div>
-
-            <!-- Text -->
-            <div
-              class="text position-absolute d-flex flex-column justify-content-center text-md-start text-center p-md-5 p-3"
-              style="
-                z-index: 3;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 300px;
-                padding: 20px;
-              "
-            >
-              <h4 class="text-white mb-4">
-                Download the mobile application for bonuses<br />
-                Get exclusive deals and offers
+    <div
+      class="layer mt-5"
+      style="
+        background-color: rgb(245, 240, 240);
+        border-top: 1px solid #fbf9f9;
+      "
+    >
+      <!--second part-->
+      <div class="container mt-3">
+        <div class="row">
+          <div class="col-12 col-lg-8 mb-4 mb-lg-5">
+            <div class="card border-0 shadow-sm p-3">
+              <!-- Hotel Title -->
+              <h4 class="fw-bold mb-1" style="font-size: 32px">
+                Lakeside Motel Waterfront
               </h4>
 
-              <button
-                type="submit"
-                class="btn btn-primary px-md-3 py-md-2 mb-3 ms-md-0 ms-5 px-5 py-2"
-                style="width: max-content"
+              <!-- Rating -->
+              <div class="d-flex align-items-center mb-2">
+                <div class="text-warning me-2" style="font-size: 14px">
+                  ★★★★★
+                </div>
+
+                <span class="text-muted" style="font-size: 12px">
+                  4.5 (1200 Reviews)
+                </span>
+              </div>
+
+              <!-- Location -->
+              <div class="d-flex align-items-center mb-3">
+                <i class="bi bi-geo-alt-fill text-primary me-2"></i>
+
+                <span class="text-muted" style="font-size: 14px">
+                  Lorem ipsum road, Tranium-2322, Melbourne, Australia
+                </span>
+              </div>
+
+              <hr />
+
+              <!-- Overview -->
+              <h6 class="fw-semibold mb-3" style="font-size: 14px">Overview</h6>
+
+              <p
+                class="text-muted mb-3"
+                style="font-size: 16px; line-height: 1.6"
               >
-                Download mobile app
-              </button>
+                Featuring free WiFi throughout the property, Lakeside Motel
+                Waterfront offers accommodations in Lakes Entrance. Free private
+                parking is available on site.
+              </p>
+
+              <p
+                class="text-muted mb-3"
+                style="font-size: 16px; line-height: 1.6"
+              >
+                Each room at this motel is air conditioned and comes with a
+                flat-screen TV. You will find a kettle, a microwave and a
+                refrigerator in the room. Each room has a private bathroom.
+              </p>
+
+              <p
+                class="text-muted mb-3"
+                style="font-size: 16px; line-height: 1.6"
+              >
+                Couples in particular like the location — they rated it 9.2 for
+                a two-person trip.
+              </p>
+
+              <hr />
+
+              <!-- Facilities -->
+              <h6 class="fw-semibold mb-3" style="font-size: 14px">
+                Top facilities
+              </h6>
+
+              <div class="row">
+                <div class="col-6">
+                  <div class="d-flex align-items-center mb-3">
+                    <i class="bi bi-wifi text-primary me-3"></i>
+                    <span style="font-size: 15px">Free wifi</span>
+                  </div>
+
+                  <div class="d-flex align-items-center mb-3">
+                    <i class="bi bi-snow text-primary me-3"></i>
+                    <span style="font-size: 15px">Air Conditioning</span>
+                  </div>
+
+                  <div class="d-flex align-items-center">
+                    <i class="bi bi-car-front text-primary me-3"></i>
+                    <span style="font-size: 15px">Parking available</span>
+                  </div>
+                </div>
+
+                <div class="col-6">
+                  <div class="d-flex align-items-center mb-3">
+                    <i class="bi bi-briefcase text-primary me-3"></i>
+                    <span style="font-size: 15px">Business Services</span>
+                  </div>
+
+                  <div class="d-flex align-items-center mb-3">
+                    <i class="bi bi-water text-primary me-3"></i>
+                    <span style="font-size: 15px">Swimming pool</span>
+                  </div>
+
+                  <div class="d-flex align-items-center">
+                    <i class="bi bi-hand-thumbs-up text-primary me-3"></i>
+                    <span style="font-size: 15px">Top rated in area</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-lg-4">
+            <div class="card border-0 w-100">
+              <!-- Map Image -->
+              <img
+                src="img/map.png"
+                class="rounded-3 img-fluid w-100"
+                style="height: 250px; object-fit: cover"
+                alt="map"
+              />
+
+              <div class="card-body p-4 mt-3">
+                <!-- Title -->
+                <h6 class="fw-semibold mb-3" style="font-size: 14px">
+                  Explore the area
+                </h6>
+
+                <!-- Location list -->
+                <div class="small">
+                  <div class="d-flex justify-content-between mb-2">
+                    <div class="d-flex align-items-center">
+                      <i
+                        class="bi bi-airplane-fill me-2 text-bold"
+                        style="font-size: 11px"
+                      ></i>
+                      <span>Hotel Pennsylvania</span>
+                    </div>
+                    <span class="text-muted">2 min drive</span>
+                  </div>
+
+                  <div class="d-flex justify-content-between mb-2">
+                    <div class="d-flex align-items-center">
+                      <i
+                        class="bi bi-geo-alt-fill me-2 text-bold"
+                        style="font-size: 11px"
+                      ></i>
+                      <span>Travis Bakery store house</span>
+                    </div>
+                    <span class="text-muted">10 min drive</span>
+                  </div>
+
+                  <div class="d-flex justify-content-between mb-2">
+                    <div class="d-flex align-items-center">
+                      <i
+                        class="bi bi-geo-alt-fill me-2 text-bold"
+                        style="font-size: 11px"
+                      ></i>
+                      <span>Olivia Johnson Garden</span>
+                    </div>
+                    <span class="text-muted">15 min drive</span>
+                  </div>
+
+                  <div class="d-flex justify-content-between mb-2">
+                    <div class="d-flex align-items-center">
+                      <i
+                        class="bi bi-geo-alt-fill me-2 text-bold"
+                        style="font-size: 11px"
+                      ></i>
+                      <span>Norman Opera Circus</span>
+                    </div>
+                    <span class="text-muted">18 min drive</span>
+                  </div>
+
+                  <div class="d-flex justify-content-between">
+                    <div class="d-flex align-items-center">
+                      <i
+                        class="bi bi-geo-alt-fill me-2 text-bold"
+                        style="font-size: 11px"
+                      ></i>
+                      <span>Rockhardt Hotel</span>
+                    </div>
+                    <span class="text-muted">32 min drive</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <!--view-->
-    <div
-      class="container d-flex flex-column align-items-center justify-content-center text-center mb-md-0 mb-5"
-    >
-      <h1 class="mt-md-0 mt-3 mb-3">Explore the World with Dream place</h1>
-      <p class="text-primary">Discover amazing destinations and experiences.</p>
-    </div>
+      <!--second part-->
 
-    <!--footer-->
+      <!--available rooms-->
+      <div class="container mt-5">
+        <h5>Available rooms</h5>
+        <div class="container mt-4">
+          <div class="bg-white shadow-sm rounded-3 p-2">
+            <div class="row g-2 align-items-center px-2 px-md-3">
+              <!-- Check in -->
+              <div class="col-12 col-sm-6 col-lg-3">
+                <div
+                  class="d-flex align-items-center bg-light rounded-2 px-2"
+                  style="height: 45px"
+                >
+                  <i class="bi bi-calendar3 text-secondary me-2"></i>
+
+                  <input
+                    type="date"
+                    class="form-control border-0 bg-transparent shadow-none"
+                    value="2022-03-18"
+                    style="font-size: 12px; color: #777"
+                  />
+                </div>
+              </div>
+
+              <!-- Check out -->
+              <div class="col-12 col-sm-6 col-lg-3">
+                <div
+                  class="d-flex align-items-center bg-light rounded-2 px-3"
+                  style="height: 45px"
+                >
+                  <i class="bi bi-calendar3 text-secondary me-2"></i>
+
+                  <input
+                    type="date"
+                    class="form-control border-0 bg-transparent shadow-none"
+                    value="2022-03-20"
+                    style="font-size: 12px; color: #777"
+                  />
+                </div>
+              </div>
+
+              <!-- Guests -->
+              <div class="col-12 col-sm-6 col-lg-3">
+                <div
+                  class="d-flex align-items-center bg-light rounded-2 px-3"
+                  style="height: 45px"
+                >
+                  <i class="bi bi-person-circle text-secondary me-2"></i>
+
+                  <input
+                    type="text"
+                    class="form-control border-0 bg-transparent shadow-none"
+                    value="2 adult, 1 room"
+                    style="font-size: 12px; color: #777"
+                  />
+                </div>
+              </div>
+
+              <!-- Button -->
+              <div class="col-12 col-sm-6 col-lg-3">
+                <button
+                  class="btn btn-primary w-100"
+                  style="
+                    height: 45px;
+                    font-size: 12px;
+                    background: #3b82f6;
+                    border: none;
+                    white-space: nowrap;
+                  "
+                >
+                  Check Availability
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-center g-4 mt-3">
+          <div class="col-12 col-md-4">
+            <img
+              src="img/sc1.png"
+              class="img-fluid rounded-3"
+              alt="image 1"
+              style="
+                width: 100%;
+                height: 300px;
+                object-fit: cover;
+                object-position: center;
+              "
+            />
+          </div>
+          <div class="col-12 col-md-4">
+            <div class="card border-0 shadow-sm rounded-3 overflow-hidden h-100">
+              <!-- Image -->
+              <img
+                src="img/r1.png"
+                class="card-img-top"
+                style="height: 150px; object-fit: cover"
+                alt="room"
+              />
+
+              <!-- Content -->
+              <div class="card-body p-3">
+                <!-- Title -->
+                <h6 class="fw-semibold mb-3" style="font-size: 18px">
+                  Standard twin bed Multiple beds
+                </h6>
+
+                <!-- Details -->
+
+                <div class="d-flex align-items-center mb-2">
+                  <i
+                    class="bi bi-rulers text-secondary me-2"
+                    style="font-size: 14px"
+                  >
+                  </i>
+
+                  <span class="text-secondary" style="font-size: 14px">
+                    300 sq ft
+                  </span>
+                </div>
+
+                <div class="d-flex align-items-center mb-2">
+                  <i
+                    class="bi bi-globe2 text-secondary me-2"
+                    style="font-size: 14px"
+                  >
+                  </i>
+
+                  <span class="text-secondary" style="font-size: 14px">
+                    Sleeps 3
+                  </span>
+                </div>
+
+                <div class="d-flex align-items-center mb-3">
+                  <i
+                    class="bi bi-hand-thumbs-up text-secondary me-2"
+                    style="font-size: 14px"
+                  >
+                  </i>
+
+                  <span class="text-secondary" style="font-size: 14px">
+                    1 double bed and 1 twin bed
+                  </span>
+                </div>
+
+                <!-- Button -->
+
+                <a href="checkout-page.html"
+                  class="btn btn-primary w-100"
+                  style="
+                    height: 35px;
+                    font-size: 12px;
+                    background: #3b82f6;
+                    border: none;
+                  "
+                >
+                  Reserve suite
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-4">
+            <div class="card border-0 shadow-sm rounded-3 overflow-hidden h-100">
+              <!-- Image -->
+              <img
+                src="img/r1.png"
+                class="card-img-top"
+                style="height: 150px; object-fit: cover"
+                alt="room"
+              />
+
+              <!-- Content -->
+              <div class="card-body p-3">
+                <!-- Title -->
+                <h6 class="fw-semibold mb-3" style="font-size: 18px">
+                  Standard twin bed Multiple beds
+                </h6>
+
+                <!-- Details -->
+
+                <div class="d-flex align-items-center mb-2">
+                  <i
+                    class="bi bi-rulers text-secondary me-2"
+                    style="font-size: 14px"
+                  >
+                  </i>
+
+                  <span class="text-secondary" style="font-size: 14px">
+                    300 sq ft
+                  </span>
+                </div>
+
+                <div class="d-flex align-items-center mb-2">
+                  <i
+                    class="bi bi-globe2 text-secondary me-2"
+                    style="font-size: 14px"
+                  >
+                  </i>
+
+                  <span class="text-secondary" style="font-size: 14px">
+                    Sleeps 3
+                  </span>
+                </div>
+
+                <div class="d-flex align-items-center mb-3">
+                  <i
+                    class="bi bi-hand-thumbs-up text-secondary me-2"
+                    style="font-size: 14px"
+                  >
+                  </i>
+
+                  <span class="text-secondary" style="font-size: 14px">
+                    1 double bed and 1 twin bed
+                  </span>
+                </div>
+
+                <!-- Button -->
+
+                <a href="checkout-page.html"
+                  class="btn btn-primary w-100"
+                  style="
+                    height: 35px;
+                    font-size: 12px;
+                    background: #3b82f6;
+                    border: none;
+                  "
+                >
+                  Reserve suite
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--available rooms-->
+
+      <!--hero section -->
+      <!--Covid Section-->
+      <div class="container my-md-5 my-4">
+        <div class="row">
+          <div
+            class="col-md-12 d-flex align-items-center justify-content-start px-5 rounded-3"
+            style="background-color: #fcefca"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="26"
+              height="26"
+              fill="currentColor"
+              class="me-3 bi bi-exclamation-triangle"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M7.938 2.016A.13.13 0 0 1 8.002 2a.13.13 0 0 1 .063.016.15.15 0 0 1 .054.057l6.857 11.667c.036.06.035.124.002.183a.2.2 0 0 1-.054.06.1.1 0 0 1-.066.017H1.146a.1.1 0 0 1-.066-.017.2.2 0 0 1-.054-.06.18.18 0 0 1 .002-.183L7.884 2.073a.15.15 0 0 1 .054-.057m1.044-.45a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767z"
+              />
+              <path
+                d="M7.002 12a1 1 0 1 1 2 0 1 1 0 0 1-2 0M7.1 5.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0z"
+              />
+            </svg>
+
+            <p
+              class="text-center text-secondary"
+              style="font-size: 16px; margin-top: 20px"
+            >
+              check the latest covid-19 restrictions before your travel.
+              <a href="#" class="text-decoration-none text-primary"
+                >Learn more</a
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--Covid Section-->
+
+      <!--footer-->
     <footer class="mt-5">
       <div class="lists w-100">
         <div class="container">
-          <div class="row">
-            <div class="col-md">
+          <div class="row gy-4 justify-content-between">
+            <div class="col-12 col-sm-6 col-lg-auto">
               <ul class="list-unstyled">
                 <li>
                   <div class="d-flex align-items-center">
@@ -820,7 +982,7 @@
 
                     <h6
                       style="
-                        font-size: 11px;
+                        font-size: 18px;
                         font-weight: 600;
                         margin-bottom: 12px;
                       "
@@ -833,7 +995,7 @@
                   <a
                     href="#"
                     class="text-decoration-none text-secondary ms-md-4"
-                    style="font-size: 10px"
+                    style="font-size: 14px"
                     >Your Next goto Companion for <br /><span class="ms-md-4"
                       >Travel</span
                     ></a
@@ -841,12 +1003,12 @@
                 </li>
               </ul>
             </div>
-            <div class="col-md">
+            <div class="col-6 col-sm-6 col-lg-auto">
               <ul class="list-unstyled">
                 <li>
                   <h6
                     style="
-                      font-size: 11px;
+                      font-size: 16px;
                       font-weight: 600;
                       margin-bottom: 12px;
                     "
@@ -859,7 +1021,7 @@
                   <a
                     href="#"
                     class="text-decoration-none text-secondary"
-                    style="font-size: 10px"
+                    style="font-size: 14px"
                     >About</a
                   >
                 </li>
@@ -867,7 +1029,7 @@
                   <a
                     href="#"
                     class="text-decoration-none text-secondary"
-                    style="font-size: 10px"
+                    style="font-size: 14px"
                     >Jobs</a
                   >
                 </li>
@@ -875,7 +1037,7 @@
                   <a
                     href="#"
                     class="text-decoration-none text-secondary"
-                    style="font-size: 10px"
+                    style="font-size: 14px"
                     >Newsroom</a
                   >
                 </li>
@@ -883,7 +1045,7 @@
                   <a
                     href="#"
                     class="text-decoration-none text-secondary"
-                    style="font-size: 10px"
+                    style="font-size: 14px"
                     >Advertising</a
                   >
                 </li>
@@ -891,18 +1053,18 @@
                   <a
                     href="#"
                     class="text-decoration-none text-secondary"
-                    style="font-size: 10px"
+                    style="font-size: 14px"
                     >Contact us</a
                   >
                 </li>
               </ul>
             </div>
-            <div class="col-md">
+            <div class="col-6 col-sm-6 col-lg-auto">
               <ul class="list-unstyled">
                 <li>
                   <h6
                     style="
-                      font-size: 11px;
+                      font-size: 16px;
                       font-weight: 600;
                       margin-bottom: 12px;
                     "
@@ -915,7 +1077,7 @@
                   <a
                     href="#"
                     class="text-decoration-none text-secondary"
-                    style="font-size: 10px"
+                    style="font-size: 14px"
                     >Australia</a
                   >
                 </li>
@@ -923,7 +1085,7 @@
                   <a
                     href="#"
                     class="text-decoration-none text-secondary"
-                    style="font-size: 10px"
+                    style="font-size: 14px"
                     >New Zealand</a
                   >
                 </li>
@@ -931,7 +1093,7 @@
                   <a
                     href="#"
                     class="text-decoration-none text-secondary"
-                    style="font-size: 10px"
+                    style="font-size: 14px"
                     >United States</a
                   >
                 </li>
@@ -939,7 +1101,7 @@
                   <a
                     href="#"
                     class="text-decoration-none text-secondary"
-                    style="font-size: 10px"
+                    style="font-size: 14px"
                     >Greece</a
                   >
                 </li>
@@ -947,7 +1109,7 @@
                   <a
                     href="#"
                     class="text-decoration-none text-secondary"
-                    style="font-size: 10px"
+                    style="font-size: 14px"
                     >Maldives</a
                   >
                 </li>
@@ -955,7 +1117,7 @@
                   <a
                     href="#"
                     class="text-decoration-none text-secondary"
-                    style="font-size: 10px"
+                    style="font-size: 14px"
                     >Singapore</a
                   >
                 </li>
@@ -974,12 +1136,12 @@
                 </li>
               </ul>
             </div>
-            <div class="col-md">
+            <div class="col-6 col-sm-6 col-lg-auto">
               <ul class="list-unstyled">
                 <li>
                   <h6
                     style="
-                      font-size: 11px;
+                      font-size: 16px;
                       font-weight: 600;
                       margin-bottom: 12px;
                     "
@@ -992,7 +1154,7 @@
                   <a
                     href="#"
                     class="text-decoration-none text-secondary"
-                    style="font-size: 10px"
+                    style="font-size: 14px"
                     >Privacy Policy</a
                   >
                 </li>
@@ -1000,7 +1162,7 @@
                   <a
                     href="#"
                     class="text-decoration-none text-secondary"
-                    style="font-size: 10px"
+                    style="font-size: 14px"
                     >Terms of use</a
                   >
                 </li>
@@ -1008,7 +1170,7 @@
                   <a
                     href="#"
                     class="text-decoration-none text-secondary"
-                    style="font-size: 10px"
+                    style="font-size: 14px"
                     >Accessibility</a
                   >
                 </li>
@@ -1016,18 +1178,18 @@
                   <a
                     href="#"
                     class="text-decoration-none text-secondary"
-                    style="font-size: 10px"
+                    style="font-size: 14px"
                     >Reward system policy</a
                   >
                 </li>
               </ul>
             </div>
-            <div class="col-md">
+            <div class="col-6 col-sm-6 col-lg-auto">
               <ul class="list-unstyled">
                 <li>
                   <h6
                     style="
-                      font-size: 11px;
+                      font-size: 16px;
                       font-weight: 600;
                       margin-bottom: 12px;
                     "
@@ -1040,7 +1202,7 @@
                   <a
                     href="#"
                     class="text-decoration-none text-secondary"
-                    style="font-size: 10px"
+                    style="font-size: 14px"
                     >Support</a
                   >
                 </li>
@@ -1048,7 +1210,7 @@
                   <a
                     href="#"
                     class="text-decoration-none text-secondary"
-                    style="font-size: 10px"
+                    style="font-size: 14px"
                     >Cancel your bookings</a
                   >
                 </li>
@@ -1056,7 +1218,7 @@
                   <a
                     href="#"
                     class="text-decoration-none text-secondary"
-                    style="font-size: 10px"
+                    style="font-size: 14px"
                     >Use Coupon</a
                   >
                 </li>
@@ -1064,7 +1226,7 @@
                   <a
                     href="#"
                     class="text-decoration-none text-secondary"
-                    style="font-size: 10px"
+                    style="font-size: 14px"
                     >Refund Policies</a
                   >
                 </li>
@@ -1072,7 +1234,7 @@
                   <a
                     href="#"
                     class="text-decoration-none text-secondary"
-                    style="font-size: 10px"
+                    style="font-size: 14px"
                     >International Travel Documents</a
                   >
                 </li>
@@ -1096,7 +1258,8 @@
         </div>
       </div>
     </footer>
-    <!--footer-->
+      <!--footer-->
+    </div>
 
     <script>
       document.querySelectorAll("label").forEach((label) => {
@@ -1112,48 +1275,5 @@
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"
     ></script>
-
-    <script>
-    window.addEventListener("DOMContentLoaded", function () {
-      const navigation = performance.getEntriesByType("navigation")[0];
-
-        if (navigation.type === "reload") {
-        localStorage.removeItem("welcomeModalShown");
-        }
-
-
-     const modalElement = document.getElementById("welcomeModal");
-
-
-     const modal = new bootstrap.Modal(modalElement);
-
-    if(!localStorage.getItem("welcomeModalShown")) {
-      modal.show();
-      localStorage.setItem("welcomeModalShown", "true");
-    }
-    
-
-    });
-
-   </script>
-  <script>
-   window.addEventListener("DOMContentLoaded", function () {
-
-  const params = new URLSearchParams(window.location.search);
-
-  if (params.get("booking") === "success") {
-
-    const modalElement =
-      document.getElementById("bookingSuccessModal");
-
-    const modal =
-      new bootstrap.Modal(modalElement);
-   
-    modal.show();
-
-  }
-
-});
-</script>
   </body>
 </html>

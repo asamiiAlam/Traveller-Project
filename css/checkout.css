@@ -1,0 +1,216 @@
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .date-input::-webkit-calendar-picker-indicator {
+        display: none;
+      }
+
+      .date-input {
+        cursor: pointer;
+      }
+    
+      /* =========================
+         Responsive checkout page
+         ========================= */
+
+      html,
+      body {
+        max-width: 100%;
+        overflow-x: hidden;
+      }
+
+      img {
+        max-width: 100%;
+      }
+
+      /* Tablet + mobile navbar */
+      @media (max-width: 991.98px) {
+        .checkout-navbar {
+          height: auto !important;
+          min-height: 70px;
+        }
+
+        .navbar .container {
+          display: grid;
+          grid-template-columns: 1fr auto auto;
+          align-items: center;
+          gap: 10px;
+        }
+
+        .navbar .container > .d-flex:first-child {
+          grid-column: 1;
+          grid-row: 1;
+        }
+
+        .nav-actions {
+          grid-column: 2;
+          grid-row: 1;
+        }
+
+        .navbar-toggler {
+          grid-column: 3;
+          grid-row: 1;
+        }
+
+        #navbarNav {
+          grid-column: 1 / -1;
+          grid-row: 2;
+          width: 100%;
+          background: #fff;
+          padding: 12px 0;
+        }
+
+        #navbarNav .navbar-nav {
+          gap: 4px !important;
+        }
+      }
+
+      /* Phones and small tablets */
+      @media (max-width: 767.98px) {
+        .container {
+          width: 100%;
+          padding-left: 16px;
+          padding-right: 16px;
+        }
+
+        .navbar-brand {
+          margin-right: 0;
+          font-size: 12px !important;
+        }
+
+        .nav-actions .bi-bell {
+          font-size: 1rem !important;
+        }
+
+        .nav-actions img {
+          width: 34px !important;
+          height: 34px !important;
+        }
+
+        /* Secure reservation warning */
+        .container.my-md-5.my-4 .col-md-12 {
+          padding: 14px 16px !important;
+          align-items: flex-start !important;
+        }
+
+        .container.my-md-5.my-4 .col-md-12 p {
+          text-align: left !important;
+          margin: 0 !important;
+          font-size: 14px !important;
+        }
+
+        /* Booking form cards */
+        .card-body.p-4 {
+          padding: 18px !important;
+        }
+
+        /* Phone number row */
+        .phone-row {
+          flex-direction: column;
+        }
+
+        .phone-row > div,
+        .phone-row > input {
+          width: 100% !important;
+        }
+
+        .phone-row > div {
+          min-height: 38px;
+        }
+
+        /* Payment tabs */
+        .nav.nav-tabs {
+          padding-left: 12px !important;
+          padding-right: 12px !important;
+          display: flex;
+          flex-wrap: wrap;
+        }
+
+        .nav.nav-tabs .nav-link {
+          padding: 8px 10px;
+        }
+
+        /* Card logos */
+        .payment-logos {
+          gap: 8px !important;
+        }
+
+        .payment-logos > div {
+          flex: 0 0 auto;
+        }
+
+        /* Expiration selects */
+        .expiry-row select {
+          width: 50% !important;
+        }
+
+        /* Complete booking */
+        a[href*="booking=success"] {
+          width: 100%;
+          padding-top: 10px;
+          padding-bottom: 10px;
+        }
+
+        /* Price details */
+        .prices {
+          font-size: 14px !important;
+        }
+
+        .coupon-row {
+          flex-direction: column;
+          align-items: stretch !important;
+          gap: 8px;
+          padding-left: 0 !important;
+          padding-right: 0 !important;
+        }
+
+        .coupon-row input,
+        .coupon-row button {
+          width: 100% !important;
+        }
+
+        /* Hotel summary */
+        .col-lg-4 .card-img-top {
+          height: 200px !important;
+        }
+
+        /* Footer */
+        footer {
+          margin-top: 32px !important;
+        }
+
+        footer .last {
+          height: auto !important;
+          min-height: 48px;
+          padding: 10px 0;
+        }
+
+        footer .last p {
+          text-align: center;
+          font-size: 13px;
+        }
+      }
+
+      @media (max-width: 575.98px) {
+        .navbar .container {
+          padding-left: 12px;
+          padding-right: 12px;
+          gap: 7px;
+        }
+
+        .expiry-row {
+          flex-direction: column;
+        }
+
+        .expiry-row select {
+          width: 100% !important;
+        }
+
+        footer .col-6 {
+          padding-right: 8px;
+        }
+      }
