@@ -4,7 +4,7 @@
 
 You can view the live version of the project here:
 
-🔗 **Live Link:**https://dynamic-sorbet-4e9fe7.netlify.app/
+🔗 **Live Link:**https://finalfigmaproject-2.vercel.app/
 
 
 ---
