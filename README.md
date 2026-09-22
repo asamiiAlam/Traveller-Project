@@ -1,146 +1,241 @@
-# Final Figma Project - Hotel Booking Website
+# Traveller - Hotel Booking Website
 
-## Live Demo
+## 🌐 Live Demo
 
 You can view the live version of the project here:
 
-[Live Link](https://gilded-dusk-805d17.netlify.app/)
+🔗 **Live Link:**https://dynamic-sorbet-4e9fe7.netlify.app/ 
 
-------------------------------------------------------------------------
 
-## Project Overview
+---
 
-This project is a front-end hotel booking website created using **HTML,
-CSS, and JavaScript**.
+## 📌 Project Overview
 
-It includes multiple pages for: - Browsing hotels - Searching hotels -
-Viewing hotel details - Booking checkout - User authentication -
-Managing trips
+Traveller is a front-end hotel booking website designed to provide users with a smooth hotel searching and booking experience.
 
-The project uses `trips.json` as a hotel data source and JavaScript to
-dynamically display hotel cards and handle filtering/sorting features.
+The project allows users to:
 
-------------------------------------------------------------------------
+- Browse available hotels
+- Search hotels by location and name
+- Filter hotels using multiple options
+- Sort hotels based on price and rating
+- View hotel details
+- Complete booking flow
+- Manage user-related pages
 
-## Project Structure
 
-``` text
+The project is developed using:
+
+- HTML5
+- CSS3
+- JavaScript
+- Bootstrap 5
+- JSON data handling
+
+
+---
+
+## 📂 Project Structure
+
+```
 finalfigmaproject/
 
+│
+├── CSS/
+│   └── Website styling files
+│
 ├── img/
-│   └── Website images and visual assets
-
+│   └── Images and website assets
+│
+├── js/
+│   ├── index.js
+│   └── search.js
+│
+├── Json/
+│   └── trips.json
+│
 ├── index.html
-│   └── Homepage / landing page
-
+│   └── Main landing page
+│
+├── home.html
+│   └── Homepage
+│
 ├── search.html
-│   └── Hotel search, filtering, and sorting page
-
-├── mytrips.html
-│   └── User trip history page
-
+│   └── Hotel search and filtering page
+│
 ├── detail.html
 │   └── Hotel details page
-
+│
 ├── checkout-page.html
 │   └── Booking checkout page
-
+│
+├── Booking-success.html
+│   └── Booking confirmation page
+│
+├── mytrips.html
+│   └── User trip history page
+│
 ├── check-inbox.html
 │   └── Check-in information page
-
+│
 ├── sign-in.html
 │   └── User login page
-
+│
 ├── Register.html
 │   └── User registration page
-
+│
 ├── create-password.html
-│   └── Create password page
-
+│   └── Password creation page
+│
 ├── Forgot-password.html
-│   └── Forgot password recovery page
-
+│   └── Password recovery page
+│
+├── welcome.html
+│   └── Welcome page
+│
 ├── s2.html
-│   └── Additional project page
-
+│   └── Additional page
+│
 ├── test.html
 │   └── Testing page
-
-├── index.css
-│   └── Main website styling
-
-├── index.js
-│   └── JavaScript logic and functionality
-
-└── trips.json
-    └── Hotel information database in JSON format
+│
+└── README.md
 ```
 
-------------------------------------------------------------------------
 
-## Features
+---
 
-### Hotel Listing
+## ✨ Features
 
--   Dynamic hotel card generation
--   Hotel images, names, ratings, prices, and reviews
--   Data loaded from JSON file
 
-### Search System
+### 🏨 Hotel Listing
 
--   Search hotels by name
--   Display matching results dynamically
+- Dynamic hotel cards
+- Hotel images
+- Hotel names
+- Ratings and reviews
+- Pricing information
+- Discount badges
 
-### Filtering System
 
-Supports: - Price range filtering - Rating filtering - Popular filters -
-Activity filters - Hotel category filtering
+### 🔎 Search System
 
-### Sorting System
+Users can search hotels using:
 
-Users can sort hotels by: - Recommended - Price low to high - Price high
-to low - Rating
+- Hotel name
+- Location
 
-### User Pages
 
-Includes: - Registration - Login - Password recovery - Checkout - Trip
-management
+### 🎯 Filtering System
 
-------------------------------------------------------------------------
+Multiple filters are available:
 
-## How to Run the Project
+- Price range
+- Rating
+- Popular filters
+- Activities
+- Hotel category
 
-1.  Download or clone the project.
-2.  Open the project folder in VS Code.
-3.  Run the project using Live Server.
 
-Example:
+### ↕️ Sorting System
 
-    Right click index.html
-    → Open with Live Server
+Hotels can be sorted by:
 
-------------------------------------------------------------------------
+- Recommended
+- Price low to high
+- Price high to low
+- Rating
 
-## File Relationship
 
-    HTML Pages
-         |
-         ↓
-    index.css
-         |
-         ↓
-    index.js
-         |
-         ↓
-    trips.json
-         |
-         ↓
-    Dynamic Hotel Display
+### 🛒 Booking Flow
 
-------------------------------------------------------------------------
+Includes:
 
-## Future Improvements
+- Hotel details page
+- Checkout page
+- Booking confirmation page
 
-Possible improvements: - Connect with a backend API - Add database
-integration - Add user authentication system - Add payment gateway -
-Store bookings permanently
+
+### 👤 User Pages
+
+Includes:
+
+- Registration
+- Login
+- Password recovery
+- User trip management
+
+
+---
+
+## ⚙️ How To Run The Project Locally
+
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/asamiiAlam/Traveller-Project.git
+```
+
+
+### 2. Open the project
+
+Open the folder in Visual Studio Code.
+
+
+### 3. Run with Live Server
+
+Install the VS Code extension:
+
+```
+Live Server
+```
+
+Then:
+
+```
+Right click index.html
+→ Open with Live Server
+```
+
+
+---
+
+## 🔗 File Relationship
+
+```
+HTML Pages
+      |
+      ↓
+CSS Files
+      |
+      ↓
+JavaScript Files
+      |
+      ↓
+trips.json
+      |
+      ↓
+Dynamic Hotel Rendering
+```
+
+
+---
+
+## 🚀 Future Improvements
+
+Possible improvements:
+
+- Connect with Django backend
+- Add database integration
+- Add real authentication system
+- Add payment gateway
+- Store booking history permanently
+- Add real hotel API integration
+
+
+---
+
+## 👨‍💻 Author
+
+Developed as a front-end hotel booking website project.
