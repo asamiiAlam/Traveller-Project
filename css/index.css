@@ -10,3 +10,20 @@ input{
 
 
 
+@media (max-width: 767.98px) {
+  .search .col-md-10 {
+    width: 100%;
+    flex: 0 0 100%;
+    flex-direction: column;
+  }
+
+  .search-field {
+    width: 100% !important;
+    flex: 0 0 100% !important;
+  }
+
+  .search-btn-col {
+    width: 100%;
+    flex: 0 0 100%;
+  }
+}
