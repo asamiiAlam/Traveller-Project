@@ -522,11 +522,39 @@
       }
 
       /* ---------- Footer ---------- */
+      /* ---------- Footer ---------- */
+
+      footer h6 {
+        font-size: 16px !important;
+      }
+
+      footer li a,
+      footer .footer-tagline,
+      footer .last p {
+        font-size: 14px !important;
+      }
+
+      footer li a br {
+        display: none;
+      }
+
+      footer li a span[class*="ms-md"] {
+        margin-left: 0 !important;
+      }
+
       footer .container > .row {
         row-gap: 2rem;
       }
 
       @media (max-width: 767.98px) {
+        footer .container > .row {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          --bs-gutter-y: 0.75rem;
+          row-gap: 0.75rem;
+        }
+
         footer .container > .row > [class*="col"] {
           width: 50%;
           flex: 0 0 50%;
@@ -535,12 +563,23 @@
         footer .container > .row > [class*="col"]:first-child {
           width: 100%;
           flex: 0 0 100%;
+          margin-bottom: 0.25rem;
         }
 
         footer .container > .row > [class*="col"]:first-child a {
+          display: block;
+          margin-left: 0 !important;
           max-width: 100%;
           white-space: normal;
           line-height: 1.5;
+        }
+
+        footer .container > .row > [class*="col"]:first-child ul {
+          margin-bottom: 0;
+        }
+
+        footer .container > .row > [class*="col"]:first-child h6 {
+          margin-bottom: 4px !important;
         }
 
         footer .last {
@@ -551,12 +590,6 @@
 
         footer .last p {
           text-align: center;
-          font-size: 0.8rem;
-        }
-      }
-
-      @media (max-width: 575.98px) {
-        footer .container > .row {
-          --bs-gutter-x: 1rem;
+          font-size: 14px !important;
         }
       }
