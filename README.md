@@ -4,7 +4,7 @@
 
 You can view the live version of the project here:
 
-🔗 **Live Link:**https://traveller-project.vercel.app/
+🔗 **Live Link:**https://finalfigmaproject-3.vercel.app/
 
 
 ---
