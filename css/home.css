@@ -365,36 +365,63 @@
       }
 
       /* ---------- Mobile application banner ---------- */
-      .hero2-banner {
-        min-height: 360px;
-      }
 
-      .hero2-banner > .overlay {
-        height: 100%;
-      }
+.hero2 .hand img {
+     width: 60% !important;
 
-      @media (max-width: 991.98px) {
-        .hero2-banner {
-          min-height: 330px;
-        }
+     left:40% !important;
+  
+}
 
-        .hero2 .hand img {
-          width: 48% !important;
-          height: 390px !important;
-          top: -15px !important;
-        }
+@media (max-width: 1199.98px) {
+  .hero2-banner {
+    min-height: 350px;
+  }
 
-        .hero2 .text {
-          padding: 2rem !important;
-        }
+  .hero2 .hand img {
+     width: 70% !important;
+     top:20px !important;
+     left:35% !important;
 
-        .hero2 .text h4 {
-          max-width: 65%;
-          font-size: 1.35rem;
-          line-height: 1.45;
-        }
-      }
+     
+    
+  }
 
+  .hero2 .text {
+    padding: 2rem !important;
+  }
+
+  .hero2 .text h4 {
+    font-size: 1.5rem;
+    line-height: 1.45;
+    max-width: 70%;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .hero2-banner {
+    min-height: 330px;
+  }
+
+  .hero2 .hand img {
+     width: 80% !important;
+     top:20px !important;
+     left:30% !important;
+
+     
+    
+  }
+
+  .hero2 .text {
+    padding: 2rem !important;
+  }
+
+  .hero2 .text h4 {
+    font-size: 1.35rem;
+    line-height: 1.45;
+    max-width: 65%;
+  }
+}
       @media (max-width: 767.98px) {
         .hero2-banner {
           min-height: 300px;
@@ -402,6 +429,7 @@
 
         .hero2 .hand {
           display: none;
+          
         }
 
         .hero2 .text {
@@ -423,11 +451,8 @@
         .hero2 .text .btn {
           margin-left: auto !important;
           margin-right: auto !important;
-          padding-left: 1rem !important;
-          padding-right: 1rem !important;
         }
       }
-
       /* ---------- Explore CTA ---------- */
       @media (max-width: 767.98px) {
         body > .container.d-flex.flex-column.align-items-center h1 {
