@@ -98,6 +98,7 @@
       .search-panel {
         width: 95% !important;
       }
+      
 
       /* Keep the desktop search bar above the tall blue navbar background. */
       @media (min-width: 992px) {
@@ -113,6 +114,41 @@
 
       .search .col-md-10 > [class*="col-md"] {
         min-width: 150px;
+      }
+
+      /* ---------- Desktop search fix: 992px to 1300px ---------- */
+      @media (min-width: 992px) and (max-width: 1300px) {
+        .search .col-md-10 {
+          display: flex !important;
+          align-items: center;
+          gap: 6px;
+        }
+
+        /* Allow all fields to shrink correctly in this width range */
+        .search .col-md-10 > [class*="col-md"] {
+          flex: 1 1 0;
+          min-width: 0;
+        }
+
+        /* Give the location field extra width for its longer placeholder */
+        .search .col-md-10 > [class*="col-md"]:first-child {
+          flex: 1.6 1 0;
+        }
+
+        /* Reduce inner horizontal padding slightly */
+        .search .col-md-10 > [class*="col-md"] > div {
+          padding-left: 10px !important;
+          padding-right: 10px !important;
+        }
+
+        .search .col-md-10 input {
+          min-width: 0;
+          font-size: 12px;
+        }
+
+        .search .row > .col-md-2 {
+          padding-left: 6px;
+        }
       }
 
       @media (max-width: 991.98px) {
@@ -348,6 +384,24 @@
         width: 100%;
       }
 
+      @media (min-width: 992px) and (max-width: 1200px) {
+         .trip-card .badge.position-absolute {
+          width: auto !important;
+          max-width: calc(100% - 30px);
+          right: 10px !important;
+          top: 10px !important;
+          white-space: normal;
+        }
+      }
+      @media (max-width: 991.98px) {
+         .trip-card .badge.position-absolute {
+          width: auto !important;
+          max-width: calc(100% - 30px);
+          right: 10px !important;
+          top: 10px !important;
+          white-space: normal;
+        }
+      }
       @media (max-width: 767.98px) {
         #tripContainer {
           padding-left: 0;

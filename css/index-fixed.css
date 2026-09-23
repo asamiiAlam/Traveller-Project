@@ -162,6 +162,41 @@
       }
 
       /* ---------- Search bar ---------- */
+/* Fix search fields between 992px and 1300px */
+@media (min-width: 992px) and (max-width: 1300px) {
+
+  .search .col-md-10 {
+    display: flex !important;
+    align-items: center;
+    gap: 6px;
+  }
+
+  /* Normal fields */
+  .search .search-field {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  /* Give location field extra space */
+  .search .search-field:first-child {
+    flex: 1.5 1 0;
+  }
+
+  /* Reduce unnecessary horizontal padding */
+  .search .search-field > div {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+
+  .search .search-field input {
+    min-width: 0;
+    font-size: 12px;
+  }
+
+  .search .search-btn-col {
+    padding-left: 6px;
+  }
+}
       @media (max-width: 991.98px) {
         .search {
           margin-top: 1rem;
