@@ -1,33 +1,4 @@
 
-  * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-      @media(max-width:991px){
-
-       .navbar-collapse .nav-link {
-        color: black !important;
-       }
-      .navbar-toggler-icon {
-        filter: brightness(0) invert(1);
-}  
-
-
-      }
- 
-      .date-input::-webkit-calendar-picker-indicator {
-        display: none;
-      }
-
-      .date-input {
-        cursor: pointer;
-      }
-    
-
-      /* =========================
-         Responsive improvements
-         ========================= */
 
       html,
       body {
@@ -39,36 +10,30 @@
         max-width: 100%;
       }
 
-      /* Search panel */
-      .search-panel {
-        max-width: 100%;
+
+      .container-navbar {
+        position: relative;
+        z-index: 1030;
       }
 
-      /* Result image */
-      .trip-image {
-        width: 100%;
-        height: 160px;
-        object-fit: cover;
-      }
-
-      /* Tablet + mobile navbar */
       @media (max-width: 991.98px) {
         .search-navbar {
           height: auto !important;
-          min-height: 95px;
-          padding: 12px 0;
+          min-height: 90px;
+          padding: 10px 0;
         }
 
         .navbar .container {
           display: grid;
-          grid-template-columns: 1fr auto auto;
+          grid-template-columns: minmax(0, 1fr) auto auto;
           align-items: center;
-          gap: 10px;
+          gap: 0.65rem;
         }
 
         .navbar .container > .d-flex:first-child {
           grid-column: 1;
           grid-row: 1;
+          min-width: 0;
         }
 
         .nav-actions {
@@ -79,49 +44,44 @@
         .navbar-toggler {
           grid-column: 3;
           grid-row: 1;
-          border-color: rgba(255, 255, 255, 0.45);
+          padding: 0.3rem 0.55rem;
+          border-color: rgba(255, 255, 255, 0.65);
+        }
+
+        .navbar-toggler-icon {
+          filter: invert(1);
         }
 
         #navbarNav {
           grid-column: 1 / -1;
           grid-row: 2;
-          width: 100%;
-          background: #fff;
-          padding: 12px 0;
-          margin-top: 8px;
-          border-radius: 8px;
+          position: static !important;
+          width: auto !important;
+          margin-top: 0.65rem;
+          padding: 0.75rem;
+          background: #144e9d;
+          border: 1px solid rgba(255, 255, 255, 0.16);
+          border-radius: 0.5rem;
+          box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.12);
         }
 
         #navbarNav .navbar-nav {
-          gap: 4px !important;
+          gap: 0.25rem !important;
         }
 
         #navbarNav .nav-link {
-          color: #212529 !important;
-          padding: 10px 12px;
-        }
-
-        #navbarNav .nav-link:hover {
-          background: #f8f9fa;
-          border-radius: 6px;
-        }
-
-        .filter-column {
-          margin-top: 1rem;
+          padding: 0.65rem 0.75rem;
         }
       }
 
-      /* Phones and small tablets */
-      @media (max-width: 767.98px) {
-        .container {
-          width: 100%;
-          padding-left: 16px;
-          padding-right: 16px;
+      @media (max-width: 575.98px) {
+        .navbar .container {
+          gap: 0.45rem;
         }
 
         .navbar-brand {
           margin-right: 0;
-          font-size: 12px !important;
+          font-size: 0.78rem !important;
         }
 
         .nav-actions .bi-bell {
@@ -132,229 +92,371 @@
           width: 34px !important;
           height: 34px !important;
         }
+      }
 
-        /* Search form */
+      /* ---------- Top search panel ---------- */
+      .search-panel {
+        width: 95% !important;
+      }
+
+      /* Keep the desktop search bar above the tall blue navbar background. */
+      @media (min-width: 992px) {
         .search {
-          margin-top: 16px;
+          position: relative;
+          z-index: 1040;
+        }
+
+        .search-panel {
+          z-index: 1041 !important;
+        }
+      }
+
+      .search .col-md-10 > [class*="col-md"] {
+        min-width: 150px;
+      }
+
+      @media (max-width: 991.98px) {
+        .search {
+          margin-top: 0;
+          padding-top: 12px;
+          position: relative;
+          z-index: 1;
+          clear: both;
         }
 
         .search-panel {
           top: 0 !important;
+          left: 0 !important;
           width: 100% !important;
-          padding: 12px !important;
+          transform: none !important;
+          position: relative !important;
         }
 
         .search .col-md-10 {
           width: 100%;
+          flex: 0 0 100%;
           display: flex !important;
-          flex-direction: column;
-          gap: 8px !important;
+          flex-wrap: wrap !important;
+          gap: 0.5rem !important;
+          padding: 0;
         }
 
-        .search .col-md-10 > div {
+        .search .col-md-10 > [class*="col-md"] {
+          flex: 1 1 calc(50% - 0.5rem);
+          width: calc(50% - 0.5rem);
+          max-width: calc(50% - 0.5rem);
+          min-width: 0;
+        }
+
+        .search .row > .col-md-2 {
           width: 100%;
           flex: 0 0 100%;
-        }
-
-        .search .col-md-2 {
-          width: 100%;
-        }
-
-        /* Filter/results area */
-        .filter-column,
-        .results-column {
-          width: 100%;
-        }
-
-        .results-column {
-          margin-top: 1.5rem !important;
-        }
-
-        /* Search-result category buttons:
-           wrap onto new lines instead of creating a scrollbar */
-        .buttons {
-          justify-content: flex-start !important;
-          overflow: visible !important;
-          padding-bottom: 0;
-        }
-
-        .buttons > div {
-          display: flex;
-          flex-wrap: wrap !important;
-          gap: 8px;
-          min-width: 0 !important;
-          width: 100%;
-        }
-
-        .buttons .new {
-          white-space: normal;
-          border: 1px solid #0d6efd !important;
-          border-radius: 5px !important;
-          flex: 0 0 auto;
-        }
-
-        /* Sort */
-        .results-column .b {
-          justify-content: flex-start !important;
-        }
-
-        .results-column .b > div {
-          width: 100% !important;
-        }
-
-        /* Hotel cards */
-        .trip-card {
-          margin-bottom: 16px;
-        }
-
-        .trip-card .card-body {
-          padding: 12px !important;
-        }
-
-        .trip-image {
-          height: 220px;
-        }
-
-        .trip-price-col {
-          text-align: left !important;
-        }
-
-        #tripButton {
-          width: 100%;
-          padding: 9px 12px;
-        }
-
-        /* Covid notice */
-        .container.my-md-5.my-4 .col-md-12 {
-          padding: 14px 16px !important;
-          align-items: flex-start !important;
-        }
-
-        .container.my-md-5.my-4 .col-md-12 p {
-          text-align: left !important;
-          margin: 0 !important;
-          font-size: 14px !important;
-        }
-
-        /* Footer */
-        footer {
-          margin-top: 32px !important;
-        }
-
-        footer .last {
-          height: auto !important;
-          min-height: 48px;
-          padding: 10px 0;
-        }
-
-        footer .last p {
-          text-align: center;
-          font-size: 13px;
+          max-width: 100%;
+          padding: 0;
         }
       }
 
-      /* Very small phones */
-      @media (max-width: 575.98px) {
-        .navbar .container {
+      @media (max-width: 767.98px) {
+        .search {
           padding-left: 12px;
           padding-right: 12px;
-          gap: 7px;
         }
 
-        .trip-image {
-          height: 190px;
+        .search-panel {
+          top: 0 !important;
         }
 
-        footer .col-6 {
-          padding-right: 8px;
+        .search .col-md-10 {
+          flex-direction: column;
         }
-      }
 
-    
-      /* Never show horizontal scrollbars for the result-type buttons */
-      .buttons {
-        overflow: visible !important;
-      }
-
-      .buttons > div {
-        flex-wrap: wrap !important;
-        gap: 8px;
-      }
-
-      .buttons .new {
-        border-radius: 5px !important;
-      }
-
-      /* On large screens Bootstrap's d-lg-block keeps the filter panel visible
-         even though it is a collapse element on smaller screens. */
-      @media (min-width: 992px) {
-        #searchFilters {
-          display: block !important;
-          height: auto !important;
-          visibility: visible !important;
+        .search .col-md-10 > [class*="col-md"] {
+          width: 100% !important;
+          max-width: 100% !important;
+          flex: 0 0 100% !important;
         }
-      }
 
-    
-      .mobile-search-type-buttons .new {
-        border-radius: 5px !important;
-        white-space: normal;
-      }
-
-      @media (max-width: 991.98px) {
-        .mobile-search-type-buttons {
+        .search .col-md-10 > [class*="col-md"] > div,
+        .search .col-md-10 input,
+        .search .row > .col-md-2,
+        .search .row > .col-md-2 .btn {
           width: 100%;
         }
+      }
 
-        .mobile-search-type-buttons .new {
-          flex: 1 1 calc(50% - 8px);
+   
+      @media (max-width: 991.98px) {
+        .mobile-filter-toggle-wrap {
+          display: flex;
+          justify-content: flex-start;
+        }
+
+        .mobile-filter-toggle {
+          width: auto !important;
+          min-width: 138px;
+          padding: 9px 14px !important;
+          border-radius: 8px;
+          box-shadow: 0 4px 12px rgba(59, 130, 246, 0.18);
+        }
+
+        #searchFilters {
+          display: block !important;
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: min(82vw, 300px) !important;
+          max-width: 300px;
+          height: 100vh !important;
+          height: 100dvh !important;
+          flex: 0 0 auto;
+          overflow-y: auto;
+          overscroll-behavior: contain;
+          padding: 14px 12px 24px;
+          margin: 0 !important;
+          background: #fff;
+          z-index: 2000;
+          transform: translateX(-105%);
+          visibility: hidden;
+          box-shadow: 8px 0 24px rgba(0, 0, 0, 0.16);
+          transition: transform 0.28s ease, visibility 0.28s ease;
+        }
+
+        #searchFilters.show {
+          transform: translateX(0);
+          visibility: visible;
+        }
+
+        #searchFilters.collapsing {
+          height: 100vh !important;
+          height: 100dvh !important;
+          transform: translateX(-105%);
+          visibility: hidden;
+          transition: transform 0.28s ease, visibility 0.28s ease !important;
+        }
+
+        .mobile-filter-close {
+          position: sticky;
+          top: 0;
+          z-index: 2;
+          display: flex;
+          justify-content: flex-end;
+          padding-bottom: 8px;
+          background: #fff;
+        }
+
+        .mobile-filter-close .btn {
+          width: 34px;
+          height: 34px;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          padding: 0;
+          border-radius: 50%;
+        }
+
+        .mobile-search-type-buttons .btn {
+          flex: 1 1 calc(50% - 0.5rem);
+          white-space: normal;
         }
       }
 
       @media (max-width: 575.98px) {
-        .mobile-search-type-buttons .new {
-          flex: 1 1 100%;
-          width: 100%;
+        .mobile-search-type-buttons {
+          display: grid !important;
+          grid-template-columns: 1fr;
         }
-        .covid{
-          max-width: 80%;
+
+        .mobile-search-type-buttons .btn {
+          width: 100%;
+          text-align: left;
+        }
+
+        #searchFilters .card-body,
+        #searchFilters .card-header {
+          padding-left: 1rem !important;
+          padding-right: 1rem !important;
         }
       }
 
-    
-      /* Desktop: keep search result type buttons as one clean segmented row */
+
+      .rating-btn {
+        min-width: 0;
+      }
+
+      @media (max-width: 575.98px) {
+        #searchFilters .btn-group {
+          display: grid;
+          grid-template-columns: repeat(5, 1fr);
+          width: 100%;
+        }
+
+        #searchFilters .btn-group .btn {
+          padding-left: 0.25rem;
+          padding-right: 0.25rem;
+          min-width: 0;
+        }
+      }
+
+     
       @media (min-width: 992px) {
         .results-column .buttons {
-          overflow: visible !important;
           width: 100%;
+          overflow: visible !important;
         }
 
         .results-column .buttons > div {
           display: flex;
           flex-wrap: nowrap !important;
-          gap: 0 !important;
           width: 100%;
-          min-width: 0 !important;
+          min-width: 0;
         }
 
         .results-column .buttons .new {
           flex: 1 1 auto;
           white-space: nowrap;
-          border: 1px solid #0d6efd !important;
-          border-radius: 0 !important;
           margin: 0 !important;
-        }
-
-        .results-column .buttons .new:first-child {
-          border-radius: 5px 0 0 5px !important;
-        }
-
-        .results-column .buttons .new:last-child {
-          border-radius: 0 5px 5px 0 !important;
-        }
-
-        .results-column .buttons .new + .new {
-          margin-left: -1px !important;
         }
       }
 
+      @media (max-width: 991.98px) {
+        .results-column {
+          margin-top: 1rem !important;
+        }
+
+        .results-column > .row > .col-md-9,
+        .results-column > .row > .col-md-3 {
+          width: 100%;
+          flex: 0 0 100%;
+        }
+
+        .results-column .b {
+          justify-content: stretch !important;
+          margin-top: 0 !important;
+        }
+
+        .results-column .b > div {
+          width: 100% !important;
+        }
+      }
+
+
+      .trip-card {
+        overflow: hidden;
+      }
+
+      .trip-card img {
+        width: 100%;
+      }
+
+      @media (max-width: 767.98px) {
+        #tripContainer {
+          padding-left: 0;
+          padding-right: 0;
+        }
+
+        .trip-card .card-body {
+          padding: 1rem !important;
+        }
+
+        .trip-card .row > [class*="col-md"] {
+          width: 100%;
+          flex: 0 0 100%;
+        }
+
+        .trip-card .col-md-4,
+        .trip-card .col-12.col-md-3 {
+          margin-bottom: 1rem;
+        }
+
+        .trip-card img,
+        .trip-image {
+          width: 100% !important;
+          height: 220px !important;
+          object-fit: cover;
+        }
+
+        .trip-card .col-md-3.text-end,
+        .trip-card .trip-price-col,
+        .trip-card .text-end {
+          margin-top: 1rem !important;
+          text-align: left !important;
+          align-items: flex-start !important;
+        }
+
+        .trip-card .badge.position-absolute {
+          width: auto !important;
+          max-width: calc(100% - 30px);
+          right: 10px !important;
+          top: 10px !important;
+          white-space: normal;
+        }
+      }
+
+      @media (max-width: 575.98px) {
+        .trip-card img,
+        .trip-image {
+          height: 190px !important;
+        }
+      }
+
+      @media (max-width: 575.98px) {
+        .container > .row.g-0 > .col-md-12[style*="background-color: #fcefca"] {
+          padding: 1rem !important;
+          align-items: flex-start !important;
+        }
+
+        .container > .row.g-0 > .col-md-12[style*="background-color: #fcefca"] p {
+          margin-top: 0 !important;
+          margin-bottom: 0 !important;
+          text-align: left !important;
+          font-size: 0.85rem !important;
+          line-height: 1.5;
+        }
+
+        .container > .row.g-0 > .col-md-12[style*="background-color: #fcefca"] svg {
+          flex-shrink: 0;
+        }
+      }
+
+      footer .container > .row {
+        row-gap: 2rem;
+      }
+
+      footer li a br {
+        display: none;
+      }
+
+      footer li a span[class*="ms-md"] {
+        margin-left: 0 !important;
+      }
+
+      @media (max-width: 767.98px) {
+        footer .container > .row > [class*="col"] {
+          width: 50%;
+          flex: 0 0 50%;
+        }
+
+        footer .container > .row > [class*="col"]:first-child {
+          width: 100%;
+          flex: 0 0 100%;
+        }
+
+        footer .container > .row > [class*="col"]:first-child a {
+          display: block;
+          margin-left: 0 !important;
+          max-width: 100%;
+          line-height: 1.5;
+          white-space: normal;
+        }
+
+        footer .last {
+          height: auto !important;
+          min-height: 48px;
+          padding: 0.65rem 0;
+        }
+
+        footer .last p {
+          text-align: center;
+          font-size: 0.8rem;
+        }
+      }

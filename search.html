@@ -21,6 +21,9 @@
      <link rel="stylesheet" href="css/search.css" />
      <link href="https://fonts.cdnfonts.com/css/sf-pro-display" rel="stylesheet">
 
+  
+
+
   </head>
   <body>
     <div
@@ -307,9 +310,9 @@
         <div class="container">
 
         <!-- Mobile / Tablet Filter Toggle -->
-        <div class="d-lg-none mb-3 mt-4">
+        <div class="d-lg-none mb-3 mt-4 mobile-filter-toggle-wrap">
           <button
-            class="btn btn-outline-primary w-100"
+            class="btn btn-outline-primary mobile-filter-toggle"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#searchFilters"
@@ -326,6 +329,17 @@
         <!--search filters-->
         <div class="row">
             <div class="col-12 col-lg-3 gy-4 filter-column collapse d-lg-block" id="searchFilters">
+                <div class="mobile-filter-close d-lg-none">
+                  <button
+                    class="btn btn-light border"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#searchFilters"
+                    aria-label="Close filters"
+                  >
+                    <i class="bi bi-x-lg"></i>
+                  </button>
+                </div>
                 <div class="card shadow-sm mb-3 border-0 rounded-3 mb-3" style=" background-color:#f5f5f5;">
 
     <!-- Body -->
@@ -948,7 +962,7 @@
             <div class="col-md-3 d-flex justify-content-md-end  justify-content-center align-items-center mb-3 mt-3 b">
             <div style="border:1px solid rgb(190, 184, 184);
             border-radius:5px; display:flex; flex-direction:column; justify-content:start;;
-            width:210px; 
+            width:210px; height:50px; 
             
             ">
 

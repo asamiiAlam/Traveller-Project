@@ -1,22 +1,4 @@
 
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      .date-input::-webkit-calendar-picker-indicator {
-        display: none;
-      }
-
-      .date-input {
-        cursor: pointer;
-      }
-    
-      /* =========================
-         Responsive checkout page
-         ========================= */
-
       html,
       body {
         max-width: 100%;
@@ -27,26 +9,33 @@
         max-width: 100%;
       }
 
-      /* Tablet + mobile navbar */
+      .container-navbar {
+        position: relative;
+        z-index: 1030;
+      }
+
+      /* Navbar: tablet + mobile */
       @media (max-width: 991.98px) {
-        .checkout-navbar {
+        .container-navbar {
           height: auto !important;
           min-height: 70px;
         }
 
         .navbar .container {
           display: grid;
-          grid-template-columns: 1fr auto auto;
+          grid-template-columns: minmax(0, 1fr) auto auto;
           align-items: center;
-          gap: 10px;
+          gap: 0.65rem;
         }
 
         .navbar .container > .d-flex:first-child {
           grid-column: 1;
           grid-row: 1;
+          min-width: 0;
         }
 
-        .nav-actions {
+        .navbar .container > .nav-actions,
+        .navbar .container > .d-flex:last-child:not(.d-none) {
           grid-column: 2;
           grid-row: 1;
         }
@@ -54,163 +43,225 @@
         .navbar-toggler {
           grid-column: 3;
           grid-row: 1;
+          padding: 0.3rem 0.55rem;
         }
 
         #navbarNav {
           grid-column: 1 / -1;
           grid-row: 2;
-          width: 100%;
+          position: static !important;
+          top: auto !important;
+          left: auto !important;
+          width: auto !important;
+          margin-top: 0.6rem !important;
+          padding: 0.75rem !important;
           background: #fff;
-          padding: 12px 0;
+          border-radius: 0.5rem;
+          box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.08);
         }
 
         #navbarNav .navbar-nav {
-          gap: 4px !important;
-        }
-      }
-
-      /* Phones and small tablets */
-      @media (max-width: 767.98px) {
-        .container {
-          width: 100%;
-          padding-left: 16px;
-          padding-right: 16px;
+          gap: 0.25rem !important;
         }
 
-        .navbar-brand {
-          margin-right: 0;
-          font-size: 12px !important;
+        #navbarNav .nav-link {
+          padding: 0.65rem 0.75rem;
         }
 
-        .nav-actions .bi-bell {
-          font-size: 1rem !important;
-        }
-
-        .nav-actions img {
-          width: 34px !important;
-          height: 34px !important;
-        }
-
-        /* Secure reservation warning */
-        .container.my-md-5.my-4 .col-md-12 {
-          padding: 14px 16px !important;
-          align-items: flex-start !important;
-        }
-
-        .container.my-md-5.my-4 .col-md-12 p {
-          text-align: left !important;
-          margin: 0 !important;
-          font-size: 14px !important;
-        }
-
-        /* Booking form cards */
-        .card-body.p-4 {
-          padding: 18px !important;
-        }
-
-        /* Phone number row */
-        .phone-row {
-          flex-direction: column;
-        }
-
-        .phone-row > div,
-        .phone-row > input {
-          width: 100% !important;
-        }
-
-        .phone-row > div {
-          min-height: 38px;
-        }
-
-        /* Payment tabs */
-        .nav.nav-tabs {
-          padding-left: 12px !important;
-          padding-right: 12px !important;
-          display: flex;
-          flex-wrap: wrap;
-        }
-
-        .nav.nav-tabs .nav-link {
-          padding: 8px 10px;
-        }
-
-        /* Card logos */
-        .payment-logos {
-          gap: 8px !important;
-        }
-
-        .payment-logos > div {
-          flex: 0 0 auto;
-        }
-
-        /* Expiration selects */
-        .expiry-row select {
-          width: 50% !important;
-        }
-
-        /* Complete booking */
-        a[href*="booking=success"] {
-          width: 100%;
-          padding-top: 10px;
-          padding-bottom: 10px;
-        }
-
-        /* Price details */
-        .prices {
-          font-size: 14px !important;
-        }
-
-        .coupon-row {
-          flex-direction: column;
-          align-items: stretch !important;
-          gap: 8px;
-          padding-left: 0 !important;
-          padding-right: 0 !important;
-        }
-
-        .coupon-row input,
-        .coupon-row button {
-          width: 100% !important;
-        }
-
-        /* Hotel summary */
-        .col-lg-4 .card-img-top {
-          height: 200px !important;
-        }
-
-        /* Footer */
-        footer {
-          margin-top: 32px !important;
-        }
-
-        footer .last {
-          height: auto !important;
-          min-height: 48px;
-          padding: 10px 0;
-        }
-
-        footer .last p {
-          text-align: center;
-          font-size: 13px;
+        .home-collapse {
+          margin-top: 0 !important;
         }
       }
 
       @media (max-width: 575.98px) {
         .navbar .container {
-          padding-left: 12px;
-          padding-right: 12px;
-          gap: 7px;
+          gap: 0.45rem;
+        }
+
+        .navbar-brand {
+          margin-right: 0;
+          font-size: 0.78rem !important;
+        }
+
+        .nav-actions .bi-bell,
+        .navbar .container > .d-flex:last-child .bi-bell {
+          font-size: 1rem !important;
+        }
+
+        .nav-actions img,
+        .navbar .container > .d-flex:last-child img.rounded-circle {
+          width: 34px !important;
+          height: 34px !important;
+        }
+      }
+
+      /* Notices / alert strips */
+      .container > .row.g-0 > .col-md-12[style*="background-color: #fcefca"],
+      .container > .row > .col-md-12[style*="background-color: #fcefca"] {
+        min-width: 0;
+      }
+
+      @media (max-width: 575.98px) {
+        .container > .row.g-0 > .col-md-12[style*="background-color: #fcefca"],
+        .container > .row > .col-md-12[style*="background-color: #fcefca"] {
+          padding: 1rem !important;
+          align-items: flex-start !important;
+        }
+
+        .container > .row.g-0 > .col-md-12[style*="background-color: #fcefca"] p,
+        .container > .row > .col-md-12[style*="background-color: #fcefca"] p {
+          margin-top: 0 !important;
+          margin-bottom: 0 !important;
+          text-align: left !important;
+          font-size: 0.85rem !important;
+          line-height: 1.5;
+        }
+      }
+
+      /* Footer */
+      footer .container > .row {
+        row-gap: 2rem;
+        justify-content: space-between;
+      }
+
+      footer .container > .row > div[style*="margin-left"] {
+        margin-left: 0 !important;
+      }
+
+      footer li a br {
+        display: none;
+      }
+
+      footer li a span[class*="ms-md"] {
+        margin-left: 0 !important;
+      }
+
+      @media (max-width: 767.98px) {
+        footer .container > .row > [class*="col"] {
+          width: 50%;
+          flex: 0 0 50%;
+        }
+
+        footer .container > .row > [class*="col"]:first-child {
+          width: 100%;
+          flex: 0 0 100%;
+        }
+
+        footer .container > .row > [class*="col"]:first-child a {
+          display: block;
+          margin-left: 0 !important;
+          max-width: 100%;
+          font-size: 0.8125rem !important;
+          line-height: 1.5;
+          white-space: normal;
+        }
+
+        footer .last {
+          height: auto !important;
+          min-height: 48px;
+          padding: 0.65rem 0;
+        }
+
+        footer .last p {
+          text-align: center;
+          font-size: 0.8rem;
+        }
+      }
+
+      /* Checkout */
+      @media (max-width: 991.98px) {
+        .checkout-navbar + .container,
+        .checkout-navbar ~ .container {
+          min-width: 0;
+        }
+      }
+
+      .phone-row,
+      .expiry-row,
+      .coupon-row {
+        min-width: 0;
+      }
+
+      .payment-logos img {
+        height: auto;
+      }
+
+      @media (max-width: 767.98px) {
+        .card-body.p-4 {
+          padding: 1.25rem !important;
+        }
+
+        .phone-row {
+          flex-wrap: wrap;
+        }
+
+        .phone-row > div,
+        .phone-row > input {
+          width: 100% !important;
+          flex: 0 0 100%;
         }
 
         .expiry-row {
-          flex-direction: column;
+          width: 100%;
         }
 
         .expiry-row select {
-          width: 100% !important;
+          width: calc(50% - 0.25rem) !important;
+          flex: 1 1 calc(50% - 0.25rem);
         }
 
-        footer .col-6 {
-          padding-right: 8px;
+        .payment-logos {
+          gap: 0.5rem !important;
+        }
+
+        .payment-logos > div {
+          flex: 1 1 calc(50% - 0.5rem);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .nav-tabs {
+          padding-left: 0.75rem !important;
+          padding-right: 0.75rem !important;
+          flex-wrap: wrap;
+        }
+
+        .nav-tabs .nav-link {
+          padding: 0.55rem 0.7rem;
+        }
+
+        .coupon-row {
+          flex-wrap: wrap;
+          gap: 0.5rem;
+        }
+
+        .coupon-row input,
+        .coupon-row button {
+          width: 100% !important;
+          flex: 0 0 100%;
+        }
+
+        a[href*="booking=success"] {
+          width: 100%;
         }
       }
+
+      @media (max-width: 575.98px) {
+        .payment-logos > div {
+          flex-basis: calc(50% - 0.5rem);
+        }
+
+        .prices {
+          font-size: 0.9rem !important;
+        }
+
+        .prices .price {
+          gap: 1rem;
+        }
+
+        .prices .price p {
+          margin-bottom: 0.6rem;
+        }
+      }
+

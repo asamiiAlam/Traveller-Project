@@ -1,117 +1,430 @@
 
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
 
+      html,
       body {
-        font-family: "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        max-width: 100%;
+        overflow-x: hidden;
       }
 
-      .date-input::-webkit-calendar-picker-indicator {
-        display: none;
+      img {
+        max-width: 100%;
       }
 
-      .date-input {
-        cursor: pointer;
-      }
-
-      /* ---- Responsiveness fixes ---- */
-
-      /* Welcome modal icons: f2.png had no width, so it rendered at
-         native size and could blow out the card on small screens */
-      .welcome-icon {
-        width: 100px;
-        max-width: 30%;
-        height: auto;
-      }
-
-      /* Navbar */
-      @media (max-width: 991.98px) {
-        .navbar .container {
-          flex-wrap: wrap;
-        }
-
-        #navbarNav {
-          width: 100%;
-          background-color: #fff;
-          padding-top: 12px;
-        }
-
-        .mobile-auth-buttons {
-          padding-top: 12px;
-          padding-bottom: 4px;
-        }
-      }
-
-      /* Hero image: fixed 500px was too tall on phones */
       .hero-image,
       .hero .overlay {
         height: 500px;
       }
-      @media (max-width: 767.98px) {
-        .hero-image,
-        .hero .overlay {
-          height: 280px;
+
+      .hero2-banner {
+        min-height: 360px;
+      }
+
+      .hero2-banner > .overlay {
+        height: 100%;
+      }
+
+      /* ---------- Navbar: tablet/mobile ---------- */
+      @media (max-width: 991.98px) {
+        .container-navbar {
+          padding: 10px 0 !important;
         }
-        .hero .text h1 {
-          font-size: 1.6rem;
+
+        .navbar {
+          margin-bottom: 0 !important;
         }
-        .hero .text p {
-          font-size: 0.9rem;
+
+        .navbar .container {
+          display: grid;
+          grid-template-columns: minmax(0, 1fr) auto;
+          align-items: center;
+          gap: 0.65rem;
+        }
+
+        .navbar .container > .d-flex:first-child {
+          grid-column: 1;
+          grid-row: 1;
+          min-width: 0;
+        }
+
+        .navbar-toggler {
+          grid-column: 2;
+          grid-row: 1;
+          padding: 0.3rem 0.55rem;
+        }
+
+        #navbarNav {
+          grid-column: 1 / -1;
+          grid-row: 2;
+          position: static !important;
+          width: 100% !important;
+          margin-top: 0.65rem;
+          padding: 0.75rem;
+          background: #fff;
+          border: 1px solid #e9ecef;
+          border-radius: 0.5rem;
+          box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.08);
+        }
+
+        #navbarNav .navbar-nav {
+          gap: 0.25rem !important;
+        }
+
+        #navbarNav .nav-link {
+          padding: 0.65rem 0.75rem;
+        }
+
+        .mobile-auth-buttons {
+          padding-top: 0.75rem;
+          margin-top: 0.5rem;
+          border-top: 1px solid #e9ecef;
         }
       }
 
-      /* Search bar: give the guest field the same basis as the others */
-      .search-field {
-        min-width: 160px;
+      @media (max-width: 575.98px) {
+        .navbar .container {
+          gap: 0.45rem;
+        }
+
+        .navbar-brand {
+          margin-right: 0;
+          font-size: 0.82rem !important;
+        }
       }
+
+      /* ---------- Main hero ---------- */
+      @media (max-width: 991.98px) {
+        .hero.mt-5 {
+          margin-top: 1.5rem !important;
+        }
+
+        .hero-image,
+        .hero .overlay {
+          height: 400px !important;
+        }
+
+        .hero .text {
+          width: 88% !important;
+        }
+
+        .hero .text h1 {
+          font-size: clamp(1.8rem, 4vw, 2.5rem);
+        }
+
+        .hero .text p {
+          font-size: 0.95rem;
+          line-height: 1.5;
+        }
+      }
+
       @media (max-width: 767.98px) {
-        .search-btn-col {
+        .hero.mt-5 {
+          margin-top: 1rem !important;
+        }
+
+        .hero-image,
+        .hero .overlay {
+          height: 320px !important;
+        }
+
+        .hero .text {
+          width: calc(100% - 48px) !important;
+        }
+
+        .hero .text h1 {
+          font-size: 1.8rem;
+          line-height: 1.15;
+          margin-bottom: 0.75rem;
+        }
+
+        .hero .text p {
+          font-size: 0.9rem;
+          margin-bottom: 0;
+        }
+
+        .hero .text p br {
+          display: none;
+        }
+      }
+
+      @media (max-width: 575.98px) {
+        .hero-image,
+        .hero .overlay {
+          height: 280px !important;
+        }
+
+        .hero .text h1 {
+          font-size: 1.55rem;
+        }
+
+        .hero .text p {
+          font-size: 0.82rem;
+        }
+      }
+
+      /* ---------- Search bar ---------- */
+      @media (max-width: 991.98px) {
+        .search {
+          margin-top: 1rem;
+          padding-left: 12px;
+          padding-right: 12px;
+        }
+
+        .search > div:first-child {
+          top: 0 !important;
+          left: auto !important;
+          width: 100% !important;
+          transform: none !important;
+        }
+
+        .search .col-md-10 {
+          width: 100%;
+          flex: 0 0 100%;
+          display: flex !important;
+          flex-wrap: wrap !important;
+          gap: 0.5rem !important;
+          padding: 0;
+        }
+
+        .search .search-field {
+          flex: 1 1 calc(50% - 0.5rem);
+          width: calc(50% - 0.5rem);
+          max-width: calc(50% - 0.5rem);
+          min-width: 0;
+        }
+
+        .search .search-btn-col {
+          width: 100%;
+          flex: 0 0 100%;
+          max-width: 100%;
+          padding: 0;
+        }
+      }
+
+      @media (max-width: 767.98px) {
+        .search .col-md-10 {
+          flex-direction: column;
+        }
+
+        .search .search-field {
+          width: 100% !important;
+          max-width: 100% !important;
+          flex: 0 0 100% !important;
+        }
+
+        .search .search-field > div,
+        .search .search-field input,
+        .search .search-btn-col,
+        .search .search-btn-col .btn {
           width: 100%;
         }
       }
 
-      /* Promo/hero2 banner: fixed 300px clipped the heading on phones */
-      .hero2-banner {
-        min-height: 300px;
-        height: auto;
-      }
-      .hero2-banner .overlay {
-        min-height: 300px;
-        height: 100%;
-      }
-      .hero2-banner .hand {
-        display: none;
-      }
-      @media (min-width: 992px) {
-        .hero2-banner .hand {
-          display: block;
-        }
-        .hero2-banner .hand img {
-          left: 65% !important;
-        }
-      }
+      /* ---------- Covid notice ---------- */
       @media (max-width: 767.98px) {
-        .hero2-banner .text {
-          padding: 24px !important;
+        .container > .row.g-0 > .col-md-12[style*="background-color: #fcefca"] {
+          padding: 1rem !important;
+          align-items: flex-start !important;
         }
-        .hero2-banner .text h4 {
-          font-size: 1.15rem;
+
+        .container > .row.g-0 > .col-md-12[style*="background-color: #fcefca"] p {
+          font-size: 0.85rem !important;
+          line-height: 1.5;
+          text-align: left !important;
+        }
+
+        .container > .row.g-0 > .col-md-12[style*="background-color: #fcefca"] svg {
+          flex-shrink: 0;
+          margin-top: 0.1rem;
         }
       }
 
-      /* Footer: inline margin-left:100px shoved a column off-screen on
-         mobile instead of stacking naturally */
-      .footer-row {
+      /* ---------- Content cards ---------- */
+      @media (max-width: 991.98px) {
+        .hero .container h4,
+        .container h4[style*="font-size:28px"] {
+          font-size: 1.5rem !important;
+        }
+
+        .card-img-top[style*="height: 220px"] {
+          height: 200px !important;
+        }
+      }
+
+      @media (max-width: 767.98px) {
+        .container h4[style*="font-size:28px"] {
+          font-size: 1.35rem !important;
+        }
+
+        .container h4 + p br {
+          display: none;
+        }
+
+        .card-img-top[style*="height: 220px"] {
+          height: 180px !important;
+        }
+
+        .card h6[style*="font-size: 20px"],
+        .card h6[style*="font-size:20px"] {
+          font-size: 1rem !important;
+          line-height: 1.3;
+        }
+
+        .card p[style*="font-size: 16px"],
+        .card p[style*="font-size:16px"] {
+          font-size: 0.85rem !important;
+          line-height: 1.4;
+        }
+      }
+
+      @media (max-width: 575.98px) {
+        .card-img-top[style*="height: 220px"] {
+          height: 155px !important;
+        }
+
+        .col-6 .card h6 {
+          font-size: 0.9rem !important;
+        }
+
+        .col-6 .card p {
+          font-size: 0.78rem !important;
+        }
+      }
+
+      /* ---------- Mobile app banner ---------- */
+      @media (max-width: 991.98px) {
+        .hero2-banner {
+          min-height: 330px;
+        }
+
+        .hero2 .hand img {
+          width: 48% !important;
+          height: 390px !important;
+          top: -15px !important;
+        }
+
+        .hero2 .text {
+          padding: 2rem !important;
+        }
+
+        .hero2 .text h4 {
+          font-size: 1.35rem;
+          line-height: 1.45;
+          max-width: 65%;
+        }
+      }
+
+      @media (max-width: 767.98px) {
+        .hero2-banner {
+          min-height: 300px;
+        }
+
+        .hero2 .hand {
+          display: none;
+        }
+
+        .hero2 .text {
+          padding: 1.5rem !important;
+          align-items: center;
+          text-align: center !important;
+        }
+
+        .hero2 .text h4 {
+          max-width: 100%;
+          font-size: 1.2rem;
+          line-height: 1.45;
+        }
+
+        .hero2 .text h4 br {
+          display: none;
+        }
+
+        .hero2 .text .btn {
+          margin-left: auto !important;
+          margin-right: auto !important;
+        }
+      }
+
+      /* ---------- Explore CTA ---------- */
+      @media (max-width: 767.98px) {
+        body > .container.d-flex.flex-column.align-items-center h1 {
+          font-size: 1.5rem;
+        }
+
+        body > .container.d-flex.flex-column.align-items-center p {
+          font-size: 0.9rem;
+        }
+      }
+
+      /* ---------- Footer ---------- */
+      footer .footer-row {
         row-gap: 2rem;
       }
-      .footer-col-offset {
-        margin-left: 0;
+
+      footer li a br {
+        display: none;
       }
-      @media (min-width: 768px) {
-        .footer-col-offset {
-          margin-left: 60px;
+
+      footer li a span[class*="ms-md"] {
+        margin-left: 0 !important;
+      }
+
+      @media (max-width: 767.98px) {
+        footer .footer-row {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
         }
-    }
+
+        footer .footer-row > [class*="col"] {
+          width: 50%;
+          flex: 0 0 50%;
+        }
+
+        footer .footer-row > [class*="col"]:first-child {
+          width: 100%;
+          flex: 0 0 100%;
+        }
+
+        footer .footer-row > [class*="col"]:first-child a {
+          display: block;
+          margin-left: 0 !important;
+          max-width: 100%;
+          white-space: normal;
+          line-height: 1.5;
+        }
+
+        footer .last {
+          height: auto !important;
+          min-height: 48px;
+          padding: 0.65rem 0;
+        }
+
+        footer .last p {
+          text-align: center;
+          font-size: 0.8rem;
+        }
+      }
+
+      /* ---------- Welcome modal ---------- */
+      @media (max-width: 575.98px) {
+        #welcomeModal .modal-dialog {
+          margin: 0.75rem;
+        }
+
+        #welcomeModal .card {
+          padding: 1.25rem !important;
+        }
+
+        #welcomeModal h3 {
+          font-size: 1.35rem;
+          margin-top: 1.5rem !important;
+        }
+
+        #welcomeModal p {
+          font-size: 0.95rem !important;
+        }
+
+        #welcomeModal p br {
+          display: none;
+        }
+      }

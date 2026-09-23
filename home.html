@@ -14,65 +14,72 @@
       integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
       crossorigin="anonymous"
     />
-     <link rel="stylesheet" href="css/style.css">
-     <link rel="stylesheet" href="css/index.css">
-      <link href="https://fonts.cdnfonts.com/css/sf-pro-display" rel="stylesheet">
-     <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/index.css" />
+    <link
+      href="https://fonts.cdnfonts.com/css/sf-pro-display"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/home.css" />
+  
+
+
   </head>
   <body>
     <!--success Modal-->
-<div class="modal fade" id="bookingSuccessModal" tabindex="-1">
-
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content bg-transparent border-0 ">
-
-      <div class="container bg-transparent  d-flex justify-content-center align-items-center"
-      
-      >
-
-        <!-- Card -->
-        <div class="card success-card shadow-sm text-center p-5" style="border-radius: 8px;
-        
-        ">
-
-          <!-- Success Image -->
-          <div class="d-flex justify-content-center rounded-3 mb-5" style="background-color:#6FCF9733;
-          ">
-            <img
-              src="img/booking.png"
-              class="success-image p-5"
-              style="width: 250px; height: 250px; max-width: 100%;"
-              alt="Booking Successful">
-          </div>
-
-          <!-- Title -->
-          <h2 class="success-title mb-2" style="font-size: 20px;">
-            Booking Successful
-          </h2>
-
-          <!-- Description -->
-          <p class="success-message mt-2  mb-4 text-secondary" style="font-size: 16px;">
-            Congratulations your reservation has been made.<br>
-            You will be notified 2 days prior the date.
-          </p>
-
-          <!-- Button -->
-          <a href="detail.html" class="btn btn-primary  mt-3 w-100"
-            style="background-color: #2F80ED;padding:12px 18px;"
+    <div class="modal fade" id="bookingSuccessModal" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bg-transparent border-0">
+          <div
+            class="container bg-transparent d-flex justify-content-center align-items-center"
           >
-            View Trip
-          </a>
+            <!-- Card -->
+            <div
+              class="card success-card shadow-sm text-center p-5"
+              style="border-radius: 8px"
+            >
+              <!-- Success Image -->
+              <div
+                class="d-flex justify-content-center rounded-3 mb-5"
+                style="background-color: #6fcf9733"
+              >
+                <img
+                  src="img/booking.png"
+                  class="success-image p-5"
+                  style="width: 250px; height: 250px; max-width: 100%"
+                  alt="Booking Successful"
+                />
+              </div>
 
+              <!-- Title -->
+              <h2 class="success-title mb-2" style="font-size: 20px">
+                Booking Successful
+              </h2>
+
+              <!-- Description -->
+              <p
+                class="success-message mt-2 mb-4 text-secondary"
+                style="font-size: 16px"
+              >
+                Congratulations your reservation has been made.<br />
+                You will be notified 2 days prior the date.
+              </p>
+
+              <!-- Button -->
+              <a
+                href="detail.html"
+                class="btn btn-primary mt-3 w-100"
+                style="background-color: #2f80ed; padding: 12px 18px"
+              >
+                View Trip
+              </a>
+            </div>
+          </div>
         </div>
-
       </div>
-
     </div>
-  </div>
-</div>
 
-
-<!--success Modal-->
+    <!--success Modal-->
     <div
       class="container-navbar"
       style="
@@ -144,109 +151,103 @@
           </div>
 
           <!-- Right side -->
-<div class="d-flex align-items-center">
+          <div class="d-flex align-items-center">
+            <!-- Notification -->
+            <div class="position-relative me-3">
+              <i class="bi bi-bell text-secondary fs-5"></i>
+            </div>
 
-    <!-- Notification -->
-    <div class="position-relative me-3">
-        <i class="bi bi-bell text-secondary fs-5"></i>
-    </div>
+            <!-- User Dropdown -->
+            <div class="dropdown">
+              <button
+                class="btn p-0 border-0 bg-transparent"
+                type="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <img
+                  src="img/user.png"
+                  width="40"
+                  height="40"
+                  class="rounded-circle"
+                  style="object-fit: cover; cursor: pointer"
+                  alt="User account menu"
+                />
+              </button>
 
-
-    <!-- User Dropdown -->
-    <div class="dropdown">
-
-        <button
-            class="btn p-0 border-0 bg-transparent"
-            type="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false">
-
-            <img
-                src="img/user.png"
-                width="40"
-                height="40"
-                class="rounded-circle"
-                style="object-fit:cover; cursor:pointer;"
-                alt="User account menu"
-            >
-
-        </button>
-
-
-        <ul class="dropdown-menu dropdown-menu-end shadow rounded-3 p-0"
-            style="width:230px; overflow:hidden;">
-
-
-            <li>
-                <a class="dropdown-item py-3 d-flex align-items-center gap-3"
-                   href="#">
+              <ul
+                class="dropdown-menu dropdown-menu-end shadow rounded-3 p-0"
+                style="width: 230px; overflow: hidden"
+              >
+                <li>
+                  <a
+                    class="dropdown-item py-3 d-flex align-items-center gap-3"
+                    href="#"
+                  >
                     <i class="bi bi-person-circle fs-5 text-secondary"></i>
                     <span>Manage account</span>
-                </a>
-            </li>
+                  </a>
+                </li>
 
+                <li>
+                  <hr class="dropdown-divider m-0" />
+                </li>
 
-            <li>
-                <hr class="dropdown-divider m-0">
-            </li>
-
-
-            <li>
-                <a class="dropdown-item py-3 d-flex align-items-center gap-3"
-                   href="mytrips.html">
+                <li>
+                  <a
+                    class="dropdown-item py-3 d-flex align-items-center gap-3"
+                    href="mytrips.html"
+                  >
                     <i class="bi bi-airplane fs-5 text-secondary"></i>
                     <span>My trips</span>
-                </a>
-            </li>
+                  </a>
+                </li>
 
+                <li>
+                  <hr class="dropdown-divider m-0" />
+                </li>
 
-            <li>
-                <hr class="dropdown-divider m-0">
-            </li>
-
-
-            <li>
-                <a class="dropdown-item py-3 d-flex align-items-center gap-3"
-                   href="#">
+                <li>
+                  <a
+                    class="dropdown-item py-3 d-flex align-items-center gap-3"
+                    href="#"
+                  >
                     <i class="bi bi-wallet2 fs-5 text-secondary"></i>
                     <span>Reward and wallet</span>
-                </a>
-            </li>
+                  </a>
+                </li>
 
+                <li>
+                  <hr class="dropdown-divider m-0" />
+                </li>
 
-            <li>
-                <hr class="dropdown-divider m-0">
-            </li>
-
-
-            <li>
-                <a class="dropdown-item py-3 d-flex align-items-center gap-3 text-danger"
-                   href="index.html">
+                <li>
+                  <a
+                    class="dropdown-item py-3 d-flex align-items-center gap-3 text-danger"
+                    href="index.html"
+                  >
                     <i class="bi bi-box-arrow-right fs-5"></i>
                     <span>Sign out</span>
-                </a>
-            </li>
-             <li>
-                <a class="dropdown-item py-3 d-flex align-items-center gap-3 text-secondary"
-                   href="checkout-page.html">
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item py-3 d-flex align-items-center gap-3 text-secondary"
+                    href="checkout-page.html"
+                  >
                     <i class="bi bi-gear fs-5"></i>
                     <span>Check out</span>
-                </a>
-            </li>
-
-
-
-        </ul>
-
-    </div>
-
-</div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </nav>
     </div>
 
     <!--hero section -->
-    <div class="hero mt-4 mb-md-0 mb-2">
+    <div class="hero mt-2 mb-md-0 mb-2">
       <div class="container">
         <div class="row">
           <div class="col-md-12 position-relative">
@@ -254,11 +255,7 @@
               src="img/sydney.jpg"
               alt="Sydney skyline hero image"
               class="img-fluid rounded hero-image"
-              style="
-                width: 100%;
-                object-fit: cover;
-                object-position: center;
-              "
+              style="width: 100%; object-fit: cover; object-position: center"
             />
 
             <!-- Overlay -->
@@ -282,7 +279,7 @@
             >
               <h2 class="text-white fw-bold">Enjoy Your Dream Vacation</h2>
 
-              <p class="text-white width-50 ">
+              <p class="text-white width-50">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem
                 ipsum dolor<br />
                 sit amet consectetur adipisicing elit.
@@ -293,103 +290,102 @@
       </div>
     </div>
     <!--search-bar-->
-     <div class="container position-relative search">
+    <div class="container position-relative search">
       <div
         class="bg-white shadow rounded-3 p-2 position-md-absolute position-relative start-50 translate-middle-x"
         style="top: -35px; width: 95%; z-index: 10"
       >
         <div class="row g-2 align-items-center">
+          <div
+            class="col-md-10 d-flex flex-wrap gap-2 gap-md-0 align-items-center"
+          >
+            <!-- Location -->
+            <div class="col-md search-field">
+              <div
+                class="d-flex align-items-center bg-light rounded-2 px-3"
+                style="height: 45px"
+              >
+                <label for="location" class="me-2">
+                  <i class="bi bi-geo-alt text-secondary"></i>
+                </label>
 
-         <div class="col-md-10 d-flex flex-wrap gap-2 gap-md-0 align-items-center">
-         <!-- Location -->
-          <div class="col-md search-field">
-            <div
-              class="d-flex align-items-center bg-light rounded-2 px-3"
-              style="height: 45px"
-            >
-              <label for="location" class="me-2">
-                <i class="bi bi-geo-alt text-secondary"></i>
-              </label>
+                <input
+                  type="text"
+                  id="location"
+                  class="form-control border-0 bg-transparent shadow-none"
+                  placeholder="Where are you going?"
+                  style="color: #777"
+                />
+              </div>
+            </div>
 
-              <input
-                type="text"
-                id="location"
-                class="form-control border-0 bg-transparent shadow-none"
-                placeholder="Where are you going?"
-                style="color: #777"
-              />
+            <!-- Check in -->
+            <div class="col-md search-field">
+              <div
+                class="d-flex align-items-center bg-light rounded-2 px-3"
+                style="height: 45px"
+              >
+                <label for="checkin" class="me-2" style="cursor: pointer">
+                  <i class="bi bi-calendar3 text-secondary"></i>
+                </label>
+
+                <input
+                  type="text"
+                  id="checkin"
+                  placeholder="check in date"
+                  onfocus="this.type = 'date'"
+                  class="form-control border-0 bg-transparent shadow-none date-input"
+                  style="color: #777"
+                />
+              </div>
+            </div>
+
+            <!-- Check out -->
+            <div class="col-md search-field">
+              <div
+                class="d-flex align-items-center bg-light rounded-2 px-3"
+                style="height: 45px"
+              >
+                <label for="checkout" class="me-2" style="cursor: pointer">
+                  <i class="bi bi-calendar3 text-secondary"></i>
+                </label>
+
+                <input
+                  type="text"
+                  id="checkout"
+                  placeholder="check out date"
+                  onfocus="this.type = 'date'"
+                  class="form-control border-0 bg-transparent shadow-none date-input"
+                  style="color: #777"
+                />
+              </div>
+            </div>
+
+            <!-- Guests -->
+            <div class="col-md search-field">
+              <div
+                class="d-flex align-items-center bg-light rounded-2 px-3"
+                style="height: 45px"
+              >
+                <label for="guests" class="me-2">
+                  <i class="bi bi-person text-secondary"></i>
+                </label>
+
+                <input
+                  type="number"
+                  id="guests"
+                  class="form-control border-0 bg-transparent shadow-none"
+                  placeholder="Guests"
+                  min="1"
+                  max="100"
+                  style="color: #777"
+                />
+              </div>
             </div>
           </div>
-
-          <!-- Check in -->
-          <div class="col-md search-field">
-            <div
-              class="d-flex align-items-center bg-light rounded-2 px-3"
-              style="height: 45px"
-            >
-              <label for="checkin" class="me-2" style="cursor: pointer">
-                <i class="bi bi-calendar3 text-secondary"></i>
-              </label>
-
-              <input
-                type="text"
-                id="checkin"
-                placeholder="check in date"
-                onfocus="this.type = 'date'"
-                class="form-control border-0 bg-transparent shadow-none date-input"
-                style="color: #777"
-              />
-            </div>
-          </div>
-
-          <!-- Check out -->
-          <div class="col-md search-field">
-            <div
-              class="d-flex align-items-center bg-light rounded-2 px-3"
-              style="height: 45px"
-            >
-              <label for="checkout" class="me-2" style="cursor: pointer">
-                <i class="bi bi-calendar3 text-secondary"></i>
-              </label>
-
-              <input
-                type="text"
-                id="checkout"
-                placeholder="check out date"
-                onfocus="this.type = 'date'"
-                class="form-control border-0 bg-transparent shadow-none date-input"
-                style="color: #777"
-              />
-            </div>
-          </div>
-
-          <!-- Guests -->
-          <div class="col-md search-field">
-            <div
-              class="d-flex align-items-center bg-light rounded-2 px-3"
-              style="height: 45px"
-            >
-              <label for="guests" class="me-2">
-                <i class="bi bi-person text-secondary"></i>
-              </label>
-
-              <input
-                type="number"
-                id="guests"
-                class="form-control border-0 bg-transparent shadow-none"
-                placeholder="Guests"
-                min="1"
-                max="100"
-                style="color: #777"
-              />
-            </div>
-          </div>
-         
-
-         </div>
 
           <!-- Search Button -->
-            <div class="col-md-2 search-btn-col">
+          <div class="col-md-2 search-btn-col">
             <button
               class="btn btn-primary w-100"
               style="height: 45px; background: #3b82f6; border: none"
@@ -397,11 +393,8 @@
               Search
             </button>
           </div>
-     
         </div>
-
       </div>
-          
     </div>
 
     <!--search-bar-->
@@ -428,10 +421,7 @@
             />
           </svg>
 
-          <p
-            class="text-secondary mb-0"
-            style="font-size: 16px;"
-          >
+          <p class="text-secondary mb-0" style="font-size: 16px">
             check the latest covid-19 restrictions before your travel.
             <a href="#" class="text-decoration-none text-primary">Learn more</a>
           </p>
@@ -441,12 +431,11 @@
     <!--Covid Section-->
     <!--hero section -->
 
-  
     <!--Explore the world Part-->
 
-       <div class="hero">
+    <div class="hero">
       <div class="container mt-3 mb-3">
-        <h4 class="fw-bold" style="font-size:28px;">Enjoy Touring the World</h4>
+        <h4 class="fw-bold" style="font-size: 28px">Enjoy Touring the World</h4>
         <p class="text-secondary fw-semibold" style="font-size: 16px">
           plan and book your perfecrt trip travel,destination and experiences<br />
           and inspiration from us
@@ -532,7 +521,9 @@
       </div>
       <!--inspiration-->
       <div class="container mt-3 mb-3">
-        <h4 class="fw-bold mb-4" style="font-size:28px;">Get inspiration For Your Next Trip</h4>
+        <h4 class="fw-bold mb-4" style="font-size: 28px">
+          Get inspiration For Your Next Trip
+        </h4>
         <div class="row">
           <div class="col-md-4 mb-3">
             <div class="card border-0 w-100 position-relative overflow-hidden">
@@ -554,11 +545,17 @@
                 class="position-absolute bottom-0 start-0 p-3 text-white"
                 style="z-index: 2"
               >
-                <h6 class="mb-0 fw-semibold text-start mb-2" style="font-size: 20px">
+                <h6
+                  class="mb-0 fw-semibold text-start mb-2"
+                  style="font-size: 20px"
+                >
                   Lakeside Model Waterfront Resort and Hotels
                 </h6>
 
-                <p style="font-size: 16px;">Lorem ipsum dolor sit amet consectetur adipisicing elit.<br> Maiores alias impedit similique, ex</p>
+                <p style="font-size: 16px">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.<br />
+                  Maiores alias impedit similique, ex
+                </p>
               </div>
             </div>
           </div>
@@ -579,18 +576,24 @@
 
               <!-- Text on image -->
               <div
-                class="position-absolute bottom-0 start-0 p-3 text-white "
+                class="position-absolute bottom-0 start-0 p-3 text-white"
                 style="z-index: 2"
               >
-                <h6 class="mb-0 fw-semibold text-start mb-2" style="font-size: 20px">
+                <h6
+                  class="mb-0 fw-semibold text-start mb-2"
+                  style="font-size: 20px"
+                >
                   Lakeside Model Waterfront Resort and Hotels
                 </h6>
-                <p style="font-size:16px">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores alias impedit similique, ex</p>
+                <p style="font-size: 16px">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Maiores alias impedit similique, ex
+                </p>
               </div>
             </div>
           </div>
           <div class="col-md-4 mb-3">
-             <div class="card border-0 w-100 position-relative overflow-hidden">
+            <div class="card border-0 w-100 position-relative overflow-hidden">
               <img
                 src="img/ll3.jpg"
                 class="card-img-top rounded-3"
@@ -609,10 +612,16 @@
                 class="position-absolute bottom-0 start-0 p-3 text-white"
                 style="z-index: 2"
               >
-                <h6 class="mb-0 fw-semibold text-start mb-2" style="font-size: 20px">
+                <h6
+                  class="mb-0 fw-semibold text-start mb-2"
+                  style="font-size: 20px"
+                >
                   Lakeside Model Waterfront Resort and Hotels
                 </h6>
-                <p style="font-size:16px">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores alias impedit similique, ex</p>
+                <p style="font-size: 16px">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Maiores alias impedit similique, ex
+                </p>
               </div>
             </div>
           </div>
@@ -620,7 +629,7 @@
       </div>
       <!--popular Hotels-->
       <div class="container mt-3 mb-3">
-        <h4 class="fw-bold mb-3" style="font-size:28px;">Popular Hotels</h4>
+        <h4 class="fw-bold mb-3" style="font-size: 28px">Popular Hotels</h4>
         <div class="row">
           <div class="col-6 col-md-3 mb-3">
             <div class="card border-0 w-100">
@@ -706,7 +715,7 @@
       </div>
     </div>
 
-      <!--view-->
+    <!--view-->
     <div class="hero2 mb-md-5 mb-5">
       <div class="container">
         <div class="row g-0">
@@ -814,48 +823,41 @@
     <footer class="mt-5">
       <div class="lists w-100">
         <div class="container">
-          <div class="row footer-row">
-            <div class="col-md">
+          <div class="row gy-4 justify-content-between">
+            <div class="col-12 col-sm-6 col-lg-auto">
               <ul class="list-unstyled">
                 <li>
                   <div class="d-flex align-items-center">
                     <img
                       src="img/Group.png"
-                      alt="my Dream Place logo"
+                      alt="plane"
                       width="25"
                       height="25"
-                      style="margin-right: 8px"
+                      class="me-2"
                     />
 
-                    <h6
-                      style="
-                        font-size: 18px;
-                        font-weight: 600;
-                        margin-bottom: 12px;
-                      "
-                    >
+                    <h6 class="mb-0" style="font-size: 18px; font-weight: 600">
                       my Dream Place
                     </h6>
                   </div>
                 </li>
+
                 <li>
                   <a
                     href="#"
-                    class="text-decoration-none text-secondary ms-md-4"
-                    style="font-size: 14px"
-                    >Your Next goto Companion for <br /><span class="ms-md-4"
-                      >Travel</span
-                    ></a
+                    class="footer-tagline text-decoration-none text-secondary d-block mt-2"
                   >
+                    Your Next goto Companion for Travel
+                  </a>
                 </li>
               </ul>
             </div>
-            <div class="col-md footer-col-offset">
+            <div class="col-6 col-sm-6 col-lg-auto">
               <ul class="list-unstyled">
                 <li>
                   <h6
                     style="
-                      font-size: 16px;
+                      font-size: 11px;
                       font-weight: 600;
                       margin-bottom: 12px;
                     "
@@ -868,7 +870,7 @@
                   <a
                     href="#"
                     class="text-decoration-none text-secondary"
-                    style="font-size: 14px"
+                    style="font-size: 10px"
                     >About</a
                   >
                 </li>
@@ -876,7 +878,7 @@
                   <a
                     href="#"
                     class="text-decoration-none text-secondary"
-                    style="font-size: 14px"
+                    style="font-size: 10px"
                     >Jobs</a
                   >
                 </li>
@@ -884,7 +886,7 @@
                   <a
                     href="#"
                     class="text-decoration-none text-secondary"
-                    style="font-size: 14px"
+                    style="font-size: 10px"
                     >Newsroom</a
                   >
                 </li>
@@ -892,7 +894,7 @@
                   <a
                     href="#"
                     class="text-decoration-none text-secondary"
-                    style="font-size: 14px"
+                    style="font-size: 10px"
                     >Advertising</a
                   >
                 </li>
@@ -900,18 +902,18 @@
                   <a
                     href="#"
                     class="text-decoration-none text-secondary"
-                    style="font-size: 14px"
+                    style="font-size: 10px"
                     >Contact us</a
                   >
                 </li>
               </ul>
             </div>
-            <div class="col-md">
+            <div class="col-6 col-sm-6 col-lg-auto">
               <ul class="list-unstyled">
                 <li>
                   <h6
                     style="
-                      font-size: 16px;
+                      font-size: 11px;
                       font-weight: 600;
                       margin-bottom: 12px;
                     "
@@ -924,7 +926,7 @@
                   <a
                     href="#"
                     class="text-decoration-none text-secondary"
-                    style="font-size: 14px"
+                    style="font-size: 10px"
                     >Australia</a
                   >
                 </li>
@@ -932,7 +934,7 @@
                   <a
                     href="#"
                     class="text-decoration-none text-secondary"
-                    style="font-size: 14px"
+                    style="font-size: 10px"
                     >New Zealand</a
                   >
                 </li>
@@ -940,7 +942,7 @@
                   <a
                     href="#"
                     class="text-decoration-none text-secondary"
-                    style="font-size: 14px"
+                    style="font-size: 10px"
                     >United States</a
                   >
                 </li>
@@ -948,7 +950,7 @@
                   <a
                     href="#"
                     class="text-decoration-none text-secondary"
-                    style="font-size: 14px"
+                    style="font-size: 10px"
                     >Greece</a
                   >
                 </li>
@@ -956,7 +958,7 @@
                   <a
                     href="#"
                     class="text-decoration-none text-secondary"
-                    style="font-size: 14px"
+                    style="font-size: 10px"
                     >Maldives</a
                   >
                 </li>
@@ -964,7 +966,7 @@
                   <a
                     href="#"
                     class="text-decoration-none text-secondary"
-                    style="font-size: 14px"
+                    style="font-size: 10px"
                     >Singapore</a
                   >
                 </li>
@@ -983,12 +985,12 @@
                 </li>
               </ul>
             </div>
-            <div class="col-md">
+            <div class="col-6 col-sm-6 col-lg-auto">
               <ul class="list-unstyled">
                 <li>
                   <h6
                     style="
-                      font-size: 16px;
+                      font-size: 11px;
                       font-weight: 600;
                       margin-bottom: 12px;
                     "
@@ -1001,7 +1003,7 @@
                   <a
                     href="#"
                     class="text-decoration-none text-secondary"
-                    style="font-size: 14px"
+                    style="font-size: 10px"
                     >Privacy Policy</a
                   >
                 </li>
@@ -1009,7 +1011,7 @@
                   <a
                     href="#"
                     class="text-decoration-none text-secondary"
-                    style="font-size: 14px"
+                    style="font-size: 10px"
                     >Terms of use</a
                   >
                 </li>
@@ -1017,7 +1019,7 @@
                   <a
                     href="#"
                     class="text-decoration-none text-secondary"
-                    style="font-size: 14px"
+                    style="font-size: 10px"
                     >Accessibility</a
                   >
                 </li>
@@ -1025,18 +1027,18 @@
                   <a
                     href="#"
                     class="text-decoration-none text-secondary"
-                    style="font-size: 14px"
+                    style="font-size: 10px"
                     >Reward system policy</a
                   >
                 </li>
               </ul>
             </div>
-            <div class="col-md">
+            <div class="col-6 col-sm-6 col-lg-auto">
               <ul class="list-unstyled">
                 <li>
                   <h6
                     style="
-                      font-size: 16px;
+                      font-size: 11px;
                       font-weight: 600;
                       margin-bottom: 12px;
                     "
@@ -1049,7 +1051,7 @@
                   <a
                     href="#"
                     class="text-decoration-none text-secondary"
-                    style="font-size: 14px"
+                    style="font-size: 10px"
                     >Support</a
                   >
                 </li>
@@ -1057,7 +1059,7 @@
                   <a
                     href="#"
                     class="text-decoration-none text-secondary"
-                    style="font-size: 14px"
+                    style="font-size: 10px"
                     >Cancel your bookings</a
                   >
                 </li>
@@ -1065,7 +1067,7 @@
                   <a
                     href="#"
                     class="text-decoration-none text-secondary"
-                    style="font-size: 14px"
+                    style="font-size: 10px"
                     >Use Coupon</a
                   >
                 </li>
@@ -1073,7 +1075,7 @@
                   <a
                     href="#"
                     class="text-decoration-none text-secondary"
-                    style="font-size: 14px"
+                    style="font-size: 10px"
                     >Refund Policies</a
                   >
                 </li>
@@ -1081,7 +1083,7 @@
                   <a
                     href="#"
                     class="text-decoration-none text-secondary"
-                    style="font-size: 14px"
+                    style="font-size: 10px"
                     >International Travel Documents</a
                   >
                 </li>
@@ -1090,18 +1092,16 @@
           </div>
         </div>
         <div
-          class="last w-100 d-flex align-items-center "
+          class="last w-100 d-flex align-items-center"
           style="background-color: #ebebeb; height: 40px"
         >
-        <div class="container d-flex align-items-center justify-content-md-end justify-content-center ">
-          <p class="text-secondary m-0"
-         
+          <div
+            class="container d-flex align-items-center justify-content-md-end justify-content-center"
           >
-            &copy; 2023 Dream place. All rights reserved.
-          </p>
-
-        </div>
-          
+            <p class="text-secondary m-0">
+              &copy; 2023 Dream place. All rights reserved.
+            </p>
+          </div>
         </div>
       </div>
     </footer>
@@ -1119,35 +1119,26 @@
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
       crossorigin="anonymous"
     ></script>
-  <script>
-   window.addEventListener("DOMContentLoaded", function () {
-
-  const navigation = performance.getEntriesByType("navigation")[0];
+    <script>
+      window.addEventListener("DOMContentLoaded", function () {
+        const navigation = performance.getEntriesByType("navigation")[0];
 
         if (navigation.type === "reload") {
-        localStorage.removeItem("bookingSuccessModalShown");
+          localStorage.removeItem("bookingSuccessModalShown");
         }
 
+        const params = new URLSearchParams(window.location.search);
 
-  const params = new URLSearchParams(window.location.search);
+        if (params.get("booking") === "success") {
+          const modalElement = document.getElementById("bookingSuccessModal");
 
-  if (params.get("booking") === "success") {
-
-    const modalElement =
-      document.getElementById("bookingSuccessModal");
-
-    const modal =
-      new bootstrap.Modal(modalElement);
-    if(!localStorage.getItem("bookingSuccessModalShown")) {
-      localStorage.setItem("bookingSuccessModalShown", "true");
-      modal.show();
-    }
-   
-    
-
-  }
-
-});
-</script>
+          const modal = new bootstrap.Modal(modalElement);
+          if (!localStorage.getItem("bookingSuccessModalShown")) {
+            localStorage.setItem("bookingSuccessModalShown", "true");
+            modal.show();
+          }
+        }
+      });
+    </script>
   </body>
 </html>
