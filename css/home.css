@@ -9,6 +9,13 @@
       img {
         max-width: 100%;
       }
+      .hero2-banner {
+        min-height: 360px;
+      }
+
+      .hero2-banner > .overlay {
+        height: 100%;
+      }
 
       /* ---------- Success modal ---------- */
       .success-card {
@@ -364,7 +371,7 @@
         }
       }
 
-      /* ---------- Mobile application banner ---------- */
+  /* ---------- Mobile application banner ---------- */
 
 .hero2 .hand img {
      width: 60% !important;
