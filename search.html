@@ -26,6 +26,9 @@
 
   </head>
   <body>
+    <div class="overlay ">
+
+    </div>
     <div
       class="container-navbar search-navbar"
       style="
@@ -1546,6 +1549,12 @@ document.addEventListener("DOMContentLoaded", function () {
   const filterPanel = document.getElementById("searchFilters");
   const openButtons = document.querySelectorAll("#openMobileFilters");
   const closeButton = document.getElementById("closeMobileFilters");
+  const funnel = document.querySelector('.bi.bi-filter-circle-fill.funnel');
+   const overlay = document.querySelector(".overlay");
+
+  funnel.addEventListener("click", function () {
+    overlay.classList.add("show");
+  });
 
   openButtons.forEach(btn => {
     btn.addEventListener("click", function () {
@@ -1556,12 +1565,17 @@ document.addEventListener("DOMContentLoaded", function () {
   if (closeButton) {
     closeButton.addEventListener("click", function () {
       filterPanel.classList.remove("mobile-filter-open");
+    
+      overlay.classList.remove("show");
+
+      
     });
   }
 
   window.addEventListener("resize", function () {
     if (window.innerWidth > 991) {
-      filterPanel.classList.remove("mobile-filter-open");
+      filterPanel.classList.toggle("show");
+
     }
   });
 });

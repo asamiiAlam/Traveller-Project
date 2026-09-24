@@ -971,8 +971,44 @@
     overflow:hidden !important;
   }
 }
-
+#searchFilters::-webkit-scrollbar {
+    display: none;
+}
 .mobile-filter-close{
-  background:transparent !important;
+  background:blue !important;
+ 
+
   border:0 !important;
+  position:sticky !important;
+  top:0 !important;
+
+}
+
+.overlay {
+    position: fixed;
+
+    top:0;
+    left:0;
+
+    width:100vw;
+    height:100vh;
+    height:100dvh;
+
+    background:rgba(0,0,0,0.45);
+
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+
+    z-index:2500;
+
+    opacity:0;
+    visibility:hidden;
+
+    transition:0.3s ease;
+}
+
+
+.overlay.show {
+    opacity:1;
+    visibility:visible;
 }
