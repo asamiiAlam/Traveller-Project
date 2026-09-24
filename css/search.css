@@ -971,3 +971,8 @@
     overflow:hidden !important;
   }
 }
+
+.mobile-filter-close{
+  background:transparent !important;
+  border:0 !important;
+}
