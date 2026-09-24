@@ -756,7 +756,7 @@ html,
     padding: 0 !important;
 
     background: #fff !important;
-    border-radius: 0 20px 20px 0 !important;
+    border-radius: 0 !important;
     box-shadow: 12px 0 32px rgba(15, 23, 42, 0.18);
 
     z-index: 3000 !important;
@@ -770,13 +770,6 @@ html,
     visibility: hidden;
     transition: transform 0.3s ease, visibility 0.3s ease !important;
     box-sizing: border-box !important;
-
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-  }
-
-  #searchFilters::-webkit-scrollbar {
-    display: none;
   }
 
   #searchFilters.mobile-filter-open {
@@ -784,9 +777,8 @@ html,
     visibility: visible !important;
   }
 
-  /* ---- Header ---- */
+  /* ---- Header: fixed to the top of the panel */
   #searchFilters .mobile-filter-close {
-    flex: 0 0 auto;
     width: 100% !important;
     height: 60px !important;
     margin: 0 !important;
@@ -796,9 +788,10 @@ html,
     align-items: center !important;
     justify-content: space-between !important;
 
-    background: #144e9d !important;
-    position: sticky !important;
+    background: #94949b !important;
+    position: fixed !important;
     top: 0;
+    left: 0;
     z-index: 20;
   }
 
@@ -827,10 +820,10 @@ html,
     background: rgba(255, 255, 255, 0.28) !important;
   }
 
-  /* ---- Body ---- */
+  /* ---- Body: padded down to clear the fixed header ---- */
   #searchFilters .mobile-filter-body {
     flex: 1 1 auto;
-    padding: 18px 20px 28px !important;
+    padding: 78px 20px 28px !important;
     box-sizing: border-box !important;
   }
 
