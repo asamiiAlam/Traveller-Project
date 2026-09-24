@@ -680,3 +680,229 @@
   }
 
 }
+
+@media (max-width: 991.98px) {
+
+    .mobile-top-actions {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        width: 100%;
+    }
+
+
+    .mobile-filter-toggle {
+        flex: 1;
+        height: 45px;
+        white-space: nowrap;
+    }
+
+
+    .mobile-next-element {
+        flex: 1;
+    }
+
+
+    .mobile-next-element select {
+        width: 100%;
+        height: 45px;
+        font-size: 13px;
+    }
+
+}
+
+/* ---------- Final mobile filter layout ---------- */
+@media (max-width:991.98px){
+
+  .navbar .container{
+    grid-template-columns:minmax(0,1fr) auto auto !important;
+  }
+
+  .mobile-nav-filter{
+    grid-column:2;
+    grid-row:1;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+
+  .mobile-nav-filter button{
+    width:42px;
+    height:42px;
+    border:0;
+    border-radius:8px;
+    background:#fff;
+    color:#144e9d;
+    font-size:18px;
+  }
+
+  .mobile-filter-toggle-wrap{
+    display:none !important;
+  }
+
+  #searchFilters{
+    top:auto !important;
+    bottom:0 !important;
+    left:0 !important;
+    width:100% !important;
+    max-width:100% !important;
+    height:85vh !important;
+    border-radius:22px 22px 0 0;
+    transform:translateY(105%);
+  }
+
+  #searchFilters.show{
+    transform:translateY(0);
+  }
+
+  .mobile-search-type-buttons{
+    display:grid !important;
+    grid-template-columns:repeat(2, minmax(0,1fr));
+    gap:10px !important;
+  }
+
+  .mobile-search-type-buttons .btn{
+    width:100%;
+    text-align:center;
+    min-height:38px;
+  }
+
+  .mobile-sort-top{
+    display:block;
+  }
+}
+
+@media (max-width: 991.98px) {
+
+    #searchFilters {
+        padding-left: 12px !important;
+        padding-right: 12px !important;
+        width: 100vw !important;
+        max-width: 100vw !important;
+        box-sizing: border-box !important;
+        overflow-x: hidden !important;
+    }
+
+
+    #searchFilters .mobile-sort-top {
+        width: 100% !important;
+        max-width: 100% !important;
+        display: block !important;
+        box-sizing: border-box !important;
+    }
+
+
+    #mobileSortby {
+        appearance: none;
+        -webkit-appearance: none;
+        width: 100% !important;
+        max-width: 100% !important;
+        height: 42px;
+        padding-right: 30px;
+        box-sizing: border-box !important;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+
+    #searchFilters .card,
+    #searchFilters .card-body {
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+}
+
+/* ===== FINAL MOBILE FILTER + SORT FIX ===== */
+@media (max-width:991.98px){
+
+  body{
+    overflow-x:hidden !important;
+  }
+
+  .mobile-nav-filter button,
+  .mobile-filter-toggle{
+    display:flex !important;
+    align-items:center;
+    justify-content:center;
+    gap:6px;
+    border-radius:12px !important;
+  }
+
+  .mobile-nav-filter button{
+    width:42px !important;
+    height:42px !important;
+    padding:0 !important;
+  }
+
+  #searchFilters{
+    display:block !important;
+    position:fixed !important;
+    inset:auto 0 0 0 !important;
+    width:100% !important;
+    max-width:100% !important;
+    height:85vh !important;
+    padding:18px 16px 30px !important;
+    background:#fff !important;
+    border-radius:24px 24px 0 0 !important;
+    z-index:3000 !important;
+    overflow-y:auto !important;
+    overflow-x:hidden !important;
+    transform:translateY(110%) !important;
+    visibility:hidden;
+    transition:.3s ease !important;
+    box-sizing:border-box !important;
+  }
+
+  #searchFilters.mobile-filter-open{
+    transform:translateY(0) !important;
+    visibility:visible !important;
+  }
+
+  #searchFilters .mobile-sort-top,
+  #searchFilters .mobile-sort-top select,
+  #mobileSortby{
+    width:100% !important;
+    max-width:100% !important;
+    min-width:0 !important;
+    box-sizing:border-box !important;
+  }
+
+  #mobileSortby{
+    height:44px !important;
+    font-size:14px !important;
+    padding:8px 36px 8px 12px !important;
+    white-space:nowrap !important;
+    overflow:hidden !important;
+    text-overflow:ellipsis !important;
+  }
+
+  #searchFilters .card,
+  #searchFilters .card-body{
+    width:100% !important;
+    max-width:100% !important;
+    overflow:hidden;
+  }
+
+}
+.funnel{
+  font-size: 2rem;
+  color: #21282b;
+ 
+  
+}
+.funnel-b{
+  background: transparent;
+  border: 0;
+  margin-right: 2.5rem;
+}
+
+
+@media (min-width: 700px) and (max-width: 1000px) {
+  .show{
+    margin-bottom: 3rem!important;
+  }
+}
+
