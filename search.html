@@ -317,7 +317,7 @@
         <!-- Mobile / Tablet Filter Toggle -->
         <div class="d-lg-none mb-3 mt-4 mobile-filter-toggle-wrap">
           <button
-            class="btn btn-outline-primary mobile-filter-toggle "
+            class="btn btn-outline-primary mobile-filter-toggle open-mobile-filters-btn"
             type="button"
             id="openMobileFilters"
             style="background-color: rgb(59, 130, 246);
@@ -332,8 +332,9 @@
         <div class="row">
             <div class="col-12 col-lg-3 gy-4 filter-column collapse d-lg-block" id="searchFilters">
                 <div class="mobile-filter-close d-lg-none">
+                  <span class="mobile-filter-title">Filters</span>
                   <button
-                    class="btn btn-light border"
+                    class="btn border-0"
                     type="button"
                     id="closeMobileFilters"
                     aria-label="Close filters"
@@ -341,6 +342,8 @@
                     <i class="bi bi-x-lg"></i>
                   </button>
                 </div>
+
+                <div class="mobile-filter-body">
 
                 <!-- Mobile Sort -->
                  <div class="mobile-sort-top d-lg-none mb-3"> 
@@ -949,6 +952,7 @@
 
   
     </div>
+    </div>
          <div class="col-12 col-lg-9 mt-4 results-column ">
         
         <h6 class="mb-md-0 mb-4 show">Showing the Search Results</h6>
@@ -981,7 +985,7 @@
             <div class="col-md-3 d-flex justify-content-md-end  justify-content-center align-items-center mb-3 mt-5 b">
                <!-- Mobile Filter Icon -->
           
-            <button type="button" class="d-lg-none funnel-b mobile-filter-icon-btn" id="openMobileFilters" aria-controls="searchFilters">
+            <button type="button" class="d-lg-none funnel-b mobile-filter-icon-btn open-mobile-filters-btn" id="openMobileFiltersIcon" aria-controls="searchFilters">
               <i class="bi bi-filter-circle-fill funnel" ></i>
             </button>
          
@@ -1547,35 +1551,35 @@
 <script>
 document.addEventListener("DOMContentLoaded", function () {
   const filterPanel = document.getElementById("searchFilters");
-  const openButtons = document.querySelectorAll("#openMobileFilters");
+  const openButtons = document.querySelectorAll(".open-mobile-filters-btn");
   const closeButton = document.getElementById("closeMobileFilters");
-  const funnel = document.querySelector('.bi.bi-filter-circle-fill.funnel');
-   const overlay = document.querySelector(".overlay");
+  const overlay = document.querySelector(".overlay");
 
-  funnel.addEventListener("click", function () {
+  function openFilters() {
+    filterPanel.classList.add("mobile-filter-open");
     overlay.classList.add("show");
-  });
+    document.body.classList.add("filter-open");
+  }
 
-  openButtons.forEach(btn => {
-    btn.addEventListener("click", function () {
-      filterPanel.classList.add("mobile-filter-open");
-    });
+  function closeFilters() {
+    filterPanel.classList.remove("mobile-filter-open");
+    overlay.classList.remove("show");
+    document.body.classList.remove("filter-open");
+  }
+
+  openButtons.forEach((btn) => {
+    btn.addEventListener("click", openFilters);
   });
 
   if (closeButton) {
-    closeButton.addEventListener("click", function () {
-      filterPanel.classList.remove("mobile-filter-open");
-    
-      overlay.classList.remove("show");
-
-      
-    });
+    closeButton.addEventListener("click", closeFilters);
   }
+
+  overlay.addEventListener("click", closeFilters);
 
   window.addEventListener("resize", function () {
     if (window.innerWidth > 991) {
-      filterPanel.classList.toggle("show");
-
+      closeFilters();
     }
   });
 });
